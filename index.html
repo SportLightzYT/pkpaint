@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PK Paint &amp; Supply - สีพ่นรถยนต์คุณภาพสูง</title>
+    <meta name="description" content="จำหน่ายสีพ่นรถยนต์คุณภาพสูง อุปกรณ์พ่นสีครบวงจร ปืนพ่นสี เครื่องขัดสี จัดส่งทั่วประเทศ บริการให้คำปรึกษาโดยผู้เชี่ยวชาญ">
+    <meta property="og:title" content="PK Paint &amp; Supply - สีพ่นรถยนต์คุณภาพสูง">
+    <meta property="og:description" content="จำหน่ายสีพ่นรถยนต์คุณภาพสูง อุปกรณ์พ่นสีครบวงจร จัดส่งทั่วประเทศ">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="th_TH">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background: rgba(0,0,0,0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            font-style: italic;
+        }
+
+        .logo-icon span {
+            color: #1e90ff;
+        }
+
+        .logo-text {
+            font-size: 12px;
+            line-height: 1.4;
+            color: #ccc;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #1e90ff;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .btn-contact {
+            background: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: #1873cc;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 120px 60px 60px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            position: relative;
+            overflow: hidden;
+            gap: 40px;
+        }
+
+        .hero-content {
+            max-width: 580px;
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+        .hero-image-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -30px;
+            background: radial-gradient(ellipse at center, rgba(30,144,255,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-car-img {
+            width: 100%;
+            max-width: 680px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 60px rgba(30,144,255,0.3));
+            animation: floatCar 4s ease-in-out infinite;
+        }
+
+        @keyframes floatCar {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .hero-subtitle {
+            color: #1e90ff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-subtitle::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: #1e90ff;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .highlight {
+            color: #1e90ff;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .features {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(30,144,255,0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e90ff;
+            font-size: 18px;
+        }
+
+        .feature-text {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .feature-text strong {
+            display: block;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #1873cc;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: #1e90ff;
+            color: #1e90ff;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 60px;
+            background: #0f0f0f;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+
+        .stats-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 50px;
+            color: #fff;
+        }
+
+        .stats-title span {
+            color: #1e90ff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.02);
+            padding: 40px 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: #1e90ff;
+            background: rgba(30,144,255,0.05);
+        }
+
+        .stat-icon {
+            font-size: 36px;
+            color: #1e90ff;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1e90ff;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #888;
+            font-weight: 400;
+        }
+
+        /* Brands Section */
+        .brands {
+            background: #fff;
+            padding: 30px 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .brand-logo {
+            height: 60px;
+            opacity: 1;
+            transition: transform 0.3s;
+            filter: grayscale(0%);
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Services Section */
+        .services {
+            background: #f5f5f5;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .services-title {
+            color: #1a1a1a;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #1e90ff, #0066cc);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .service-name {
+            color: #1a1a1a;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .service-desc {
+            color: #666;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        /* Products Section */
+        .products {
+            background: #0a0a0a;
+            padding: 60px;
+        }
+
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .products-title {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .btn-viewall {
+            background: transparent;
+            color: #1e90ff;
+            border: 1px solid #1e90ff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .btn-viewall:hover {
+            background: #1e90ff;
+            color: #fff;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(30,144,255,0.3);
+        }
+
+        .product-image {
+            height: 140px;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .product-type {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 12px;
+        }
+
+        .btn-detail {
+            width: 100%;
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 8px;
+            border-radius: 6px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-detail:hover {
+            background: #1e90ff;
+            border-color: #1e90ff;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #0a1628, #1a3a5c);
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            display: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .cta-desc {
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-line {
+            background: #00c300;
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-line:hover {
+            background: #00a300;
+        }
+
+        .btn-phone {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-phone:hover {
+            border-color: #fff;
+        }
+
+        /* Google Reviews Section (Dark Theme Match) */
+        .reviews-section {
+            background: #0a0a0a;
+            padding: 80px 60px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .reviews-label {
+            color: #1e90ff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(30,144,255,0.1);
+            border-radius: 20px;
+        }
+
+        .reviews-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .reviews-subtitle {
+            color: #888;
+            font-size: 16px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: rgba(30,144,255,0.3);
+        }
+
+        .review-author-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .review-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .review-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .review-verified {
+            color: #1e90ff;
+            font-size: 12px;
+        }
+
+        .review-date {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .review-stars {
+            color: #fbbc04;
+            font-size: 14px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .review-images {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .review-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            background-color: #2a2a2a;
+            object-fit: cover;
+        }
+
+        .review-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .google-logo {
+            height: 18px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #050505;
+            padding: 50px 60px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo-icon {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            font-style: italic;
+        }
+
+        .footer-logo-icon span {
+            color: #1e90ff;
+        }
+
+        .footer-desc {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #1e90ff;
+        }
+
+        .footer-contact {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .footer-contact i {
+            color: #1e90ff;
+            margin-right: 8px;
+            width: 16px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: #1e90ff;
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+            text-align: center;
+            color: #444;
+            font-size: 12px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile Nav Overlay */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.97);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-nav.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            color: #1e90ff;
+        }
+
+        .mobile-nav-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 200px;
+        }
+
+        .mobile-nav-contact a {
+            font-size: 15px !important;
+            color: #aaa !important;
+        }
+
+        /* Responsive — Tablet (≤1024px) */
+        @media (max-width: 1024px) {
+            .navbar {
+                padding: 15px 30px;
+            }
+            .hero {
+                padding: 100px 40px 60px;
+                gap: 30px;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .brands {
+                gap: 30px;
+                padding: 25px 40px;
+            }
+            .brand-logo {
+                height: 48px;
+            }
+            .stats-section {
+                padding: 60px 40px;
+            }
+            .services {
+                padding: 50px 40px;
+            }
+            .products {
+                padding: 50px 40px;
+            }
+            .cta {
+                padding: 50px 40px;
+            }
+            .reviews-section {
+                padding: 60px 40px;
+            }
+            .footer {
+                padding: 50px 40px 20px;
+            }
+        }
+
+        /* Responsive — Mobile (≤768px) */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 14px 20px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .phone {
+                display: none;
+            }
+            .social-icon {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-nav {
+                display: flex;
+            }
+
+            .hero {
+                padding: 90px 20px 40px;
+                flex-direction: column;
+                gap: 30px;
+            }
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+            .hero-subtitle {
+                justify-content: center;
+            }
+            .hero-title {
+                font-size: 30px;
+            }
+            .features {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+                display: inline-flex;
+            }
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .hero-image-wrap {
+                justify-content: center;
+                width: 100%;
+            }
+            .hero-car-img {
+                max-width: 100%;
+            }
+
+            .stats-section {
+                padding: 50px 20px;
+            }
+            .stats-title {
+                font-size: 24px;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .stat-card {
+                padding: 28px 16px;
+            }
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .brands {
+                padding: 20px;
+                gap: 20px;
+            }
+            .brand-logo {
+                height: 36px;
+            }
+
+            .services {
+                padding: 40px 20px;
+            }
+            .services-title {
+                font-size: 22px;
+                margin-bottom: 28px;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+            .service-card {
+                padding: 22px 14px;
+            }
+
+            .products {
+                padding: 40px 20px;
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .cta {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+                padding: 40px 20px;
+            }
+            .cta-title {
+                font-size: 22px;
+            }
+            .cta-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .reviews-section {
+                padding: 50px 20px;
+            }
+            .reviews-title {
+                font-size: 24px;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                padding: 40px 20px 20px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+        }
+
+        /* Responsive — Small Mobile (≤480px) */
+        @media (max-width: 480px) {
+            .logo-text {
+                display: none;
+            }
+            .hero-title {
+                font-size: 26px;
+            }
+            .hero-desc {
+                font-size: 14px;
+            }
+            .btn-primary, .btn-secondary {
+                padding: 12px 22px;
+                font-size: 14px;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .stat-number {
+                font-size: 30px;
+            }
+            .stat-label {
+                font-size: 13px;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .service-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            .service-name {
+                font-size: 13px;
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .brands {
+                gap: 16px;
+            }
+            .brand-logo {
+                height: 28px;
+            }
+            .btn-line, .btn-phone {
+                padding: 12px 22px;
+                font-size: 14px;
+                width: 100%;
+                justify-content: center;
+            }
+            .footer-social {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-section">
+            <div class="logo-icon">P<span>K</span></div>
+            <div class="logo-text">
+                PAINT & SUPPLY<br>
+                สีพ่นรถยนต์คุณภาพสูง
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">หน้าแรก</a></li>
+            <li><a href="products.html">สินค้า</a></li>
+            <li><a href="promotions.html">โปรโมชั่น</a></li>
+            <li><a href="portfolio.html">ผลงานสีพ่น</a></li>
+            <li><a href="about.html">เกี่ยวกับเรา</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="phone">
+                <i class="fas fa-phone-alt"></i>
+                062-369-2663
+            </div>
+            <div class="social-icon">
+                <i class="fab fa-facebook-messenger"></i>
+            </div>
+            <button class="btn-contact" onclick="window.location.href='contact.html'">ติดต่อสอบถาม</button>
+            <button class="hamburger" id="hamburger" aria-label="เปิดเมนู" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="เมนูหลัก">
+        <a href="index.html" class="active">หน้าแรก</a>
+        <a href="products.html">สินค้า</a>
+        <a href="promotions.html">โปรโมชั่น</a>
+        <a href="portfolio.html">ผลงานสีพ่น</a>
+        <a href="about.html">เกี่ยวกับเรา</a>
+        <a href="contact.html">ติดต่อเรา</a>
+        <div class="mobile-nav-contact">
+            <a href="tel:0623692663"><i class="fas fa-phone-alt" style="margin-right:8px;color:#1e90ff;"></i>062-369-2663</a>
+            <a href="contact.html"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @pkpaint</a>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">PK PAINT & SUPPLY</div>
+            <h1 class="hero-title">
+                สีพ่นรถยนต์คุณภาพสูง<br>
+                <span class="highlight">สวย เงา ทน ใช้ได้จริง</span>
+            </h1>
+            <p class="hero-desc">
+                ครบทุกสี · ทุกระบบพ่น · อุปกรณ์มาตรฐาน<br>
+                สำหรับผู้ซ่อมสีและงานพ่นทุกประเภท
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <strong>สีพ่นคุณภาพสูง</strong>
+                        มาตรฐานสากล
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="feature-text">
+                        <strong>สีสวย คมชัด</strong>
+                        ตรงเฉด สีจริง
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <div class="feature-text">
+                        <strong>ใช้งานง่าย</strong>
+                        พ่นลื่น ฟิล์มสวย
+                    </div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="window.location.href='products.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    เลือกดูสินค้า
+                </button>
+                <button class="btn-secondary" onclick="window.location.href='contact.html'">
+                    <i class="fas fa-phone-alt"></i>
+                    ติดต่อสอบถาม
+                </button>
+            </div>
+        </div>
+        <div class="hero-image-wrap">
+            <img src="2015-mclaren-p1-main.jpg" alt="McLaren P1 - สีพ่นคุณภาพสูง" class="hero-car-img">
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2 class="stats-title"><span>ครบจบในที่เดียว</span> เรื่องสีพ่นรถยนต์</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-clock-rotate-left"></i></div>
+                <span class="stat-number" data-target="10" data-suffix="+">0</span>
+                <span class="stat-label">ปีประสบการณ์</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-box-open"></i></div>
+                <span class="stat-number" data-target="5000" data-suffix="+">0</span>
+                <span class="stat-label">สินค้าพร้อมส่ง</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+                <span class="stat-number" data-target="2000" data-suffix="+">0</span>
+                <span class="stat-label">ลูกค้าไว้วางใจ</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-truck-fast"></i></div>
+                <span class="stat-number" data-target="100" data-suffix="%">0</span>
+                <span class="stat-label">จัดส่งตรงเวลา</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands">
+        <img src="PGL-01.png" alt="NIPPON PAINT" class="brand-logo">
+        <img src="PPG_Logo.svg.png" alt="PPG" class="brand-logo">
+        <img src="AIKKA.jpg" alt="Aikka" class="brand-logo">
+        <img src="STANDOX.png" alt="STANDOX" class="brand-logo">
+        <img src="SATA_Logo_new.jpg" alt="SATA" class="brand-logo">
+        <img src="anest-iwata-logo-sm_orig.png" alt="Anest Iwata" class="brand-logo">
+        <img src="3M_wordmark.svg.png" alt="3M" class="brand-logo">
+    </section>
+
+    <section class="services">
+        <h2 class="services-title">บริการและอุปกรณ์ของเรา</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-fill-drip"></i>
+                </div>
+                <div class="service-name">สีพ่นรถยนต์</div>
+                <div class="service-desc">สีรองพื้น สีสร้าง สีเคลือบ<br>คุณภาพสูง</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-spray-can"></i>
+                </div>
+                <div class="service-name">อุปกรณ์พ่นสี</div>
+                <div class="service-desc">ปืนพ่นสี ฟิลเตอร์ สายลม<br>อุปกรณ์ครบครัน</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-gears"></i>
+                </div>
+                <div class="service-name">เครื่องมือสี</div>
+                <div class="service-desc">เครื่องขัดสีดีดอล<br>ผลิตแผ่นขัด</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-paint-roller"></i>
+                </div>
+                <div class="service-name">อุปกรณ์ขัดสี</div>
+                <div class="service-desc">น้ำยาขัดสี ฟองน้ำ<br>ขัดเงา งานละเอียด</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-screwdriver-wrench"></i>
+                </div>
+                <div class="service-name">อุปกรณ์งานซ่อม</div>
+                <div class="service-desc">เทป กระดาษทราย ผ้าขัด<br>อุปกรณ์งานซ่อมครบ</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-truck-fast"></i>
+                </div>
+                <div class="service-name">จัดส่งรวดเร็ว</div>
+                <div class="service-desc">จัดส่งทั่ว ทั่วประเทศ<br>แพ็คสินค้าปลอดภัย</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="products-header">
+            <h2 class="products-title">สีแนะนำยอดนิยม</h2>
+            <button class="btn-viewall">
+                ดูสีทั้งหมด <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <svg width="120" height="80" viewBox="0 0 120 80">
+                        <ellipse cx="60" cy="40" rx="55" ry="30" fill="#f5f5f5"/>
+                        <ellipse cx="60" cy="38" rx="50" ry="25" fill="#ffffff"/>
+                        <ellipse cx="60" cy="35" rx="45" ry="20" fill="#fafafa"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">White Pearl</div>
+                    <div class="product-type">ขาวมุก</div>
+                    <button class="btn-detail">ดูรายละเอียด</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <svg width="120" height="80" viewBox="0 0 120 80">
+                        <ellipse cx="60" cy="40" rx="55" ry="30" fill="#1a1a1a"/>
+                        <ellipse cx="60" cy="38" rx="50" ry="25" fill="#0a0a0a"/>
+                        <ellipse cx="60" cy="35" rx="45" ry="20" fill="#000000"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Super Black</div>
+                    <div class="product-type">ดำเงา</div>
+                    <button class="btn-detail">ดูรายละเอียด</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <svg width="120" height="80" viewBox="0 0 120 80">
+                        <ellipse cx="60" cy="40" rx="55" ry="30" fill="#c0c0c0"/>
+                        <ellipse cx="60" cy="38" rx="50" ry="25" fill="#d0d0d0"/>
+                        <ellipse cx="60" cy="35" rx="45" ry="20" fill="#e0e0e0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Silver Metallic</div>
+                    <div class="product-type">เงินเมทัลลิก</div>
+                    <button class="btn-detail">ดูรายละเอียด</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <svg width="120" height="80" viewBox="0 0 120 80">
+                        <ellipse cx="60" cy="40" rx="55" ry="30" fill="#cc0000"/>
+                        <ellipse cx="60" cy="38" rx="50" ry="25" fill="#dd0000"/>
+                        <ellipse cx="60" cy="35" rx="45" ry="20" fill="#ee0000"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Candy Red</div>
+                    <div class="product-type">แคนดี้แดง</div>
+                    <button class="btn-detail">ดูรายละเอียด</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <svg width="120" height="80" viewBox="0 0 120 80">
+                        <ellipse cx="60" cy="40" rx="55" ry="30" fill="#0033cc"/>
+                        <ellipse cx="60" cy="38" rx="50" ry="25" fill="#0044dd"/>
+                        <ellipse cx="60" cy="35" rx="45" ry="20" fill="#0055ee"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Deep Blue Mica</div>
+                    <div class="product-type">น้ำเงินไมก้า</div>
+                    <button class="btn-detail">ดูรายละเอียด</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <svg width="120" height="80" viewBox="0 0 120 80">
+                        <ellipse cx="60" cy="40" rx="55" ry="30" fill="#4a4a4a"/>
+                        <ellipse cx="60" cy="38" rx="50" ry="25" fill="#555555"/>
+                        <ellipse cx="60" cy="35" rx="45" ry="20" fill="#606060"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Gun Metal</div>
+                    <div class="product-type">เทากันส์</div>
+                    <button class="btn-detail">ดูรายละเอียด</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2 class="cta-title">ต้องการคำแนะนำเรื่องสีพ่นรถยนต์?</h2>
+            <p class="cta-desc">ทีมงานผู้เชี่ยวชาญพร้อมให้คำปรึกษา เลือกสีตรงงาน สวย ทน แน่นอน</p>
+        </div>
+        <div class="cta-buttons">
+            <button class="btn-line">
+                <i class="fab fa-line"></i>
+                แชทผ่าน LINE
+            </button>
+            <button class="btn-phone">
+                <i class="fas fa-phone-alt"></i>
+                โทร 062-369-2663
+            </button>
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <div class="reviews-header">
+            <div class="reviews-label">GOOGLE REVIEWS</div>
+            <h2 class="reviews-title">รีวิวจากลูกค้าที่ใช้จริง</h2>
+            <p class="reviews-subtitle">เสียงตอบรับและผลงานบางส่วนจากลูกค้าของเรา</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-author-header">
+                    <div class="review-avatar" style="background-color: #fbbc04; color: #000;">FG</div>
+                    <div class="review-author-info">
+                        <div class="review-name">F. G. <i class="fas fa-check-circle review-verified"></i></div>
+                        <div class="review-date">4 days ago</div>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <div class="review-text">
+                    Excellent customer service, swift replies and great results. สีตรงสเปคมากครับ พนักงานให้คำปรึกษาดีมาก ให้คำแนะนำก่อนสั่งซื้อได้เคลียร์
+                </div>
+                <div class="review-footer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-author-header">
+                    <div class="review-avatar" style="background-color: #00a4e4; color: #fff;">สม</div>
+                    <div class="review-author-info">
+                        <div class="review-name">สมชาย รักรถ <i class="fas fa-check-circle review-verified"></i></div>
+                        <div class="review-date">1 week ago</div>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <div class="review-text">
+                    สั่งสีดำเงา Super Black มาพ่นชิ้นส่วนมอเตอร์ไซค์ สีสวยมากครับ พ่นง่าย เนื้อสีละเอียดดี แพ็คของมาแน่นหนามาก ไม่มีแตกหัก
+                </div>
+                <div class="review-images">
+                    <img src="https://images.unsplash.com/photo-1541443131876-44b03de101c5?q=80&w=150&auto=format&fit=crop" alt="Review Image" class="review-img">
+                    <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=150&auto=format&fit=crop" alt="Review Image" class="review-img">
+                </div>
+                <div class="review-footer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-author-header">
+                    <div class="review-avatar" style="background-color: #34a853; color: #fff;">WI</div>
+                    <div class="review-author-info">
+                        <div class="review-name">Wichai Auto Clinic <i class="fas fa-check-circle review-verified"></i></div>
+                        <div class="review-date">2 weeks ago</div>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <div class="review-text">
+                    ทางอู่ใช้สีจากร้านนี้ประจำครับ ไม่เคยผิดหวังเรื่องเฉดสี แล็คเกอร์เงาตาแตก บริการส่งต่างจังหวัดไวมากครับ แนะนำเลยร้านนี้
+                </div>
+                <div class="review-images">
+                    <img src="https://images.unsplash.com/photo-1611821064430-0d40229e4e30?q=80&w=150&auto=format&fit=crop" alt="Review Image" class="review-img">
+                </div>
+                <div class="review-footer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-author-header">
+                    <div class="review-avatar" style="background-color: #ea4335; color: #fff;">TK</div>
+                    <div class="review-author-info">
+                        <div class="review-name">Tariq Khattab <i class="fas fa-check-circle review-verified"></i></div>
+                        <div class="review-date">8 days ago</div>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <div class="review-text">
+                    I use several of their products across my workshop, and find them to be fantastic value for money. I highly recommend their paints.
+                </div>
+                <div class="review-footer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-author-header">
+                    <div class="review-avatar" style="background-color: #00bcd4; color: #fff;">SG</div>
+                    <div class="review-author-info">
+                        <div class="review-name">Support Global <i class="fas fa-check-circle review-verified"></i></div>
+                        <div class="review-date">3 weeks ago</div>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <div class="review-text">
+                    Good products to support our team, quick delivery and response from the admin. Will definitely order again.
+                </div>
+                <div class="review-footer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">P<span>K</span></div>
+                    <div>
+                        <div style="font-size: 14px; font-weight: 600;">PAINT & SUPPLY</div>
+                        <div style="font-size: 12px; color: #666;">สีพ่นรถยนต์คุณภาพสูง</div>
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    จำหน่ายสีพ่นรถยนต์คุณภาพสูง อุปกรณ์พ่นสีครบวงจร<br>
+                    บริการให้คำปรึกษาโดยผู้เชี่ยวชาญ
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">เมนู</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="products.html">สินค้า</a></li>
+                    <li><a href="promotions.html">โปรโมชั่น</a></li>
+                    <li><a href="portfolio.html">ผลงานสีพ่น</a></li>
+                    <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                    <li><a href="contact.html">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">ติดต่อเรา</h4>
+                <div class="footer-contact">
+                    <div><i class="fas fa-phone-alt"></i> 062-369-2663</div>
+                    <div><i class="fab fa-line"></i> @pkpaint</div>
+                    <div style="margin-top: 10px;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        ร้าน PK Paint & Supply<br>
+                        ถนนมะลิวัลย์ จ.ขอนแก่น
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">ติดตามเรา</h4>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © <span id="copyright-year"></span> PK Paint &amp; Supply. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Dynamic copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // Hamburger Menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+
+        function toggleMenu(open) {
+            hamburger.classList.toggle('open', open);
+            mobileNav.classList.toggle('open', open);
+            hamburger.setAttribute('aria-expanded', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = mobileNav.classList.contains('open');
+            toggleMenu(!isOpen);
+        });
+
+        // Close mobile nav when a link is clicked
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') toggleMenu(false);
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(0,0,0,0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'rgba(0,0,0,0.9)';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Counter Animation for Stats Section
+        const statsObserverOptions = { threshold: 0.5 };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const countTo = parseInt(target.getAttribute('data-target'));
+                    const suffix = target.getAttribute('data-suffix') || '';
+                    let currentCount = 0;
+                    const duration = 2000;
+                    const increment = countTo / (duration / 16);
+
+                    const timer = setInterval(() => {
+                        currentCount += increment;
+                        if (currentCount >= countTo) {
+                            target.innerText = countTo.toLocaleString() + suffix;
+                            clearInterval(timer);
+                        } else {
+                            target.innerText = Math.floor(currentCount).toLocaleString() + suffix;
+                        }
+                    }, 16);
+                    counterObserver.unobserve(target);
+                }
+            });
+        }, statsObserverOptions);
+
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            counterObserver.observe(stat);
+        });
+
+        // Scroll-in animation — only for users who haven't set reduce-motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion) {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.service-card, .product-card, .review-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+    </script>
+</body>
+</html>

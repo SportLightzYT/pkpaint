@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PK Paint & Supply - ผลงานสีพ่น</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Kanit', sans-serif; background-color: #0a0a0a; color: #fff; overflow-x: hidden; }
+        
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 60px; background: rgba(0,0,0,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
+        .logo-section { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { font-size: 36px; font-weight: 700; color: #fff; font-style: italic; }
+        .logo-icon span { color: #1e90ff; }
+        .logo-text { font-size: 12px; line-height: 1.4; color: #ccc; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #1e90ff; }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .phone { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #fff; }
+        .btn-contact { background: #1e90ff; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.3s; }
+
+        .page-container { padding: 120px 60px 60px; max-width: 1400px; margin: 0 auto; text-align: center; }
+        .page-title { font-size: 36px; font-weight: 600; margin-bottom: 10px; color: #fff; }
+        .page-subtitle { color: #aaa; margin-bottom: 50px; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-item { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; background: #1a1a1a; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; opacity: 0.6; }
+        .gallery-item:hover img { transform: scale(1.1); opacity: 1; filter: brightness(1.2); }
+        .gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 20px; text-align: left; transform: translateY(20px); opacity: 0; transition: 0.3s; }
+        .gallery-item:hover .gallery-overlay { transform: translateY(0); opacity: 1; }
+        .gallery-title { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 5px; }
+        .gallery-tag { font-size: 12px; color: #1e90ff; }
+
+        /* New Footer Styles */
+        .footer {
+            background: #000000;
+            padding: 60px 60px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .footer-logo-icon {
+            font-size: 32px;
+            font-weight: 800;
+            font-style: italic;
+            color: #fff;
+        }
+        .footer-logo-icon span {
+            color: #1e90ff;
+        }
+        .footer-desc {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+        .footer-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #1e90ff;
+        }
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #888;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .contact-item i {
+            color: #1e90ff;
+            font-size: 16px;
+            margin-top: 3px;
+            width: 20px;
+            text-align: center;
+        }
+        .mt-2 {
+            margin-top: 10px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 16px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .footer-social a:hover {
+            background: #1e90ff;
+            color: #fff;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 25px;
+            text-align: center;
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-section">
+            <div class="logo-icon">P<span>K</span></div>
+            <div class="logo-text">PAINT & SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="products.html">สินค้า</a></li>
+            <li><a href="promotions.html">โปรโมชั่น</a></li>
+            <li><a href="portfolio.html" class="active">ผลงานสีพ่น</a></li>
+            <li><a href="about.html">เกี่ยวกับเรา</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="phone"><i class="fas fa-phone-alt"></i> 062-369-2663</div>
+            <button class="btn-contact" onclick="window.location.href='contact.html'">ติดต่อสอบถาม</button>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <h1 class="page-title">ผลงานสีพ่น</h1>
+        <p class="page-subtitle">รวบรวมผลงานการซ่อมสีและพ่นสีรถยนต์จากลูกค้าที่ใช้ผลิตภัณฑ์ของเรา</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size: 50px; color:#333; background:#111;"><i class="fas fa-car"></i></div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Honda Civic - Super Black</div>
+                    <div class="gallery-tag">#เคลือบเงาเต็มระบบ</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size: 50px; color:#333; background:#111;"><i class="fas fa-car-side"></i></div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Toyota Yaris - White Pearl</div>
+                    <div class="gallery-tag">#สีขาวมุก #งานซ่อมกันชน</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size: 50px; color:#333; background:#111;"><i class="fas fa-truck-pickup"></i></div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Isuzu D-Max - Silver Metallic</div>
+                    <div class="gallery-tag">#เก็บรอยรอบคัน</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size: 50px; color:#333; background:#111;"><i class="fas fa-car"></i></div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Mazda 2 - Soul Red Crystal</div>
+                    <div class="gallery-tag">#พ่นสีแคนดี้ #สีเงาฉ่ำ</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size: 50px; color:#333; background:#111;"><i class="fas fa-car-side"></i></div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Nissan Almera - Gun Metal</div>
+                    <div class="gallery-tag">#พ่นสีล้อแม็ก #สีเทากันส์</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size: 50px; color:#333; background:#111;"><i class="fas fa-motorcycle"></i></div>
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Honda Forza - Custom Blue</div>
+                    <div class="gallery-tag">#ทำสีมอเตอร์ไซค์ #น้ำเงินแก้ว</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">P<span>K</span></div>
+                    <div>
+                        <div style="font-size: 14px; font-weight: 600;">PAINT & SUPPLY</div>
+                        <div style="font-size: 12px; color: #666;">สีพ่นรถยนต์คุณภาพสูง</div>
+                    </div>
+                </div>
+                <p class="footer-desc">จำหน่ายสีพ่นรถยนต์คุณภาพสูง อุปกรณ์พ่นสีครบวงจร<br>บริการให้คำปรึกษาโดยผู้เชี่ยวชาญ</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">เมนู</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="products.html">สินค้า</a></li>
+                    <li><a href="promotions.html">โปรโมชั่น</a></li>
+                    <li><a href="portfolio.html">ผลงานสีพ่น</a></li>
+                    <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                    <li><a href="contact.html">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">ติดต่อเรา</h4>
+                <div class="footer-contact">
+                    <div><i class="fas fa-phone-alt"></i> 062-369-2663</div>
+                    <div><i class="fab fa-line"></i> @pkpaint</div>
+                    <div style="margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> ร้าน PK Paint & Supply<br>ถนนมะลิวัลย์ จ.ขอนแก่น</div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">ติดตามเรา</h4>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2024 PK Paint & Supply. All Rights Reserved.</div>
+    </footer>
+</body>
+</html>
