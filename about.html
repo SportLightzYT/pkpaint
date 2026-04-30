@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PK Paint & Supply - เกี่ยวกับเรา</title>
+    <title>PK Paint &amp; Supply - เกี่ยวกับเรา</title>
+    <meta name="description" content="รู้จัก PK Paint &amp; Supply ผู้นำจำหน่ายสีพ่นรถยนต์และอุปกรณ์พ่นสีครบวงจร ประสบการณ์กว่า 10 ปี ให้คำปรึกษาโดยผู้เชี่ยวชาญ">
+    <meta property="og:title" content="PK Paint &amp; Supply - เกี่ยวกับเรา">
+    <meta property="og:description" content="ผู้นำด้านการจำหน่ายสีพ่นรถยนต์และอุปกรณ์พ่นสีครบวงจร ประสบการณ์กว่า 10 ปี">
+    <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Kanit', sans-serif; background-color: #0a0a0a; color: #fff; overflow-x: hidden; }
-        
+
+        /* ── Navbar ── */
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 60px; background: rgba(0,0,0,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
         .logo-section { display: flex; align-items: center; gap: 12px; }
         .logo-icon { font-size: 36px; font-weight: 700; color: #fff; font-style: italic; }
@@ -21,7 +26,43 @@
         .nav-right { display: flex; align-items: center; gap: 20px; }
         .phone { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #fff; }
         .btn-contact { background: #1e90ff; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.3s; }
+        .btn-contact:hover { background: #1873cc; }
 
+        /* ── Hamburger ── */
+        .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; z-index: 1100; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease; }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ── Mobile Nav ── */
+        .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .mobile-nav.open { opacity: 1; pointer-events: all; }
+        .mobile-nav a { color: #fff; text-decoration: none; font-size: 22px; font-weight: 500; letter-spacing: 1px; transition: color 0.3s; }
+        .mobile-nav a:hover, .mobile-nav a.active { color: #1e90ff; }
+        .mobile-nav-contact { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); width: 220px; }
+        .mobile-nav-contact a { font-size: 15px !important; color: #aaa !important; }
+
+        /* ── Footer ── */
+        .footer { background: #050505; padding: 50px 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+        .footer-logo-icon { font-size: 32px; font-weight: 700; color: #fff; font-style: italic; }
+        .footer-logo-icon span { color: #1e90ff; }
+        .footer-desc { color: #666; font-size: 13px; line-height: 1.6; }
+        .footer-title { font-size: 14px; font-weight: 600; margin-bottom: 20px; color: #fff; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #666; text-decoration: none; font-size: 13px; transition: color 0.3s; }
+        .footer-links a:hover { color: #1e90ff; }
+        .footer-contact { color: #666; font-size: 13px; line-height: 1.8; }
+        .footer-contact i { color: #1e90ff; margin-right: 8px; width: 16px; }
+        .footer-social { display: flex; gap: 12px; margin-top: 15px; }
+        .footer-social a { width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; font-size: 14px; transition: all 0.3s; text-decoration: none; }
+        .footer-social a:hover { background: #1e90ff; color: #fff; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; color: #444; font-size: 12px; }
+
+        /* ── About Page ── */
         .about-header { padding: 150px 60px 80px; text-align: center; background: linear-gradient(135deg, #050505, #112233); border-bottom: 1px solid rgba(255,255,255,0.05); }
         .about-title { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
         .about-title span { color: #1e90ff; }
@@ -34,126 +75,39 @@
 
         .stats-section { background: #111; padding: 60px; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
         .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1200px; margin: 0 auto; text-align: center; gap: 30px; }
-        .stat-item i { font-size: 36px; color: #1e90ff; margin-bottom: 15px; }
+        .stat-item i { font-size: 36px; color: #1e90ff; margin-bottom: 15px; display: block; }
         .stat-number { font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 5px; }
         .stat-label { font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* New Footer Styles */
-        .footer {
-            background: #000000;
-            padding: 60px 60px 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .navbar { padding: 15px 30px; }
+            .about-header { padding: 130px 40px 60px; }
+            .about-content { padding: 60px 40px; gap: 40px; }
+            .stats-section { padding: 50px 40px; }
+            .footer { padding: 50px 30px 20px; }
+            .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
         }
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1.5fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
+        @media (max-width: 768px) {
+            .navbar { padding: 14px 20px; }
+            .nav-links { display: none; }
+            .phone { display: none; }
+            .hamburger { display: flex; }
+            .mobile-nav { display: flex; }
+            .about-header { padding: 110px 20px 50px; }
+            .about-title { font-size: 30px; }
+            .about-subtitle { font-size: 15px; }
+            .about-content { padding: 40px 20px; grid-template-columns: 1fr; gap: 30px; }
+            .about-image { height: 250px; font-size: 60px; }
+            .stats-section { padding: 40px 20px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .footer { padding: 40px 20px 20px; margin-top: 0; }
+            .footer-content { grid-template-columns: 1fr; gap: 24px; }
         }
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-        .footer-logo-icon {
-            font-size: 32px;
-            font-weight: 800;
-            font-style: italic;
-            color: #fff;
-        }
-        .footer-logo-icon span {
-            color: #1e90ff;
-        }
-        .footer-desc {
-            color: #888;
-            font-size: 13px;
-            line-height: 1.8;
-            max-width: 300px;
-        }
-        .footer-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: #fff;
-        }
-        .footer-links {
-            list-style: none;
-        }
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        .footer-links a {
-            color: #888;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-        .footer-links a:hover {
-            color: #1e90ff;
-        }
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            color: #888;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .contact-item i {
-            color: #1e90ff;
-            font-size: 16px;
-            margin-top: 3px;
-            width: 20px;
-            text-align: center;
-        }
-        .mt-2 {
-            margin-top: 10px;
-        }
-        .footer-social {
-            display: flex;
-            gap: 10px;
-        }
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #aaa;
-            font-size: 16px;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        .footer-social a:hover {
-            background: #1e90ff;
-            color: #fff;
-        }
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 25px;
-            text-align: center;
-            color: #555;
-            font-size: 13px;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .footer-content { grid-template-columns: 1fr 1fr; }
-        }
-
-        @media (max-width: 576px) {
-            .footer-content { grid-template-columns: 1fr; }
+        @media (max-width: 480px) {
+            .logo-text { display: none; }
+            .about-title { font-size: 26px; }
+            .stat-number { font-size: 28px; }
         }
     </style>
 </head>
@@ -161,7 +115,7 @@
     <nav class="navbar">
         <div class="logo-section">
             <div class="logo-icon">P<span>K</span></div>
-            <div class="logo-text">PAINT & SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div>
+            <div class="logo-text">PAINT &amp; SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">หน้าแรก</a></li>
@@ -174,18 +128,34 @@
         <div class="nav-right">
             <div class="phone"><i class="fas fa-phone-alt"></i> 062-369-2663</div>
             <button class="btn-contact" onclick="window.location.href='contact.html'">ติดต่อสอบถาม</button>
+            <button class="hamburger" id="hamburger" aria-label="เปิดเมนู" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
+    <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="เมนูหลัก">
+        <a href="index.html">หน้าแรก</a>
+        <a href="products.html">สินค้า</a>
+        <a href="promotions.html">โปรโมชั่น</a>
+        <a href="portfolio.html">ผลงานสีพ่น</a>
+        <a href="about.html" class="active">เกี่ยวกับเรา</a>
+        <a href="contact.html">ติดต่อเรา</a>
+        <div class="mobile-nav-contact">
+            <a href="tel:0623692663"><i class="fas fa-phone-alt" style="margin-right:8px;color:#1e90ff;"></i>062-369-2663</a>
+            <a href="#"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @pkpaint</a>
+        </div>
+    </div>
+
     <div class="about-header">
-        <h1 class="about-title">รู้จักกับ <span>PK Paint & Supply</span></h1>
+        <h1 class="about-title">รู้จักกับ <span>PK Paint &amp; Supply</span></h1>
         <p class="about-subtitle">ผู้นำด้านการจัดจำหน่ายสีพ่นรถยนต์และอุปกรณ์พ่นสีที่ครบวงจรที่สุด พร้อมให้คำปรึกษาด้วยประสบการณ์ยาวนานกว่า 10 ปี</p>
     </div>
 
     <div class="about-content">
         <div class="about-text">
             <h2>วิสัยทัศน์ของเรา</h2>
-            <p>PK Paint & Supply ก่อตั้งขึ้นด้วยความตั้งใจที่จะยกระดับมาตรฐานวงการซ่อมสีรถยนต์ในประเทศไทย เราคัดสรรเฉพาะผลิตภัณฑ์สี 2K คุณภาพสูง และอุปกรณ์งานพ่นสีมาตรฐานสากล เพื่อส่งมอบให้แก่ลูกค้า ทั้งอู่ซ่อมสีรถยนต์ ศูนย์บริการ และผู้ใช้งานทั่วไป</p>
+            <p>PK Paint &amp; Supply ก่อตั้งขึ้นด้วยความตั้งใจที่จะยกระดับมาตรฐานวงการซ่อมสีรถยนต์ในประเทศไทย เราคัดสรรเฉพาะผลิตภัณฑ์สี 2K คุณภาพสูง และอุปกรณ์งานพ่นสีมาตรฐานสากล เพื่อส่งมอบให้แก่ลูกค้า ทั้งอู่ซ่อมสีรถยนต์ ศูนย์บริการ และผู้ใช้งานทั่วไป</p>
             <p>เราไม่ได้เป็นเพียงแค่ร้านจำหน่ายสินค้า แต่เรามุ่งมั่นที่จะเป็น "พาร์ทเนอร์" ที่คอยให้คำปรึกษา แนะนำเทคนิคการใช้งาน และแก้ปัญหาเรื่องสีพ่นรถยนต์อย่างมืออาชีพ เพื่อให้ทุกผลงานการพ่นสีของคุณออกมาสมบูรณ์แบบที่สุด</p>
         </div>
         <div class="about-image">
@@ -224,8 +194,8 @@
                 <div class="footer-logo">
                     <div class="footer-logo-icon">P<span>K</span></div>
                     <div>
-                        <div style="font-size: 14px; font-weight: 600;">PAINT & SUPPLY</div>
-                        <div style="font-size: 12px; color: #666;">สีพ่นรถยนต์คุณภาพสูง</div>
+                        <div style="font-size:14px;font-weight:600;">PAINT &amp; SUPPLY</div>
+                        <div style="font-size:12px;color:#666;">สีพ่นรถยนต์คุณภาพสูง</div>
                     </div>
                 </div>
                 <p class="footer-desc">จำหน่ายสีพ่นรถยนต์คุณภาพสูง อุปกรณ์พ่นสีครบวงจร<br>บริการให้คำปรึกษาโดยผู้เชี่ยวชาญ</p>
@@ -246,7 +216,7 @@
                 <div class="footer-contact">
                     <div><i class="fas fa-phone-alt"></i> 062-369-2663</div>
                     <div><i class="fab fa-line"></i> @pkpaint</div>
-                    <div style="margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> ร้าน PK Paint & Supply<br>ถนนมะลิวัลย์ จ.ขอนแก่น</div>
+                    <div style="margin-top:10px;"><i class="fas fa-map-marker-alt"></i> ร้าน PK Paint &amp; Supply<br>ถนนมะลิวัลย์ จ.ขอนแก่น</div>
                 </div>
             </div>
             <div class="footer-col">
@@ -259,7 +229,22 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">© 2024 PK Paint & Supply. All Rights Reserved.</div>
+        <div class="footer-bottom">© <span id="copyright-year"></span> PK Paint &amp; Supply. All Rights Reserved.</div>
     </footer>
+
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        function toggleMenu(open) {
+            hamburger.classList.toggle('open', open);
+            mobileNav.classList.toggle('open', open);
+            hamburger.setAttribute('aria-expanded', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+        hamburger.addEventListener('click', () => toggleMenu(!mobileNav.classList.contains('open')));
+        mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+    </script>
 </body>
 </html>
