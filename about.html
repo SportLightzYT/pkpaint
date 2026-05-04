@@ -43,8 +43,146 @@
         .mobile-nav-contact { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); width: 220px; }
         .mobile-nav-contact a { font-size: 15px !important; color: #aaa !important; }
 
+        /* ── Mode Toggle ── */
+        .mode-toggle { position: fixed; top: 90px; right: 30px; z-index: 998; background: rgba(30,144,255,0.15); border: 1px solid rgba(30,144,255,0.3); border-radius: 30px; padding: 6px; display: flex; gap: 4px; backdrop-filter: blur(10px); }
+        .mode-btn { background: transparent; border: none; color: #888; padding: 8px 16px; border-radius: 20px; font-family: 'Kanit'; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 6px; }
+        .mode-btn.active { background: #1e90ff; color: #fff; }
+        .mode-btn:hover:not(.active) { color: #1e90ff; }
+
+        /* ════════════════════════════════════════ */
+        /* ═══════ MODE: NEW (Full Design) ═══════ */
+        /* ════════════════════════════════════════ */
+
+        .new-mode .about-hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 140px 60px 80px; text-align: center; position: relative; overflow: hidden; }
+        .new-mode .about-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(26,10,46,0.9) 50%, rgba(13,31,45,0.95) 100%); z-index: 1; }
+        .new-mode .about-hero::after { content: ''; position: absolute; inset: 0; background-image: url('asset/2015-mclaren-p1-main.jpg'); background-size: cover; background-position: center center; opacity: 0.15; z-index: 0; }
+        .new-mode .about-hero-content { position: relative; z-index: 2; max-width: 800px; }
+        .new-mode .about-hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, #fff 0%, #1e90ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .new-mode .about-hero p { color: #aaa; font-size: 16px; line-height: 1.7; max-width: 600px; margin: 0 auto 30px; }
+        .new-mode .hero-badges { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .new-mode .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #ccc; padding: 6px 16px; border-radius: 20px; font-size: 13px; }
+        .new-mode .hero-badge i { color: #1e90ff; }
+
+        /* Stats */
+        .new-mode .stats-section { padding: 80px 60px; background: #0f0f0f; border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .new-mode .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+        .new-mode .stat-card { background: rgba(255,255,255,0.02); padding: 40px 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); text-align: center; transition: all 0.3s; }
+        .new-mode .stat-card:hover { transform: translateY(-6px); border-color: rgba(30,144,255,0.3); }
+        .new-mode .stat-icon { font-size: 32px; color: #1e90ff; margin-bottom: 12px; }
+        .new-mode .stat-number { font-size: 40px; font-weight: 700; color: #fff; margin-bottom: 6px; display: block; }
+        .new-mode .stat-number span { color: #1e90ff; }
+        .new-mode .stat-label { font-size: 14px; color: #888; }
+
+        /* Story Section */
+        .new-mode .story-section { padding: 80px 60px; max-width: 1200px; margin: 0 auto; }
+        .new-mode .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .new-mode .story-image { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; border: 1px solid rgba(255,255,255,0.06); }
+        .new-mode .story-image img { width: 100%; height: 100%; object-fit: cover; }
+        .new-mode .story-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30,144,255,0.1), transparent); }
+        .new-mode .story-image .experience-badge { position: absolute; bottom: 20px; left: 20px; background: #1e90ff; color: #fff; padding: 12px 24px; border-radius: 12px; font-size: 14px; font-weight: 600; z-index: 2; box-shadow: 0 8px 24px rgba(30,144,255,0.3); }
+        .new-mode .story-image .experience-badge span { font-size: 28px; display: block; line-height: 1; }
+        .new-mode .story-text h2 { font-size: 32px; font-weight: 600; margin-bottom: 20px; }
+        .new-mode .story-text h2 span { color: #1e90ff; }
+        .new-mode .story-text p { color: #aaa; line-height: 1.8; margin-bottom: 16px; font-size: 15px; }
+        .new-mode .story-features { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+        .new-mode .story-feature { display: flex; align-items: flex-start; gap: 12px; }
+        .new-mode .story-feature i { color: #2ed573; font-size: 18px; margin-top: 2px; flex-shrink: 0; }
+        .new-mode .story-feature div { font-size: 14px; color: #ccc; }
+        .new-mode .story-feature div strong { color: #fff; display: block; margin-bottom: 2px; }
+
+        /* Timeline */
+        .new-mode .timeline-section { padding: 80px 60px; background: #080808; border-top: 1px solid rgba(255,255,255,0.04); }
+        .new-mode .section-header { text-align: center; margin-bottom: 50px; }
+        .new-mode .section-header h2 { font-size: 28px; font-weight: 600; margin-bottom: 8px; }
+        .new-mode .section-header p { color: #888; font-size: 14px; }
+        .new-mode .timeline { max-width: 800px; margin: 0 auto; position: relative; }
+        .new-mode .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #1e90ff, transparent); transform: translateX(-50%); }
+        .new-mode .timeline-item { display: flex; margin-bottom: 40px; position: relative; }
+        .new-mode .timeline-item:nth-child(odd) { flex-direction: row-reverse; text-align: right; }
+        .new-mode .timeline-item:nth-child(odd) .timeline-content { padding-right: 40px; padding-left: 0; }
+        .new-mode .timeline-item:nth-child(even) .timeline-content { padding-left: 40px; }
+        .new-mode .timeline-dot { position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 16px; height: 16px; background: #1e90ff; border-radius: 50%; border: 3px solid #0a0a0a; box-shadow: 0 0 0 3px rgba(30,144,255,0.3); }
+        .new-mode .timeline-content { width: 50%; }
+        .new-mode .timeline-year { font-size: 14px; color: #1e90ff; font-weight: 600; margin-bottom: 6px; }
+        .new-mode .timeline-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .new-mode .timeline-desc { font-size: 14px; color: #888; line-height: 1.6; }
+
+        /* Team Section */
+        .new-mode .team-section { padding: 80px 60px; max-width: 1200px; margin: 0 auto; }
+        .new-mode .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .new-mode .team-card { background: linear-gradient(135deg, #151515, #0f0f0f); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px 24px; text-align: center; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .new-mode .team-card:hover { transform: translateY(-8px); border-color: rgba(30,144,255,0.3); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+        .new-mode .team-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #1e90ff, #00a8ff); display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 700; color: #fff; margin: 0 auto 16px; }
+        .new-mode .team-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+        .new-mode .team-role { font-size: 13px; color: #1e90ff; margin-bottom: 12px; }
+        .new-mode .team-bio { font-size: 13px; color: #888; line-height: 1.6; }
+        .new-mode .team-social { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+        .new-mode .team-social a { width: 32px; height: 32px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; font-size: 12px; text-decoration: none; transition: all 0.3s; }
+        .new-mode .team-social a:hover { background: #1e90ff; color: #fff; }
+
+        /* Partners */
+        .new-mode .partners-section { padding: 60px; background: #080808; border-top: 1px solid rgba(255,255,255,0.04); }
+        .new-mode .partners-grid { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
+        .new-mode .partner-item { height: 50px; opacity: 0.85; transition: all 0.3s; filter: brightness(1.3) contrast(1.1); }
+        .new-mode .partner-item:hover { opacity: 1; filter: brightness(1.5) contrast(1.1); transform: scale(1.1); }
+        .new-mode .partner-item.anest-iwata { filter: brightness(1.8) contrast(1.2); }
+        .new-mode .partner-item.anest-iwata:hover { filter: brightness(2.0) contrast(1.2); }
+
+        /* CTA Section */
+        .new-mode .cta-section { padding: 80px 60px; text-align: center; background: linear-gradient(135deg, #0d1f2d, #1a0a2e); position: relative; overflow: hidden; }
+        .new-mode .cta-section::before { content: ''; position: absolute; inset: 0; background: url('asset/2015-mclaren-p1-main.jpg'); background-size: cover; background-position: center; opacity: 0.08; }
+        .new-mode .cta-content { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+        .new-mode .cta-section h2 { font-size: 32px; font-weight: 600; margin-bottom: 12px; }
+        .new-mode .cta-section p { color: #aaa; margin-bottom: 28px; }
+        .new-mode .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .new-mode .btn-primary { background: #1e90ff; color: #fff; border: none; padding: 14px 32px; border-radius: 8px; font-family: 'Kanit'; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .new-mode .btn-primary:hover { background: #1873cc; transform: translateY(-2px); }
+        .new-mode .btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 14px 32px; border-radius: 8px; font-family: 'Kanit'; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .new-mode .btn-secondary:hover { border-color: #1e90ff; color: #1e90ff; }
+
+        /* ════════════════════════════════════════ */
+        /* ═══════ MODE: CLASSIC (Enhanced) ═══════ */
+        /* ════════════════════════════════════════ */
+
+        .classic-mode .about-header { padding: 140px 60px 80px; text-align: center; background: linear-gradient(135deg, #050505, #112233); border-bottom: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; }
+        .classic-mode .about-header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(30,144,255,0.05) 0%, transparent 70%); }
+        .classic-mode .about-header-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .classic-mode .about-title { font-size: 40px; font-weight: 700; margin-bottom: 16px; }
+        .classic-mode .about-title span { color: #1e90ff; }
+        .classic-mode .about-subtitle { font-size: 16px; color: #aaa; line-height: 1.7; }
+        .classic-mode .about-badges { display: flex; justify-content: center; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+        .classic-mode .about-badge { background: rgba(30,144,255,0.1); border: 1px solid rgba(30,144,255,0.2); color: #1e90ff; padding: 6px 16px; border-radius: 20px; font-size: 13px; }
+
+        .classic-mode .about-content { padding: 80px 60px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .classic-mode .about-text h2 { font-size: 28px; margin-bottom: 20px; color: #1e90ff; }
+        .classic-mode .about-text p { color: #ccc; line-height: 1.8; margin-bottom: 15px; font-size: 15px; }
+        .classic-mode .about-image { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; position: relative; border: 1px solid rgba(255,255,255,0.06); }
+        .classic-mode .about-image img { width: 100%; height: 100%; object-fit: cover; }
+        .classic-mode .about-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30,144,255,0.1), transparent); }
+
+        .classic-mode .stats-section { padding: 80px 60px; background: #0f0f0f; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .classic-mode .stats-title { font-size: 32px; font-weight: 600; margin-bottom: 50px; color: #fff; }
+        .classic-mode .stats-title span { color: #1e90ff; }
+        .classic-mode .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .classic-mode .stat-card { background: rgba(255,255,255,0.02); padding: 40px 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; }
+        .classic-mode .stat-card:hover { transform: translateY(-10px); border-color: #1e90ff; background: rgba(30,144,255,0.05); }
+        .classic-mode .stat-icon { font-size: 36px; color: #1e90ff; margin-bottom: 15px; display: block; }
+        .classic-mode .stat-number { font-size: 48px; font-weight: 700; color: #1e90ff; margin-bottom: 10px; display: block; }
+        .classic-mode .stat-label { font-size: 16px; color: #888; font-weight: 400; }
+
+        .classic-mode .services-section { padding: 80px 60px; max-width: 1200px; margin: 0 auto; }
+        .classic-mode .services-header { text-align: center; margin-bottom: 50px; }
+        .classic-mode .services-header h2 { font-size: 28px; font-weight: 600; margin-bottom: 8px; }
+        .classic-mode .services-header p { color: #888; font-size: 14px; }
+        .classic-mode .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .classic-mode .service-card { background: #151515; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 32px; text-align: center; transition: all 0.3s; }
+        .classic-mode .service-card:hover { transform: translateY(-4px); border-color: rgba(30,144,255,0.3); }
+        .classic-mode .service-icon { width: 60px; height: 60px; background: rgba(30,144,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #1e90ff; margin: 0 auto 16px; }
+        .classic-mode .service-title { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+        .classic-mode .service-desc { font-size: 14px; color: #888; line-height: 1.6; }
+
         /* ── Footer ── */
-        .footer { background: #050505; padding: 50px 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; }
+        .footer { background: #050505; padding: 50px 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 0; }
         .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
         .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
         .footer-logo-icon { font-size: 32px; font-weight: 700; color: #fff; font-style: italic; }
@@ -62,29 +200,23 @@
         .footer-social a:hover { background: #1e90ff; color: #fff; }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; color: #444; font-size: 12px; }
 
-        /* ── About Page ── */
-        .about-header { padding: 150px 60px 80px; text-align: center; background: linear-gradient(135deg, #050505, #112233); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .about-title { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
-        .about-title span { color: #1e90ff; }
-        .about-subtitle { font-size: 18px; color: #aaa; max-width: 700px; margin: 0 auto; line-height: 1.6; }
-
-        .about-content { padding: 80px 60px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .about-text h2 { font-size: 28px; margin-bottom: 20px; color: #1e90ff; }
-        .about-text p { color: #ccc; line-height: 1.8; margin-bottom: 15px; font-size: 15px; }
-        .about-image { background: #1a1a1a; border-radius: 12px; height: 400px; display: flex; align-items: center; justify-content: center; font-size: 80px; color: #333; border: 1px solid rgba(255,255,255,0.1); }
-
-        .stats-section { background: #111; padding: 60px; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1200px; margin: 0 auto; text-align: center; gap: 30px; }
-        .stat-item i { font-size: 36px; color: #1e90ff; margin-bottom: 15px; display: block; }
-        .stat-number { font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 5px; }
-        .stat-label { font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
-
         /* ── Responsive ── */
         @media (max-width: 1024px) {
             .navbar { padding: 15px 30px; }
-            .about-header { padding: 130px 40px 60px; }
-            .about-content { padding: 60px 40px; gap: 40px; }
-            .stats-section { padding: 50px 40px; }
+            .mode-toggle { top: 85px; right: 20px; }
+            .new-mode .about-hero { padding: 130px 30px 60px; }
+            .new-mode .story-section, .new-mode .team-section { padding: 60px 30px; }
+            .new-mode .story-grid { gap: 40px; }
+            .new-mode .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .new-mode .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .new-mode .timeline::before { left: 20px; }
+            .new-mode .timeline-item, .new-mode .timeline-item:nth-child(odd) { flex-direction: column; text-align: left; }
+            .new-mode .timeline-item:nth-child(odd) .timeline-content, .new-mode .timeline-item:nth-child(even) .timeline-content { padding-left: 50px; padding-right: 0; width: 100%; }
+            .new-mode .timeline-dot { left: 20px; }
+            .classic-mode .about-header { padding: 130px 30px 60px; }
+            .classic-mode .about-content { padding: 60px 30px; gap: 40px; }
+            .classic-mode .services-section { padding: 60px 30px; }
+            .classic-mode .services-grid { grid-template-columns: repeat(2, 1fr); }
             .footer { padding: 50px 30px 20px; }
             .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
         }
@@ -94,24 +226,53 @@
             .phone { display: none; }
             .hamburger { display: flex; }
             .mobile-nav { display: flex; }
-            .about-header { padding: 110px 20px 50px; }
-            .about-title { font-size: 30px; }
-            .about-subtitle { font-size: 15px; }
-            .about-content { padding: 40px 20px; grid-template-columns: 1fr; gap: 30px; }
-            .about-image { height: 250px; font-size: 60px; }
-            .stats-section { padding: 40px 20px; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-            .footer { padding: 40px 20px 20px; margin-top: 0; }
+            .mode-toggle { top: 75px; right: 10px; }
+            .mode-btn { padding: 6px 12px; font-size: 12px; }
+            .new-mode .about-hero { padding: 110px 20px 50px; min-height: auto; }
+            .new-mode .about-hero h1 { font-size: 28px; }
+            .new-mode .story-section, .new-mode .team-section, .new-mode .stats-section { padding: 40px 20px; }
+            .new-mode .story-grid { grid-template-columns: 1fr; }
+            .new-mode .team-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .new-mode .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .new-mode .timeline-section { padding: 40px 20px; }
+            .new-mode .cta-section { padding: 50px 20px; }
+            .new-mode .cta-section h2 { font-size: 24px; }
+            .new-mode .partners-section { padding: 40px 20px; }
+            .new-mode .partners-grid { gap: 24px; }
+            .new-mode .partner-item { height: 36px; }
+            .classic-mode .about-header { padding: 110px 20px 50px; }
+            .classic-mode .about-title { font-size: 30px; }
+            .classic-mode .about-content { padding: 40px 20px; grid-template-columns: 1fr; }
+            .classic-mode .stats-section { padding: 50px 20px; }
+            .classic-mode .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .classic-mode .stat-number { font-size: 32px; }
+            .classic-mode .services-section { padding: 40px 20px; }
+            .classic-mode .services-grid { grid-template-columns: 1fr; }
+            .footer { padding: 40px 20px 20px; }
             .footer-content { grid-template-columns: 1fr; gap: 24px; }
         }
         @media (max-width: 480px) {
             .logo-text { display: none; }
-            .about-title { font-size: 26px; }
-            .stat-number { font-size: 28px; }
+            .new-mode .about-hero h1 { font-size: 24px; }
+            .new-mode .team-grid { grid-template-columns: 1fr; }
+            .new-mode .stats-grid { grid-template-columns: 1fr; }
+            .new-mode .partner-item { height: 30px; }
+            .classic-mode .about-title { font-size: 26px; }
+            .classic-mode .stat-number { font-size: 28px; }
         }
     </style>
 </head>
-<body>
+<body class="new-mode" id="body">
+
+    <div class="mode-toggle">
+        <button class="mode-btn active" id="btnNew" onclick="switchMode('new')">
+            <i class="fas fa-layer-group"></i> ดีไซน์ใหม่
+        </button>
+        <button class="mode-btn" id="btnClassic" onclick="switchMode('classic')">
+            <i class="fas fa-th"></i> ดีไซน์เดิม
+        </button>
+    </div>
+
     <nav class="navbar">
         <div class="logo-section">
             <div class="logo-icon">P<span>K</span></div>
@@ -147,45 +308,278 @@
         </div>
     </div>
 
-    <div class="about-header">
-        <h1 class="about-title">รู้จักกับ <span>PK Paint &amp; Supply</span></h1>
-        <p class="about-subtitle">ผู้นำด้านการจัดจำหน่ายสีพ่นรถยนต์และอุปกรณ์พ่นสีที่ครบวงจรที่สุด พร้อมให้คำปรึกษาด้วยประสบการณ์ยาวนานกว่า 10 ปี</p>
+    <div id="newModeContent">
+
+        <section class="about-hero">
+            <div class="about-hero-content">
+                <h1>รู้จักกับ PK Paint &amp; Supply</h1>
+                <p>ผู้นำด้านการจัดจำหน่ายสีพ่นรถยนต์และอุปกรณ์พ่นสีที่ครบวงจรที่สุดในภาคอีสาน พร้อมให้คำปรึกษาด้วยประสบการณ์ยาวนานกว่า 12 ปี</p>
+                <div class="hero-badges">
+                    <span class="hero-badge"><i class="fas fa-award"></i> ISO 9001 Certified</span>
+                    <span class="hero-badge"><i class="fas fa-shield-alt"></i> รับประกันคุณภาพ</span>
+                    <span class="hero-badge"><i class="fas fa-truck"></i> ส่งทั่วประเทศ</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <span class="stat-number" data-target="12" data-suffix="+">0</span>
+                    <span class="stat-label">ปีประสบการณ์</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-spray-can"></i></div>
+                    <span class="stat-number" data-target="500" data-suffix="+">0</span>
+                    <span class="stat-label">คันที่ทำสี</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <span class="stat-number" data-target="2000" data-suffix="+">0</span>
+                    <span class="stat-label">ลูกค้าไว้วางใจ</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-boxes"></i></div>
+                    <span class="stat-number" data-target="5000" data-suffix="+">0</span>
+                    <span class="stat-label">รายการสินค้า</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="story-grid">
+                <div class="story-image">
+                    <img src="asset/2015-mclaren-p1-main.jpg" alt="PK Paint Workshop">
+                    <div class="experience-badge"><span>12+</span> ปีประสบการณ์</div>
+                </div>
+                <div class="story-text">
+                    <h2>เราคือผู้เชี่ยวชาญด้าน<span>สีพ่นรถยนต์</span></h2>
+                    <p>PK Paint &amp; Supply ก่อตั้งขึ้นในปี 2014 ที่จังหวัดขอนแก่น ด้วยความตั้งใจที่จะยกระดับมาตรฐานวงการซ่อมสีรถยนต์ในภาคอีสาน เริ่มต้นจากร้านเล็กๆ จนขยายเป็นศูนย์รวมสีพ่นรถยนต์และอุปกรณ์ครบวงจร</p>
+                    <p>เราคัดสรรเฉพาะผลิตภัณฑ์สี 2K คุณภาพสูงจากแบรนด์ชั้นนำ พร้อมอุปกรณ์งานพ่นสีมาตรฐานสากล ทั้งปืนพ่นสี SATA, เครื่องขัดสี Flex, และน้ำยาขัดสี 3M</p>
+                    <div class="story-features">
+                        <div class="story-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div><strong>สินค้าคุณภาพสูง</strong>คัดสรรจากแบรนด์ชั้นนำระดับโลก</div>
+                        </div>
+                        <div class="story-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div><strong>ที่ปรึกษามืออาชีพ</strong>ทีมงานมีประสบการณ์กว่า 12 ปี</div>
+                        </div>
+                        <div class="story-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div><strong>บริการหลังการขาย</strong>รับประกันสินค้าและให้คำปรึกษาตลอดอายุการใช้งาน</div>
+                        </div>
+                        <div class="story-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div><strong>จัดส่งทั่วประเทศ</strong>ส่งเร็วภายใน 1-3 วันทำการ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="section-header">
+                <h2>ประวัติความเป็นมา</h2>
+                <p>การเติบโตของเราตลอด 12 ปีที่ผ่านมา</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2014</div>
+                        <div class="timeline-title">ก่อตั้งร้าน PK Paint</div>
+                        <div class="timeline-desc">เริ่มต้นจากร้านเล็กๆ บนถนนมะลิวัลย์ จำหน่ายสีพ่นรถยนต์และอุปกรณ์พื้นฐาน</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2017</div>
+                        <div class="timeline-title">ขยายสาขาและเพิ่มสินค้า</div>
+                        <div class="timeline-desc">นำเข้าอุปกรณ์พ่นสีจากยุโรป รวมถึงปืนพ่นสี SATA และระบบพ่นสีครบวงจร</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-title">เปิดช่องทางออนไลน์</div>
+                        <div class="timeline-desc">เปิดร้านค้าบน Shopee และ Lazada ขยายฐานลูกค้าทั่วประเทศ</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-title">ได้รับมาตรฐาน ISO 9001</div>
+                        <div class="timeline-desc">รับรองระบบคุณภาพการจัดการ ยกระดับมาตรฐานการบริการและสินค้า</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-title">ศูนย์รวมสีพ่นครบวงจร</div>
+                        <div class="timeline-desc">พร้อมให้บริการสีพ่นรถยนต์ อุปกรณ์พ่นสี และที่ปรึกษาครบวงจรแห่งแรกในภาคอีสาน</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="section-header">
+                <h2>ทีมงานของเรา</h2>
+                <p>ผู้เชี่ยวชาญที่พร้อมให้คำปรึกษาทุกเรื่องสีพ่น</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">ป</div>
+                    <div class="team-name">ปรเมศวร์ คงทอง</div>
+                    <div class="team-role">ผู้ก่อตั้ง &amp; ที่ปรึกษาอาวุโส</div>
+                    <div class="team-bio">ประสบการณ์กว่า 20 ปีในวงการสีพ่นรถยนต์ อดีตหัวหน้าช่างศูนย์บริการใหญ่</div>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">ก</div>
+                    <div class="team-name">กิตติพงษ์ รักดี</div>
+                    <div class="team-role">ผู้จัดการฝ่ายขาย</div>
+                    <div class="team-bio">ดูแลลูกค้าและให้คำปรึกษาเรื่องสีพ่นและอุปกรณ์ พร้อมแนะนำเทคนิคการใช้งาน</div>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">ส</div>
+                    <div class="team-name">สมชาย วงษ์ใหญ่</div>
+                    <div class="team-role">ช่างสีมืออาชีพ</div>
+                    <div class="team-bio">ช่างสีประสบการณ์ 15 ปี ผู้เชี่ยวชาญด้านสีแคนดี้และงานเคลือบเงา</div>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">น</div>
+                    <div class="team-name">นภาพร สีสวย</div>
+                    <div class="team-role">ฝ่ายบริการลูกค้า</div>
+                    <div class="team-bio">ดูแลการสั่งซื้อ ติดตามสถานะจัดส่ง และประสานงานหลังการขาย</div>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-section">
+            <div class="section-header">
+                <h2>แบรนด์พันธมิตร</h2>
+                <p>เราจำหน่ายสินค้าจากแบรนด์ชั้นนำระดับโลก</p>
+            </div>
+            <div class="partners-grid">
+                <img src="asset/PGL-01.png" alt="NIPPON PAINT" class="partner-item">
+                <img src="asset/PPG_Logo.svg.png" alt="PPG" class="partner-item">
+                <img src="asset/AIKKA.jpg" alt="Aikka" class="partner-item">
+                <img src="asset/STANDOX.png" alt="STANDOX" class="partner-item">
+                <img src="asset/SATA_Logo_new.jpg" alt="SATA" class="partner-item">
+                <img src="asset/anest-iwata-logo-sm_orig.png" alt="Anest Iwata" class="partner-item anest-iwata">
+                <img src="asset/3M_wordmark.svg.png" alt="3M" class="partner-item">
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>พร้อมให้คำปรึกษาฟรี</h2>
+                <p>ไม่ว่าคุณจะเป็นอู่ซ่อมสี ศูนย์บริการ หรือผู้ใช้งานทั่วไป เราพร้อมช่วยเหลือ</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-primary"><i class="fas fa-phone-alt"></i> ติดต่อเรา</a>
+                    <a href="products.html" class="btn-secondary"><i class="fas fa-shopping-bag"></i> ดูสินค้า</a>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="about-content">
-        <div class="about-text">
-            <h2>วิสัยทัศน์ของเรา</h2>
-            <p>PK Paint &amp; Supply ก่อตั้งขึ้นด้วยความตั้งใจที่จะยกระดับมาตรฐานวงการซ่อมสีรถยนต์ในประเทศไทย เราคัดสรรเฉพาะผลิตภัณฑ์สี 2K คุณภาพสูง และอุปกรณ์งานพ่นสีมาตรฐานสากล เพื่อส่งมอบให้แก่ลูกค้า ทั้งอู่ซ่อมสีรถยนต์ ศูนย์บริการ และผู้ใช้งานทั่วไป</p>
-            <p>เราไม่ได้เป็นเพียงแค่ร้านจำหน่ายสินค้า แต่เรามุ่งมั่นที่จะเป็น "พาร์ทเนอร์" ที่คอยให้คำปรึกษา แนะนำเทคนิคการใช้งาน และแก้ปัญหาเรื่องสีพ่นรถยนต์อย่างมืออาชีพ เพื่อให้ทุกผลงานการพ่นสีของคุณออกมาสมบูรณ์แบบที่สุด</p>
-        </div>
-        <div class="about-image">
-            <i class="fas fa-store"></i>
-        </div>
-    </div>
+    <div id="classicModeContent" style="display:none;">
 
-    <div class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <i class="fas fa-calendar-check"></i>
-                <div class="stat-number">10+</div>
-                <div class="stat-label">ปีแห่งประสบการณ์</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-box-open"></i>
-                <div class="stat-number">5,000+</div>
-                <div class="stat-label">รายการสินค้า</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-users"></i>
-                <div class="stat-number">2,000+</div>
-                <div class="stat-label">ลูกค้าที่ไว้วางใจ</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-truck-fast"></i>
-                <div class="stat-number">100%</div>
-                <div class="stat-label">จัดส่งรวดเร็วตรงเวลา</div>
+        <div class="about-header">
+            <div class="about-header-content">
+                <h1 class="about-title">รู้จักกับ <span>PK Paint &amp; Supply</span></h1>
+                <p class="about-subtitle">ผู้นำด้านการจัดจำหน่ายสีพ่นรถยนต์และอุปกรณ์พ่นสีที่ครบวงจรที่สุด พร้อมให้คำปรึกษาด้วยประสบการณ์ยาวนานกว่า 12 ปี</p>
+                <div class="about-badges">
+                    <span class="about-badge"><i class="fas fa-award"></i> ISO 9001</span>
+                    <span class="about-badge"><i class="fas fa-shield-alt"></i> รับประกันคุณภาพ</span>
+                    <span class="about-badge"><i class="fas fa-truck"></i> ส่งทั่วประเทศ</span>
+                </div>
             </div>
         </div>
+
+        <div class="about-content">
+            <div class="about-text">
+                <h2>วิสัยทัศน์ของเรา</h2>
+                <p>PK Paint &amp; Supply ก่อตั้งขึ้นในปี 2014 ที่จังหวัดขอนแก่น ด้วยความตั้งใจที่จะยกระดับมาตรฐานวงการซ่อมสีรถยนต์ในภาคอีสาน เริ่มต้นจากร้านเล็กๆ จนขยายเป็นศูนย์รวมสีพ่นรถยนต์และอุปกรณ์ครบวงจร</p>
+                <p>เราคัดสรรเฉพาะผลิตภัณฑ์สี 2K คุณภาพสูงจากแบรนด์ชั้นนำระดับโลก เช่น SATA, 3M, Flex, Meguiar's, PPG และ DeVilbiss พร้อมให้คำปรึกษาโดยทีมงานผู้เชี่ยวชาญ</p>
+                <p>เราไม่ได้เป็นเพียงแค่ร้านจำหน่ายสินค้า แต่เรามุ่งมั่นที่จะเป็น "พาร์ทเนอร์" ที่คอยให้คำปรึกษา แนะนำเทคนิคการใช้งาน และแก้ปัญหาเรื่องสีพ่นรถยนต์อย่างมืออาชีพ</p>
+            </div>
+            <div class="about-image">
+                <img src="asset/2015-mclaren-p1-main.jpg" alt="PK Paint Workshop">
+            </div>
+        </div>
+
+        <section class="stats-section">
+            <h2 class="stats-title"><span>ครบจบในที่เดียว</span> เรื่องสีพ่นรถยนต์</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-clock-rotate-left"></i></div>
+                    <span class="stat-number" data-target="12" data-suffix="+">0</span>
+                    <span class="stat-label">ปีประสบการณ์</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-box-open"></i></div>
+                    <span class="stat-number" data-target="5000" data-suffix="+">0</span>
+                    <span class="stat-label">สินค้าพร้อมส่ง</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+                    <span class="stat-number" data-target="2000" data-suffix="+">0</span>
+                    <span class="stat-label">ลูกค้าไว้วางใจ</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-truck-fast"></i></div>
+                    <span class="stat-number" data-target="100" data-suffix="%">0</span>
+                    <span class="stat-label">จัดส่งตรงเวลา</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="services-header">
+                <h2>บริการของเรา</h2>
+                <p>ครบวงจรทุกเรื่องสีพ่นรถยนต์</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-spray-can"></i></div>
+                    <div class="service-title">จำหน่ายสีพ่นรถยนต์</div>
+                    <div class="service-desc">สี 2K Basecoat, สีรองพื้น, เคลือบเงาครบทุกระบบ ทุกเฉดสี</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <div class="service-title">อุปกรณ์พ่นสี</div>
+                    <div class="service-desc">ปืนพ่นสี, เครื่องขัดสี, ห้องพ่นสี, อุปกรณ์ครบวงจร</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="service-title">ให้คำปรึกษา</div>
+                    <div class="service-desc">แนะนำเทคนิคการพ่นสี แก้ปัญหาสี ปรับสูตรสีตามความต้องการ</div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer class="footer">
@@ -233,7 +627,10 @@
     </footer>
 
     <script>
+        // Copyright year
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // Mobile menu
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');
         function toggleMenu(open) {
@@ -245,6 +642,62 @@
         hamburger.addEventListener('click', () => toggleMenu(!mobileNav.classList.contains('open')));
         mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
         document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+
+        // Mode Switcher
+        function switchMode(mode) {
+            const body = document.getElementById('body');
+            const newContent = document.getElementById('newModeContent');
+            const classicContent = document.getElementById('classicModeContent');
+            const btnNew = document.getElementById('btnNew');
+            const btnClassic = document.getElementById('btnClassic');
+
+            if (mode === 'new') {
+                body.classList.remove('classic-mode');
+                body.classList.add('new-mode');
+                newContent.style.display = 'block';
+                classicContent.style.display = 'none';
+                btnNew.classList.add('active');
+                btnClassic.classList.remove('active');
+            } else {
+                body.classList.remove('new-mode');
+                body.classList.add('classic-mode');
+                newContent.style.display = 'none';
+                classicContent.style.display = 'block';
+                btnClassic.classList.add('active');
+                btnNew.classList.remove('active');
+            }
+            localStorage.setItem('aboutMode', mode);
+        }
+
+        // Restore saved mode
+        const savedMode = localStorage.getItem('aboutMode') || 'new';
+        switchMode(savedMode);
+
+        // Counter Animation for Stats Section
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const countTo = parseInt(target.getAttribute('data-target'));
+                    const suffix = target.getAttribute('data-suffix') || '';
+                    let currentCount = 0;
+                    const duration = 2000;
+                    const increment = countTo / (duration / 16);
+                    const timer = setInterval(() => {
+                        currentCount += increment;
+                        if (currentCount >= countTo) {
+                            target.innerText = countTo.toLocaleString() + suffix;
+                            clearInterval(timer);
+                        } else {
+                            target.innerText = Math.floor(currentCount).toLocaleString() + suffix;
+                        }
+                    }, 16);
+                    counterObserver.unobserve(target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.stat-number').forEach(stat => counterObserver.observe(stat));
     </script>
 </body>
 </html>

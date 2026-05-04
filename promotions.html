@@ -43,21 +43,101 @@
         .mobile-nav-contact { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); width: 220px; }
         .mobile-nav-contact a { font-size: 15px !important; color: #aaa !important; }
 
-        /* ── Page Content ── */
-        .page-container { padding: 120px 60px 60px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .page-title { font-size: 36px; font-weight: 600; margin-bottom: 10px; color: #fff; }
-        .page-subtitle { color: #aaa; margin-bottom: 50px; }
-        .promo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; text-align: left; }
-        .promo-card { background: linear-gradient(135deg, #1a1a1a, #111); border: 1px solid rgba(30,144,255,0.2); border-radius: 12px; overflow: hidden; display: flex; align-items: center; transition: 0.3s; }
-        .promo-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(30,144,255,0.1); border-color: #1e90ff; }
-        .promo-img { width: 40%; background: #1e90ff; height: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff; position: relative; }
-        .promo-img::after { content: 'PROMO'; position: absolute; transform: rotate(-45deg); font-size: 16px; font-weight: 700; opacity: 0.2; letter-spacing: 5px; }
-        .promo-info { padding: 30px; width: 60%; }
-        .promo-badge { background: rgba(255,71,87,0.2); color: #ff4757; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 10px; }
-        .promo-title { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
-        .promo-desc { font-size: 14px; color: #aaa; margin-bottom: 20px; line-height: 1.5; }
-        .btn-promo { background: transparent; color: #1e90ff; border: 1px solid #1e90ff; padding: 8px 20px; border-radius: 6px; font-family: 'Kanit'; cursor: pointer; transition: 0.3s; }
-        .btn-promo:hover { background: #1e90ff; color: #fff; }
+        /* ── Hero Section ── */
+        .promo-hero { background: linear-gradient(135deg, #0a1628 0%, #1a0a2e 50%, #0d1f2d 100%); padding: 140px 60px 60px; text-align: center; position: relative; overflow: hidden; }
+        .promo-hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(30,144,255,0.08) 0%, transparent 70%); animation: pulse 4s ease-in-out infinite; }
+        @keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 0.8; } }
+        .promo-hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .promo-hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,71,87,0.15); color: #ff4757; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(255,71,87,0.3); }
+        .promo-hero-badge i { animation: blink 1.5s infinite; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .promo-hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 12px; background: linear-gradient(135deg, #fff 0%, #1e90ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .promo-hero p { color: #aaa; font-size: 16px; margin-bottom: 30px; }
+
+        /* ── Countdown Timer ── */
+        .countdown-box { display: flex; justify-content: center; gap: 16px; margin-bottom: 30px; }
+        .countdown-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px 24px; text-align: center; min-width: 80px; }
+        .countdown-item .num { font-size: 32px; font-weight: 700; color: #1e90ff; display: block; line-height: 1; }
+        .countdown-item .label { font-size: 12px; color: #888; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+        .countdown-sep { font-size: 32px; font-weight: 300; color: #444; align-self: center; }
+
+        /* ── Coupon Section ── */
+        .coupon-section { padding: 50px 60px; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header h2 { font-size: 28px; font-weight: 600; margin-bottom: 8px; }
+        .section-header p { color: #888; font-size: 14px; }
+        .coupon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .coupon-card { background: linear-gradient(135deg, #151515, #0f0f0f); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; position: relative; overflow: hidden; transition: all 0.3s; }
+        .coupon-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #1e90ff, #00a8ff); }
+        .coupon-card.hot::before { background: linear-gradient(to bottom, #ff4757, #ff6b81); }
+        .coupon-card:hover { transform: translateY(-3px); border-color: rgba(30,144,255,0.3); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        .coupon-card.hot:hover { border-color: rgba(255,71,87,0.3); }
+        .coupon-tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 4px; margin-bottom: 10px; }
+        .coupon-tag.discount { background: rgba(30,144,255,0.15); color: #1e90ff; }
+        .coupon-tag.hot-tag { background: rgba(255,71,87,0.15); color: #ff4757; }
+        .coupon-value { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+        .coupon-value span { font-size: 14px; font-weight: 400; color: #888; }
+        .coupon-desc { font-size: 13px; color: #aaa; margin-bottom: 16px; line-height: 1.5; }
+        .coupon-code-box { display: flex; gap: 8px; }
+        .coupon-code { flex: 1; background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2); border-radius: 6px; padding: 10px 14px; font-family: 'Kanit', monospace; font-size: 15px; font-weight: 600; color: #1e90ff; text-align: center; letter-spacing: 2px; }
+        .coupon-card.hot .coupon-code { color: #ff4757; }
+        .btn-copy { background: #1e90ff; color: #fff; border: none; padding: 10px 18px; border-radius: 6px; font-family: 'Kanit'; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+        .btn-copy:hover { background: #1873cc; }
+        .btn-copy.copied { background: #2ed573; }
+        .btn-copy i { margin-right: 4px; }
+        .coupon-expire { font-size: 11px; color: #555; margin-top: 12px; display: flex; align-items: center; gap: 5px; }
+
+        /* ── Promo Products Section ── */
+        .promo-products { padding: 50px 60px; max-width: 1400px; margin: 0 auto; }
+        .promo-products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .promo-product-card { background: #151515; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; transition: all 0.3s; position: relative; }
+        .promo-product-card:hover { transform: translateY(-4px); border-color: rgba(30,144,255,0.4); box-shadow: 0 12px 32px rgba(0,0,0,0.6); }
+        .promo-product-badge { position: absolute; top: 10px; left: 10px; background: #ff4757; color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; z-index: 2; }
+        .promo-product-img { width: 100%; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; }
+        .promo-product-img i { font-size: 52px; color: rgba(255,255,255,0.15); }
+        .promo-product-info { padding: 14px; }
+        .promo-product-title { font-size: 13px; color: #ddd; margin-bottom: 6px; line-height: 1.45; height: 38px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; }
+        .promo-product-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+        .promo-product-price { color: #ff4757; font-size: 18px; font-weight: 700; }
+        .promo-product-old { color: #555; font-size: 12px; text-decoration: line-through; }
+        .promo-product-save { display: inline-block; background: rgba(46,213,115,0.15); color: #2ed573; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-bottom: 10px; }
+        .promo-product-progress { margin-bottom: 12px; }
+        .progress-bar-bg { background: rgba(255,255,255,0.08); border-radius: 10px; height: 6px; overflow: hidden; }
+        .progress-bar-fill { height: 100%; border-radius: 10px; background: linear-gradient(90deg, #1e90ff, #00a8ff); transition: width 0.5s; }
+        .progress-text { font-size: 11px; color: #666; margin-top: 4px; display: flex; justify-content: space-between; }
+        .btn-buy-now { background: #EE4D2D; color: #fff; border: none; width: 100%; padding: 10px; border-radius: 6px; font-family: 'Kanit'; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.25s; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+        .btn-buy-now:hover { background: #d43d1f; }
+
+        /* ── Flash Sale Banner ── */
+        .flash-sale { background: linear-gradient(135deg, #1a0a0a, #2a1010); border: 1px solid rgba(255,71,87,0.2); border-radius: 16px; padding: 40px; margin: 40px 60px; max-width: 1280px; margin-left: auto; margin-right: auto; display: flex; align-items: center; gap: 40px; position: relative; overflow: hidden; }
+        .flash-sale::after { content: 'FLASH'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%) rotate(-90deg); font-size: 80px; font-weight: 900; color: rgba(255,71,87,0.04); letter-spacing: 10px; }
+        .flash-sale-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #ff4757, #ff6b81); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 36px; flex-shrink: 0; }
+        .flash-sale-content { flex: 1; }
+        .flash-sale-content h3 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+        .flash-sale-content p { color: #aaa; font-size: 14px; margin-bottom: 16px; }
+        .flash-sale-timer { display: flex; gap: 12px; }
+        .flash-timer-item { background: rgba(255,71,87,0.1); border: 1px solid rgba(255,71,87,0.2); border-radius: 8px; padding: 10px 16px; text-align: center; }
+        .flash-timer-item .num { font-size: 24px; font-weight: 700; color: #ff4757; display: block; line-height: 1; }
+        .flash-timer-item .lbl { font-size: 11px; color: #888; margin-top: 2px; }
+        .flash-sale-btn { background: #ff4757; color: #fff; border: none; padding: 14px 32px; border-radius: 8px; font-family: 'Kanit'; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; flex-shrink: 0; }
+        .flash-sale-btn:hover { background: #ff6b81; transform: scale(1.02); }
+
+        /* ── Terms Section ── */
+        .terms-section { padding: 40px 60px; max-width: 800px; margin: 0 auto; }
+        .terms-card { background: #111; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 30px; }
+        .terms-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .terms-card h3 i { color: #1e90ff; }
+        .terms-list { list-style: none; }
+        .terms-list li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #aaa; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; }
+        .terms-list li:last-child { border-bottom: none; }
+        .terms-list li i { color: #2ed573; margin-top: 3px; flex-shrink: 0; }
+
+        /* ── Notification Toast ── */
+        .toast { position: fixed; bottom: 30px; right: 30px; background: #1e1e1e; border: 1px solid rgba(46,213,115,0.3); border-radius: 10px; padding: 16px 24px; display: flex; align-items: center; gap: 12px; transform: translateY(100px); opacity: 0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 9999; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast i { color: #2ed573; font-size: 20px; }
+        .toast-text { font-size: 14px; color: #fff; }
+        .toast-code { font-family: monospace; color: #1e90ff; font-weight: 600; }
 
         /* ── Footer (Standard) ── */
         .footer { background: #050505; padding: 50px 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; }
@@ -81,9 +161,14 @@
         /* ── Responsive ── */
         @media (max-width: 1024px) {
             .navbar { padding: 15px 30px; }
+            .promo-hero { padding: 130px 30px 50px; }
+            .coupon-grid { grid-template-columns: repeat(2, 1fr); }
+            .promo-products-grid { grid-template-columns: repeat(3, 1fr); }
+            .flash-sale { margin: 30px; flex-direction: column; text-align: center; }
+            .flash-sale-timer { justify-content: center; }
             .footer { padding: 50px 30px 20px; }
             .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
-            .page-container { padding: 120px 30px 60px; }
+            .coupon-section, .promo-products, .terms-section { padding: 40px 30px; }
         }
         @media (max-width: 768px) {
             .navbar { padding: 14px 20px; }
@@ -91,17 +176,26 @@
             .phone { display: none; }
             .hamburger { display: flex; }
             .mobile-nav { display: flex; }
-            .page-container { padding: 100px 20px 40px; }
-            .promo-grid { grid-template-columns: 1fr; }
-            .promo-card { flex-direction: column; }
-            .promo-img { width: 100%; min-height: 160px; }
-            .promo-info { width: 100%; }
+            .promo-hero h1 { font-size: 28px; }
+            .countdown-box { gap: 8px; }
+            .countdown-item { padding: 12px 16px; min-width: 60px; }
+            .countdown-item .num { font-size: 24px; }
+            .coupon-grid { grid-template-columns: 1fr; }
+            .promo-products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            .flash-sale { margin: 20px; padding: 30px 20px; }
+            .flash-sale-icon { width: 60px; height: 60px; font-size: 28px; }
             .footer { padding: 40px 20px 20px; margin-top: 40px; }
             .footer-content { grid-template-columns: 1fr; gap: 24px; }
+            .coupon-section, .promo-products, .terms-section { padding: 30px 20px; }
         }
         @media (max-width: 480px) {
             .logo-text { display: none; }
-            .page-title { font-size: 28px; }
+            .promo-hero h1 { font-size: 24px; }
+            .countdown-item { padding: 10px 12px; min-width: 50px; }
+            .countdown-item .num { font-size: 20px; }
+            .promo-products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .coupon-code-box { flex-direction: column; }
+            .btn-copy { width: 100%; }
         }
     </style>
 </head>
@@ -141,48 +235,183 @@
         </div>
     </div>
 
-    <div class="page-container">
-        <h1 class="page-title">โปรโมชั่นพิเศษ</h1>
-        <p class="page-subtitle">อัปเดตโปรโมชั่นและส่วนลดสุดคุ้มจาก PK Paint & Supply</p>
+    <!-- Hero Section -->
+    <section class="promo-hero">
+        <div class="promo-hero-content">
+            <div class="promo-hero-badge"><i class="fas fa-fire"></i> โปรโมชั่นพิเศษเดือนนี้</div>
+            <h1>ลดสูงสุด 50% ทุกสินค้า</h1>
+            <p>โปรโมชั่นจำกัดเวลา สั่งซื้อก่อนหมดโปร รับส่วนลดสูงสุดพร้อมของแถมมูลค่า</p>
+            <div class="countdown-box" id="countdown">
+                <div class="countdown-item"><span class="num" id="cd-days">03</span><span class="label">วัน</span></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-item"><span class="num" id="cd-hours">14</span><span class="label">ชั่วโมง</span></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-item"><span class="num" id="cd-minutes">35</span><span class="label">นาที</span></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-item"><span class="num" id="cd-seconds">42</span><span class="label">วินาที</span></div>
+            </div>
+        </div>
+    </section>
 
-        <div class="promo-grid">
-            <div class="promo-card">
-                <div class="promo-img" style="background: linear-gradient(135deg, #ff4757, #ff6b81);"><i class="fas fa-tags"></i></div>
-                <div class="promo-info">
-                    <div class="promo-badge">HOT DEAL</div>
-                    <h3 class="promo-title">ลดจัดหนัก สีพ่น 2K ลด 20%</h3>
-                    <p class="promo-desc">ซื้อสีพ่นรถยนต์ระบบ 2K ทุกเฉดสีวันนี้ รับส่วนลดทันที 20% แบบไม่มีขั้นต่ำ</p>
-                    <button class="btn-promo">ดูรายละเอียด</button>
+    <!-- Coupon Section -->
+    <section class="coupon-section">
+        <div class="section-header">
+            <h2><i class="fas fa-ticket-alt" style="color:#1e90ff;margin-right:8px;"></i>คูปองส่วนลด</h2>
+            <p>ก๊อปปี้โค้ดและใช้งานได้ทันที ไม่มีขั้นต่ำ</p>
+        </div>
+        <div class="coupon-grid">
+            <div class="coupon-card hot">
+                <span class="coupon-tag hot-tag"><i class="fas fa-fire"></i> ยอดนิยม</span>
+                <div class="coupon-value">฿200 <span>ลดทันที</span></div>
+                <div class="coupon-desc">เมื่อซื้อครบ 1,500 บาท ใช้ได้กับสีพ่นรถยนต์ทุกรุ่น</div>
+                <div class="coupon-code-box">
+                    <div class="coupon-code">PKPAINT200</div>
+                    <button class="btn-copy" onclick="copyCode(this, 'PKPAINT200')"><i class="fas fa-copy"></i> ก๊อปปี้</button>
+                </div>
+                <div class="coupon-expire"><i class="fas fa-clock"></i> หมดอายุ 31 พ.ค. 2026</div>
+            </div>
+            <div class="coupon-card">
+                <span class="coupon-tag discount">ส่งฟรี</span>
+                <div class="coupon-value">ส่งฟรี <span>ทั่วไทย</span></div>
+                <div class="coupon-desc">สั่งซื้อสินค้าครบ 999 บาท ส่งฟรีทั่วประเทศ</div>
+                <div class="coupon-code-box">
+                    <div class="coupon-code">FREESHIP</div>
+                    <button class="btn-copy" onclick="copyCode(this, 'FREESHIP')"><i class="fas fa-copy"></i> ก๊อปปี้</button>
+                </div>
+                <div class="coupon-expire"><i class="fas fa-clock"></i> หมดอายุ 31 พ.ค. 2026</div>
+            </div>
+            <div class="coupon-card">
+                <span class="coupon-tag discount">ลด 15%</span>
+                <div class="coupon-value">15% <span>สูงสุด 500 บาท</span></div>
+                <div class="coupon-desc">สำหรับลูกค้าใหม่ ใช้ได้ครั้งแรกเท่านั้น</div>
+                <div class="coupon-code-box">
+                    <div class="coupon-code">NEWBIE15</div>
+                    <button class="btn-copy" onclick="copyCode(this, 'NEWBIE15')"><i class="fas fa-copy"></i> ก๊อปปี้</button>
+                </div>
+                <div class="coupon-expire"><i class="fas fa-clock"></i> หมดอายุ 30 มิ.ย. 2026</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Sale Banner -->
+    <section class="flash-sale">
+        <div class="flash-sale-icon"><i class="fas fa-bolt"></i></div>
+        <div class="flash-sale-content">
+            <h3><i class="fas fa-bolt" style="color:#ff4757;margin-right:8px;"></i>Flash Sale ประจำวัน</h3>
+            <p>สีพ่นรถยนต์รุ่นฮิต ลดราคาพิเศษเฉพาะช่วงเวลานี้เท่านั้น</p>
+            <div class="flash-sale-timer" id="flashTimer">
+                <div class="flash-timer-item"><span class="num" id="ft-hours">05</span><span class="lbl">ชม.</span></div>
+                <div class="flash-timer-item"><span class="num" id="ft-minutes">23</span><span class="lbl">นาที</span></div>
+                <div class="flash-timer-item"><span class="num" id="ft-seconds">18</span><span class="lbl">วินาที</span></div>
+            </div>
+        </div>
+        <button class="flash-sale-btn" onclick="window.location.href='products.html'">ดูสินค้า Flash Sale <i class="fas fa-arrow-right"></i></button>
+    </section>
+
+    <!-- Promo Products -->
+    <section class="promo-products">
+        <div class="section-header">
+            <h2><i class="fas fa-percent" style="color:#ff4757;margin-right:8px;"></i>สินค้าลดราคา</h2>
+            <p>สินค้าราคาพิเศษ จำนวนจำกัด รีบสั่งก่อนหมด</p>
+        </div>
+        <div class="promo-products-grid">
+            <div class="promo-product-card">
+                <span class="promo-product-badge">-27%</span>
+                <div class="promo-product-img" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+                    <i class="fas fa-spray-can"></i>
+                </div>
+                <div class="promo-product-info">
+                    <div class="promo-product-title">PK 2K Basecoat Toyota Yaris | ระบบ 2K Fast Dry</div>
+                    <div class="promo-product-price-row">
+                        <span class="promo-product-price">฿95</span>
+                        <span class="promo-product-old">฿130</span>
+                    </div>
+                    <span class="promo-product-save">ประหยัด ฿35</span>
+                    <div class="promo-product-progress">
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:78%"></div></div>
+                        <div class="progress-text"><span>ขายแล้ว 78%</span><span>เหลือ 22%</span></div>
+                    </div>
+                    <a href="https://shopee.co.th" target="_blank" class="btn-buy-now"><i class="fas fa-shopping-cart"></i> สั่งซื้อเลย</a>
                 </div>
             </div>
-            <div class="promo-card">
-                <div class="promo-img" style="background: linear-gradient(135deg, #1e90ff, #00a8ff);"><i class="fas fa-gift"></i></div>
-                <div class="promo-info">
-                    <div class="promo-badge">ซื้อ 3 แถม 1</div>
-                    <h3 class="promo-title">ชุดสีรองพื้นสุดคุ้ม</h3>
-                    <p class="promo-desc">ซื้อสีรองพื้นกลบรอยขนาด 1 ลิตร จำนวน 3 กระป๋อง แถมฟรีทันที 1 กระป๋อง</p>
-                    <button class="btn-promo">ดูรายละเอียด</button>
+            <div class="promo-product-card">
+                <span class="promo-product-badge">-38%</span>
+                <div class="promo-product-img" style="background: linear-gradient(135deg, #1f1a0e, #2e2510);">
+                    <i class="fas fa-fill-drip"></i>
+                </div>
+                <div class="promo-product-info">
+                    <div class="promo-product-title">PK Primer Surfacer 2K | รองพื้นกลบรอยเกรดอู่</div>
+                    <div class="promo-product-price-row">
+                        <span class="promo-product-price">฿280</span>
+                        <span class="promo-product-old">฿450</span>
+                    </div>
+                    <span class="promo-product-save">ประหยัด ฿170</span>
+                    <div class="promo-product-progress">
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:92%"></div></div>
+                        <div class="progress-text"><span>ขายแล้ว 92%</span><span>เหลือ 8%</span></div>
+                    </div>
+                    <a href="https://shopee.co.th" target="_blank" class="btn-buy-now"><i class="fas fa-shopping-cart"></i> สั่งซื้อเลย</a>
                 </div>
             </div>
-            <div class="promo-card">
-                <div class="promo-img" style="background: linear-gradient(135deg, #2ed573, #7bed9f);"><i class="fas fa-truck"></i></div>
-                <div class="promo-info">
-                    <div class="promo-badge">FREE SHIPPING</div>
-                    <h3 class="promo-title">ส่งฟรีทั่วประเทศ</h3>
-                    <p class="promo-desc">เมื่อสั่งซื้อสินค้าครบ 1,500 บาทขึ้นไป จัดส่งฟรีทั่วไทยด้วยขนส่งเอกชนชั้นนำ</p>
-                    <button class="btn-promo">ดูรายละเอียด</button>
+            <div class="promo-product-card">
+                <span class="promo-product-badge">-35%</span>
+                <div class="promo-product-img" style="background: linear-gradient(135deg, #0d1f2d, #1a3344);">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <div class="promo-product-info">
+                    <div class="promo-product-title">PK Clear Coat 2K Anti-Scratch | UV Protection</div>
+                    <div class="promo-product-price-row">
+                        <span class="promo-product-price">฿520</span>
+                        <span class="promo-product-old">฿800</span>
+                    </div>
+                    <span class="promo-product-save">ประหยัด ฿280</span>
+                    <div class="promo-product-progress">
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:65%"></div></div>
+                        <div class="progress-text"><span>ขายแล้ว 65%</span><span>เหลือ 35%</span></div>
+                    </div>
+                    <a href="https://shopee.co.th" target="_blank" class="btn-buy-now"><i class="fas fa-shopping-cart"></i> สั่งซื้อเลย</a>
                 </div>
             </div>
-            <div class="promo-card">
-                <div class="promo-img" style="background: linear-gradient(135deg, #ffa502, #ff7f50);"><i class="fas fa-tools"></i></div>
-                <div class="promo-info">
-                    <div class="promo-badge">COMBO SET</div>
-                    <h3 class="promo-title">ชุดอุปกรณ์พ่นสีเริ่มต้น</h3>
-                    <p class="promo-desc">กาพ่นสี + สายลม + ฟิลเตอร์กรองน้ำ ราคาพิเศษเพียง 1,290 บาท (จากปกติ 1,890 บาท)</p>
-                    <button class="btn-promo">ดูรายละเอียด</button>
+            <div class="promo-product-card">
+                <span class="promo-product-badge">-21%</span>
+                <div class="promo-product-img" style="background: linear-gradient(135deg, #1a1200, #2a1e00);">
+                    <i class="fas fa-spray-can-sparkles"></i>
+                </div>
+                <div class="promo-product-info">
+                    <div class="promo-product-title">ปืนพ่นสี SATA Jet X 5500 HVLP | หัว 1.3 มม.</div>
+                    <div class="promo-product-price-row">
+                        <span class="promo-product-price">฿4,890</span>
+                        <span class="promo-product-old">฿6,200</span>
+                    </div>
+                    <span class="promo-product-save">ประหยัด ฿1,310</span>
+                    <div class="promo-product-progress">
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:45%"></div></div>
+                        <div class="progress-text"><span>ขายแล้ว 45%</span><span>เหลือ 55%</span></div>
+                    </div>
+                    <a href="https://shopee.co.th" target="_blank" class="btn-buy-now"><i class="fas fa-shopping-cart"></i> สั่งซื้อเลย</a>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Terms Section -->
+    <section class="terms-section">
+        <div class="terms-card">
+            <h3><i class="fas fa-info-circle"></i> เงื่อนไขการใช้โปรโมชั่น</h3>
+            <ul class="terms-list">
+                <li><i class="fas fa-check-circle"></i> สามารถใช้คูปองร่วมกับโปรโมชั่นอื่นได้ ยกเว้นระบุไว้เป็นอย่างอื่น</li>
+                <li><i class="fas fa-check-circle"></i> ส่งฟรีทั่วประเทศเมื่อสั่งซื้อครบตามเงื่อนไขที่กำหนด</li>
+                <li><i class="fas fa-check-circle"></i> สินค้าลดราคามีจำนวนจำกัด สั่งซื้อตามลำดับการชำระเงิน</li>
+                <li><i class="fas fa-check-circle"></i> สามารถเปลี่ยนหรือคืนสินค้าได้ภายใน 7 วัน (สินค้าต้องอยู่ในสภาพเดิม)</li>
+                <li><i class="fas fa-check-circle"></i> สอบถามเพิ่มเติมได้ที่ LINE: @pkpaint หรือโทร 062-369-2663</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <div class="toast-text">ก๊อปปี้โค้ด <span class="toast-code" id="toastCode"></span> สำเร็จ!</div>
     </div>
 
     <footer class="footer">
@@ -230,7 +459,10 @@
     </footer>
 
     <script>
+        // Copyright year
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // Mobile menu
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');
         function toggleMenu(open) {
@@ -242,6 +474,71 @@
         hamburger.addEventListener('click', () => toggleMenu(!mobileNav.classList.contains('open')));
         mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
         document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+
+        // Countdown Timer (Main Promo)
+        function updateCountdown() {
+            const now = new Date();
+            const endDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 3, 23, 59, 59);
+            const diff = endDate - now;
+            if (diff <= 0) return;
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
+            document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+            document.getElementById('cd-minutes').textContent = String(m).padStart(2, '0');
+            document.getElementById('cd-seconds').textContent = String(s).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Flash Sale Timer
+        function updateFlashTimer() {
+            const now = new Date();
+            const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+            const diff = midnight - now;
+            const h = Math.floor(diff / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            document.getElementById('ft-hours').textContent = String(h).padStart(2, '0');
+            document.getElementById('ft-minutes').textContent = String(m).padStart(2, '0');
+            document.getElementById('ft-seconds').textContent = String(s).padStart(2, '0');
+        }
+        setInterval(updateFlashTimer, 1000);
+        updateFlashTimer();
+
+        // Copy coupon code
+        function copyCode(btn, code) {
+            navigator.clipboard.writeText(code).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> ก๊อปปี้แล้ว';
+                btn.classList.add('copied');
+                document.getElementById('toastCode').textContent = code;
+                document.getElementById('toast').classList.add('show');
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-copy"></i> ก๊อปปี้';
+                    btn.classList.remove('copied');
+                    document.getElementById('toast').classList.remove('show');
+                }, 2500);
+            }).catch(() => {
+                // Fallback
+                const el = document.createElement('textarea');
+                el.value = code;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                btn.innerHTML = '<i class="fas fa-check"></i> ก๊อปปี้แล้ว';
+                btn.classList.add('copied');
+                document.getElementById('toastCode').textContent = code;
+                document.getElementById('toast').classList.add('show');
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-copy"></i> ก๊อปปี้';
+                    btn.classList.remove('copied');
+                    document.getElementById('toast').classList.remove('show');
+                }, 2500);
+            });
+        }
     </script>
 </body>
 </html>

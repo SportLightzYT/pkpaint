@@ -1,51 +1,652 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PK Paint &amp; Supply - ติดต่อเรา</title>
-    <meta name="description" content="ติดต่อ PK Paint &amp; Supply สอบถามข้อมูลสินค้า ขอใบเสนอราคา หรือรับคำปรึกษาเรื่องสีพ่นรถยนต์จากผู้เชี่ยวชาญ โทร 062-369-2663">
-    <meta property="og:title" content="PK Paint &amp; Supply - ติดต่อเรา">
-    <meta property="og:description" content="ติดต่อสอบถามสินค้าและบริการ สีพ่นรถยนต์คุณภาพสูง">
-    <meta property="og:type" content="website">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="ติดต่อ PK Paint &amp; Supply สอบถามข้อมูลสินค้า ขอใบเสนอราคา หรือรับคำปรึกษาเรื่องสีพ่นรถยนต์จากผู้เชี่ยวชาญ โทร 062-369-2663" />
+    <meta property="og:title" content="PK Paint &amp; Supply - ติดต่อเรา" />
+    <meta property="og:description" content="ติดต่อสอบถามสินค้าและบริการ สีพ่นรถยนต์คุณภาพสูง" />
+    <meta property="og:type" content="website" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Kanit', sans-serif; background-color: #0a0a0a; color: #fff; overflow-x: hidden; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        a { color: inherit; }
 
-        /* ── Navbar ── */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 60px; background: rgba(0,0,0,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background: rgba(0,0,0,0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
         .logo-section { display: flex; align-items: center; gap: 12px; }
         .logo-icon { font-size: 36px; font-weight: 700; color: #fff; font-style: italic; }
         .logo-icon span { color: #1e90ff; }
         .logo-text { font-size: 12px; line-height: 1.4; color: #ccc; }
         .nav-links { display: flex; gap: 30px; list-style: none; }
-        .nav-links a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
         .nav-links a:hover, .nav-links a.active { color: #1e90ff; }
         .nav-right { display: flex; align-items: center; gap: 20px; }
         .phone { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #fff; }
-        .btn-contact { background: #1e90ff; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.3s; }
-        .btn-contact:hover { background: #1873cc; }
+        .btn-contact {
+            background: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .btn-contact:hover { background: #1873cc; transform: translateY(-1px); }
 
-        /* ── Hamburger ── */
-        .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; z-index: 1100; }
-        .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease; }
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
         .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
         .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        /* ── Mobile Nav ── */
-        .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        /* Mobile Nav */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.97);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
         .mobile-nav.open { opacity: 1; pointer-events: all; }
-        .mobile-nav a { color: #fff; text-decoration: none; font-size: 22px; font-weight: 500; letter-spacing: 1px; transition: color 0.3s; }
+        .mobile-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
         .mobile-nav a:hover, .mobile-nav a.active { color: #1e90ff; }
-        .mobile-nav-contact { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); width: 220px; }
+        .mobile-nav-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 240px;
+        }
         .mobile-nav-contact a { font-size: 15px !important; color: #aaa !important; }
 
-        /* ── Footer ── */
-        .footer { background: #050505; padding: 50px 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; }
-        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        /* Mode Toggle */
+        .mode-toggle {
+            position: fixed;
+            top: 90px;
+            right: 30px;
+            z-index: 998;
+            background: rgba(30,144,255,0.15);
+            border: 1px solid rgba(30,144,255,0.3);
+            border-radius: 30px;
+            padding: 6px;
+            display: flex;
+            gap: 4px;
+            backdrop-filter: blur(10px);
+        }
+        .mode-btn {
+            background: transparent;
+            border: none;
+            color: #888;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .mode-btn.active { background: #1e90ff; color: #fff; }
+        .mode-btn:hover:not(.active) { color: #1e90ff; }
+
+        /* New Mode */
+        .new-mode .page-hero {
+            padding: 140px 60px 80px;
+            background:
+                radial-gradient(circle at top left, rgba(30,144,255,0.18), transparent 35%),
+                radial-gradient(circle at top right, rgba(120,80,255,0.12), transparent 30%),
+                linear-gradient(135deg, #0a1628 0%, #0f1020 55%, #0d1f2d 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .new-mode .page-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.22) 100%);
+            pointer-events: none;
+        }
+        .new-mode .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: center;
+        }
+        .new-mode .hero-copy h1 {
+            font-size: 46px;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 14px;
+            background: linear-gradient(135deg, #fff 0%, #7cc4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .new-mode .hero-copy p {
+            color: #b8c0cc;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 680px;
+        }
+        .new-mode .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+        .new-mode .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 0.25s, background 0.25s, border-color 0.25s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .new-mode .hero-btn:hover { transform: translateY(-2px); }
+        .new-mode .hero-btn.primary { background: linear-gradient(135deg, #1e90ff, #49b1ff); color: #fff; border-color: transparent; }
+        .new-mode .hero-btn.secondary { background: rgba(255,255,255,0.04); color: #fff; }
+        .new-mode .hero-btn.ghost { background: transparent; color: #9fb7d2; }
+
+        .new-mode .hero-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 24px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+        .new-mode .hero-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .new-mode .hero-card p {
+            color: #97a3b5;
+            font-size: 13px;
+            line-height: 1.75;
+            margin-bottom: 18px;
+        }
+        .new-mode .quick-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .new-mode .quick-item {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 14px;
+        }
+        .new-mode .quick-item .label {
+            display: block;
+            font-size: 12px;
+            color: #7f8da3;
+            margin-bottom: 4px;
+        }
+        .new-mode .quick-item .value {
+            font-size: 14px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .new-mode .contact-section {
+            padding: 0 60px 70px;
+        }
+        .new-mode .contact-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: -30px;
+            position: relative;
+            z-index: 2;
+        }
+        .new-mode .info-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .new-mode .info-card {
+            background: linear-gradient(180deg, rgba(17,17,17,0.96), rgba(11,11,11,0.96));
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.3);
+        }
+        .new-mode .info-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 14px;
+            background: rgba(30,144,255,0.12);
+            color: #1e90ff;
+            font-size: 18px;
+        }
+        .new-mode .info-card h4 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .new-mode .info-card p,
+        .new-mode .info-card a {
+            font-size: 13px;
+            color: #a6b0bf;
+            text-decoration: none;
+            line-height: 1.7;
+        }
+        .new-mode .info-card a:hover { color: #1e90ff; }
+
+        .new-mode .contact-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 20px;
+        }
+        .new-mode .panel {
+            background: linear-gradient(180deg, rgba(17,17,17,0.98), rgba(10,10,10,0.98));
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+        }
+        .new-mode .panel-head {
+            padding: 24px 24px 0;
+        }
+        .new-mode .section-kicker {
+            color: #1e90ff;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .new-mode .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .new-mode .section-desc {
+            color: #98a2b3;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .new-mode .form-area { padding-bottom: 24px; }
+        .new-mode .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            padding: 24px;
+        }
+        .new-mode .form-group { margin-bottom: 0; }
+        .new-mode .form-group.full { grid-column: 1 / -1; }
+        .new-mode .form-label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: #d6d6d6;
+        }
+        .new-mode .form-label span { color: #ff6b6b; }
+        .new-mode .form-control {
+            width: 100%;
+            padding: 13px 15px;
+            background: #161616;
+            border: 1px solid #2e2e2e;
+            border-radius: 12px;
+            color: #fff;
+            font-family: 'Kanit', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+        }
+        .new-mode .form-control:focus {
+            border-color: #1e90ff;
+            box-shadow: 0 0 0 4px rgba(30,144,255,0.12);
+        }
+        .new-mode textarea.form-control { min-height: 145px; resize: vertical; }
+        .new-mode .captcha-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            align-items: center;
+        }
+        .new-mode .captcha-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            border: 1px solid #2e2e2e;
+            background: #161616;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+        .new-mode .captcha-btn:hover {
+            transform: rotate(18deg);
+            border-color: #1e90ff;
+        }
+        .new-mode .privacy-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: #a5adba;
+            line-height: 1.7;
+            padding: 0 24px;
+        }
+        .new-mode .privacy-check input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-top: 4px;
+            accent-color: #1e90ff;
+        }
+        .new-mode .privacy-check a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .new-mode .submit-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            padding: 20px 24px 0;
+        }
+        .new-mode .btn-submit {
+            background: linear-gradient(135deg, #1e90ff, #49b1ff);
+            color: #fff;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 12px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 14px 30px rgba(30,144,255,0.25);
+        }
+        .new-mode .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 34px rgba(30,144,255,0.35);
+        }
+        .new-mode .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            padding: 13px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.09);
+            color: #d8e3f2;
+            background: rgba(255,255,255,0.03);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .new-mode .side-panel { padding: 24px; }
+        .new-mode .contact-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        .new-mode .contact-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 16px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .new-mode .contact-item i {
+            color: #1e90ff;
+            font-size: 18px;
+            width: 22px;
+            padding-top: 2px;
+        }
+        .new-mode .contact-item strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .new-mode .contact-item span,
+        .new-mode .contact-item a {
+            color: #aeb8c7;
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .new-mode .map-box {
+            margin-top: 18px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.07);
+            background: #111;
+        }
+        .new-mode .map-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
+        }
+        .new-mode .map-top span { color: #c7d2e3; font-size: 13px; }
+        .new-mode .map-top a {
+            color: #1e90ff;
+            font-size: 13px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .new-mode .map-frame {
+            width: 100%;
+            min-height: 390px;
+            border: 0;
+            display: block;
+        }
+
+        /* Classic Mode */
+        .classic-mode .contact-container {
+            padding: 120px 60px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .classic-mode .page-title {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: #fff;
+        }
+        .classic-mode .page-subtitle {
+            color: #aaa;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+        .classic-mode .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: #111;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .classic-mode .form-group { margin-bottom: 20px; }
+        .classic-mode .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .classic-mode .form-label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+        .classic-mode .form-label span { color: #ff4757; }
+        .classic-mode .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #fff;
+            font-family: 'Kanit', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .classic-mode .form-control:focus { border-color: #1e90ff; }
+        .classic-mode textarea.form-control { resize: vertical; min-height: 120px; }
+        .classic-mode .captcha-box { display: flex; gap: 10px; margin-bottom: 20px; }
+        .classic-mode .captcha-input { width: 120px; text-align: center; }
+        .classic-mode .captcha-btn {
+            background: #222;
+            border: 1px solid #333;
+            color: #fff;
+            width: 45px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .classic-mode .captcha-btn:hover { background: #333; }
+        .classic-mode .privacy-check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+        .classic-mode .privacy-check input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #1e90ff;
+        }
+        .classic-mode .privacy-check a { color: #1e90ff; text-decoration: underline; }
+        .classic-mode .btn-submit {
+            background: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .classic-mode .btn-submit:hover { background: #1873cc; transform: translateY(-2px); }
+        .classic-mode .map-container {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        .classic-mode .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: #050505;
+            padding: 50px 60px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 60px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
         .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
         .footer-logo-icon { font-size: 32px; font-weight: 700; color: #fff; font-style: italic; }
         .footer-logo-icon span { color: #1e90ff; }
@@ -53,44 +654,57 @@
         .footer-title { font-size: 14px; font-weight: 600; margin-bottom: 20px; color: #fff; }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #666; text-decoration: none; font-size: 13px; transition: color 0.3s; }
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
         .footer-links a:hover { color: #1e90ff; }
-        .footer-contact { color: #666; font-size: 13px; line-height: 1.8; }
+        .footer-contact {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.8;
+        }
         .footer-contact i { color: #1e90ff; margin-right: 8px; width: 16px; }
         .footer-social { display: flex; gap: 12px; margin-top: 15px; }
-        .footer-social a { width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; font-size: 14px; transition: all 0.3s; text-decoration: none; }
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
         .footer-social a:hover { background: #1e90ff; color: #fff; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; color: #444; font-size: 12px; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+            text-align: center;
+            color: #444;
+            font-size: 12px;
+        }
 
-        /* ── Contact Page ── */
-        .contact-container { padding: 120px 60px 60px; max-width: 1200px; margin: 0 auto; }
-        .page-title { font-size: 36px; font-weight: 600; margin-bottom: 40px; color: #fff; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: #111; padding: 40px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
-        .form-group { margin-bottom: 20px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
-        .form-label { display: block; font-size: 14px; margin-bottom: 8px; color: #ccc; }
-        .form-label span { color: #ff4757; }
-        .form-control { width: 100%; padding: 12px 15px; background: #1a1a1a; border: 1px solid #333; border-radius: 6px; color: #fff; font-family: 'Kanit', sans-serif; font-size: 14px; outline: none; transition: border-color 0.3s; }
-        .form-control:focus { border-color: #1e90ff; }
-        textarea.form-control { resize: vertical; min-height: 120px; }
-        .captcha-box { display: flex; gap: 10px; margin-bottom: 20px; }
-        .captcha-input { width: 120px; text-align: center; }
-        .captcha-btn { background: #222; border: 1px solid #333; color: #fff; width: 45px; border-radius: 6px; cursor: pointer; }
-        .captcha-btn:hover { background: #333; }
-        .privacy-check { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #aaa; margin-bottom: 30px; }
-        .privacy-check input[type="checkbox"] { width: 16px; height: 16px; accent-color: #1e90ff; }
-        .privacy-check a { color: #1e90ff; text-decoration: underline; }
-        .btn-submit { background: #1e90ff; color: #fff; border: none; padding: 12px 30px; border-radius: 6px; font-family: 'Kanit', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 10px; }
-        .btn-submit:hover { background: #1873cc; transform: translateY(-2px); }
-        .map-container { width: 100%; height: 100%; min-height: 400px; border-radius: 8px; overflow: hidden; border: 1px solid #333; }
-        .map-container iframe { width: 100%; height: 100%; min-height: 400px; border: none; }
-
-        /* ── Responsive ── */
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .new-mode .hero-inner,
+            .new-mode .contact-grid { grid-template-columns: 1fr; }
+            .new-mode .info-row { grid-template-columns: repeat(2, 1fr); }
+            .new-mode .contact-wrap { margin-top: -10px; }
+        }
         @media (max-width: 1024px) {
             .navbar { padding: 15px 30px; }
             .footer { padding: 50px 30px 20px; }
             .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
-            .contact-container { padding: 120px 30px 60px; }
+            .new-mode .page-hero,
+            .new-mode .contact-section { padding-left: 30px; padding-right: 30px; }
+            .classic-mode .contact-container { padding: 120px 30px 60px; }
+            .classic-mode .contact-grid { gap: 30px; }
         }
         @media (max-width: 768px) {
             .navbar { padding: 14px 20px; }
@@ -98,20 +712,54 @@
             .phone { display: none; }
             .hamburger { display: flex; }
             .mobile-nav { display: flex; }
-            .contact-container { padding: 100px 20px 40px; }
-            .contact-grid { grid-template-columns: 1fr; padding: 24px; gap: 30px; }
-            .form-row { grid-template-columns: 1fr; gap: 0; }
-            .form-row > div { margin-bottom: 20px; }
+
+            .mode-toggle {
+                top: 80px;
+                right: 15px;
+            }
+            .mode-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .new-mode .page-hero {
+                padding: 120px 20px 44px;
+            }
+            .new-mode .hero-copy h1 { font-size: 31px; }
+            .new-mode .hero-copy p { font-size: 15px; }
+            .new-mode .info-row { grid-template-columns: 1fr; }
+            .new-mode .form-grid { grid-template-columns: 1fr; }
+            .new-mode .submit-row { flex-direction: column; align-items: stretch; }
+            .new-mode .btn-submit,
+            .new-mode .btn-outline { justify-content: center; }
+            .new-mode .map-frame { min-height: 320px; }
+
+            .classic-mode .contact-container { padding: 100px 20px 40px; }
+            .classic-mode .contact-grid { grid-template-columns: 1fr; padding: 24px; gap: 30px; }
+            .classic-mode .form-row { grid-template-columns: 1fr; gap: 0; }
+            .classic-mode .form-row > div { margin-bottom: 20px; }
             .footer { padding: 40px 20px 20px; margin-top: 40px; }
             .footer-content { grid-template-columns: 1fr; gap: 24px; }
         }
         @media (max-width: 480px) {
             .logo-text { display: none; }
-            .page-title { font-size: 28px; }
+            .new-mode .hero-copy h1 { font-size: 26px; }
+            .new-mode .section-title { font-size: 22px; }
+            .classic-mode .page-title { font-size: 28px; }
         }
     </style>
 </head>
-<body>
+<body class="new-mode" id="body">
+
+    <div class="mode-toggle" aria-label="สลับโหมดดีไซน์">
+        <button class="mode-btn active" id="btnNew" onclick="switchMode('new')">
+            <i class="fas fa-layer-group"></i> ดีไซน์ใหม่
+        </button>
+        <button class="mode-btn" id="btnClassic" onclick="switchMode('classic')">
+            <i class="fas fa-th"></i> ดีไซน์เดิม
+        </button>
+    </div>
+
     <nav class="navbar">
         <div class="logo-section">
             <div class="logo-icon">P<span>K</span></div>
@@ -143,68 +791,279 @@
         <a href="contact.html" class="active">ติดต่อเรา</a>
         <div class="mobile-nav-contact">
             <a href="tel:0623692663"><i class="fas fa-phone-alt" style="margin-right:8px;color:#1e90ff;"></i>062-369-2663</a>
-            <a href="#"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @pkpaint</a>
+            <a href="https://line.me/R/ti/p/@pkpaint" target="_blank" rel="noopener"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @pkpaint</a>
         </div>
     </div>
 
-    <div class="contact-container">
-        <h1 class="page-title">ติดต่อเรา</h1>
-        <div class="contact-grid">
-            <div class="contact-form-area">
-                <form action="#" method="POST">
-                    <div class="form-row">
-                        <div>
-                            <label class="form-label">ชื่อ <span>*</span></label>
-                            <input type="text" class="form-control" placeholder="ชื่อ">
-                        </div>
-                        <div>
-                            <label class="form-label">นามสกุล <span>*</span></label>
-                            <input type="text" class="form-control" placeholder="นามสกุล">
-                        </div>
+    <!-- New mode -->
+    <div id="newModeContent">
+        <section class="page-hero">
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <div class="section-kicker">Contact us</div>
+                    <h1>ติดต่อ PK Paint &amp; Supply</h1>
+                    <p>
+                        สอบถามสินค้า ขอใบเสนอราคา นัดเข้ารับคำปรึกษา หรือส่งรายละเอียดงานสีพ่นรถยนต์มาให้ทีมงานได้เลย
+                        เราพร้อมตอบกลับให้เร็วที่สุดทั้งทางโทรศัพท์ LINE และแผนที่หน้าร้าน
+                    </p>
+                    <div class="hero-actions">
+                        <a class="hero-btn primary" href="tel:0623692663">
+                            <i class="fas fa-phone-alt"></i> โทรเลย
+                        </a>
+                        <a class="hero-btn secondary" href="https://line.me/R/ti/p/@pkpaint" target="_blank" rel="noopener">
+                            <i class="fab fa-line"></i> แชท LINE
+                        </a>
+                        <a class="hero-btn ghost" href="https://maps.app.goo.gl/kP2w8g4x2kSQs8rA6" target="_blank" rel="noopener">
+                            <i class="fas fa-location-dot"></i> เปิดแผนที่
+                        </a>
                     </div>
-                    <div class="form-row">
-                        <div>
-                            <label class="form-label">อีเมล <span>*</span></label>
-                            <input type="email" class="form-control" placeholder="อีเมล">
+                </div>
+                <div class="hero-card">
+                    <h3>ช่องทางติดต่อด่วน</h3>
+                    <p>เลือกช่องทางที่สะดวกที่สุด แล้วกดได้ทันทีจากปุ่มด้านล่าง</p>
+                    <div class="quick-grid">
+                        <div class="quick-item">
+                            <span class="label">โทรศัพท์</span>
+                            <span class="value">062-369-2663</span>
                         </div>
-                        <div>
-                            <label class="form-label">เบอร์โทรศัพท์ <span>*</span></label>
-                            <input type="tel" class="form-control" placeholder="เบอร์โทรศัพท์">
+                        <div class="quick-item">
+                            <span class="label">LINE</span>
+                            <span class="value">@pkpaint</span>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">เรื่องที่ติดต่อ <span>*</span></label>
-                        <select class="form-control">
-                            <option>กรุณาเลือก</option>
-                            <option>สอบถามข้อมูลสินค้า</option>
-                            <option>ขอใบเสนอราคา</option>
-                            <option>แจ้งปัญหาการใช้งาน</option>
-                            <option>อื่นๆ</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">ข้อความ <span>*</span></label>
-                        <textarea class="form-control" placeholder="ระบุข้อความของคุณที่นี่..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">รหัสยืนยัน <span>*</span></label>
-                        <div class="captcha-box">
-                            <input type="text" class="form-control captcha-input" placeholder="----">
-                            <button type="button" class="captcha-btn"><i class="fas fa-sync-alt"></i></button>
+                        <div class="quick-item">
+                            <span class="label">เวลาเปิด</span>
+                            <span class="value">จันทร์ - เสาร์</span>
+                        </div>
+                        <div class="quick-item">
+                            <span class="label">สถานที่</span>
+                            <span class="value">หน้าร้าน PK Paint</span>
                         </div>
                     </div>
-                    <div class="privacy-check">
-                        <input type="checkbox" id="privacy">
-                        <label for="privacy">ข้าพเจ้ายอมรับ <a href="#">นโยบายความเป็นส่วนตัว</a></label>
-                    </div>
-                    <button type="submit" class="btn-submit">
-                        <i class="far fa-envelope"></i> ส่งข้อความ
-                    </button>
-                </form>
+                </div>
             </div>
-            <div class="map-area">
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15502.261271638634!2d100.53037415541991!3d13.764510000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29eb6d649d211%3A0x7d6f5dfd2d53c7c4!2sVictory%20Monument!5e0!3m2!1sen!2sth!4v1714000000000!5m2!1sen!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-wrap">
+                <div class="info-row">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <h4>โทรสอบถาม</h4>
+                        <p><a href="tel:0623692663">062-369-2663</a></p>
+                        <p>โทรได้ทันทีสำหรับข้อมูลสินค้าและงานบริการ</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fab fa-line"></i></div>
+                        <h4>คุยผ่าน LINE</h4>
+                        <p><a href="https://line.me/R/ti/p/@pkpaint" target="_blank" rel="noopener">@pkpaint</a></p>
+                        <p>ส่งรูปงานจริงให้ประเมินได้สะดวก</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <h4>เวลาทำการ</h4>
+                        <p>จันทร์ - เสาร์</p>
+                        <p>08:00 - 17:00 น.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h4>แผนที่ร้าน</h4>
+                        <p>กดเปิดใน Google Maps ได้ทันที</p>
+                        <p><a href="https://maps.app.goo.gl/kP2w8g4x2kSQs8rA6" target="_blank" rel="noopener">ดูเส้นทาง</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-grid">
+                    <section class="panel form-area">
+                        <div class="panel-head">
+                            <div class="section-kicker">Send message</div>
+                            <h2 class="section-title">ส่งข้อความถึงเรา</h2>
+                            <p class="section-desc">กรอกข้อมูลด้านล่างเพื่อให้ทีมงานติดต่อกลับ หรือใช้ช่องทางด้านบนเพื่อคุยได้ทันที</p>
+                        </div>
+
+                        <form action="#" method="POST">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label">ชื่อ <span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="ชื่อ" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">นามสกุล <span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="นามสกุล" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">อีเมล <span>*</span></label>
+                                    <input type="email" class="form-control" placeholder="อีเมล" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">เบอร์โทรศัพท์ <span>*</span></label>
+                                    <input type="tel" class="form-control" placeholder="เบอร์โทรศัพท์" />
+                                </div>
+                                <div class="form-group full">
+                                    <label class="form-label">เรื่องที่ติดต่อ <span>*</span></label>
+                                    <select class="form-control">
+                                        <option>กรุณาเลือก</option>
+                                        <option>สอบถามข้อมูลสินค้า</option>
+                                        <option>ขอใบเสนอราคา</option>
+                                        <option>แจ้งปัญหาการใช้งาน</option>
+                                        <option>นัดรับคำปรึกษา</option>
+                                        <option>อื่น ๆ</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full">
+                                    <label class="form-label">ข้อความ <span>*</span></label>
+                                    <textarea class="form-control" placeholder="ระบุรายละเอียดที่ต้องการสอบถาม..."></textarea>
+                                </div>
+                                <div class="form-group full">
+                                    <label class="form-label">รหัสยืนยัน <span>*</span></label>
+                                    <div class="captcha-row">
+                                        <input type="text" class="form-control" placeholder="----" />
+                                        <button type="button" class="captcha-btn" aria-label="สุ่มรหัสยืนยัน">
+                                            <i class="fas fa-sync-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="privacy-check">
+                                <input type="checkbox" id="privacyNew" />
+                                <label for="privacyNew">
+                                    ข้าพเจ้ายอมรับ <a href="#">นโยบายความเป็นส่วนตัว</a> และยินยอมให้ติดต่อกลับ
+                                </label>
+                            </div>
+
+                            <div class="submit-row">
+                                <button type="submit" class="btn-submit">
+                                    <i class="far fa-envelope"></i> ส่งข้อความ
+                                </button>
+                                <a class="btn-outline" href="https://maps.app.goo.gl/kP2w8g4x2kSQs8rA6" target="_blank" rel="noopener">
+                                    <i class="fas fa-route"></i> เปิดเส้นทางจาก Google Maps
+                                </a>
+                            </div>
+                        </form>
+                    </section>
+
+                    <aside class="panel side-panel">
+                        <div class="section-kicker">Visit us</div>
+                        <h2 class="section-title">แผนที่และข้อมูลร้าน</h2>
+                        <p class="section-desc">
+                            กดเปิดแผนที่ด้านล่างเพื่อดูจุดปักหมุด หรือใช้ปุ่มเปิด Google Maps เพื่อไปยังเส้นทางนำทางได้ทันที
+                        </p>
+
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>โทรศัพท์</strong>
+                                    <a href="tel:0623692663">062-369-2663</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-line"></i>
+                                <div>
+                                    <strong>LINE</strong>
+                                    <a href="https://line.me/R/ti/p/@pkpaint" target="_blank" rel="noopener">@pkpaint</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Google Maps</strong>
+                                    <a href="https://maps.app.goo.gl/kP2w8g4x2kSQs8rA6" target="_blank" rel="noopener">เปิดลิงก์แผนที่ที่ปักหมุดไว้</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="map-box">
+                            <div class="map-top">
+                                <span><i class="fas fa-location-dot" style="color:#1e90ff;margin-right:8px;"></i> แผนที่ร้าน PK Paint &amp; Supply</span>
+                                <a href="https://maps.app.goo.gl/kP2w8g4x2kSQs8rA6" target="_blank" rel="noopener">เปิดใน Google Maps</a>
+                            </div>
+                            <iframe
+                                class="map-frame"
+                                src="https://www.google.com/maps?q=13.9839944,100.5913704&z=17&output=embed"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen
+                                title="Google Maps - PK Paint & Supply"></iframe>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Classic mode -->
+    <div id="classicModeContent" style="display:none;">
+        <div class="contact-container">
+            <h1 class="page-title">ติดต่อเรา</h1>
+            <p class="page-subtitle">ส่งข้อความหาเราเพื่อสอบถามสินค้า ขอใบเสนอราคา หรือนัดคุยรายละเอียดงาน</p>
+
+            <div class="contact-grid">
+                <div class="contact-form-area">
+                    <form action="#" method="POST">
+                        <div class="form-row">
+                            <div>
+                                <label class="form-label">ชื่อ <span>*</span></label>
+                                <input type="text" class="form-control" placeholder="ชื่อ" />
+                            </div>
+                            <div>
+                                <label class="form-label">นามสกุล <span>*</span></label>
+                                <input type="text" class="form-control" placeholder="นามสกุล" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div>
+                                <label class="form-label">อีเมล <span>*</span></label>
+                                <input type="email" class="form-control" placeholder="อีเมล" />
+                            </div>
+                            <div>
+                                <label class="form-label">เบอร์โทรศัพท์ <span>*</span></label>
+                                <input type="tel" class="form-control" placeholder="เบอร์โทรศัพท์" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">เรื่องที่ติดต่อ <span>*</span></label>
+                            <select class="form-control">
+                                <option>กรุณาเลือก</option>
+                                <option>สอบถามข้อมูลสินค้า</option>
+                                <option>ขอใบเสนอราคา</option>
+                                <option>แจ้งปัญหาการใช้งาน</option>
+                                <option>อื่น ๆ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">ข้อความ <span>*</span></label>
+                            <textarea class="form-control" placeholder="ระบุข้อความของคุณที่นี่..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">รหัสยืนยัน <span>*</span></label>
+                            <div class="captcha-box">
+                                <input type="text" class="form-control captcha-input" placeholder="----" />
+                                <button type="button" class="captcha-btn"><i class="fas fa-sync-alt"></i></button>
+                            </div>
+                        </div>
+                        <div class="privacy-check">
+                            <input type="checkbox" id="privacyOld" />
+                            <label for="privacyOld">ข้าพเจ้ายอมรับ <a href="#">นโยบายความเป็นส่วนตัว</a></label>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="far fa-envelope"></i> ส่งข้อความ
+                        </button>
+                    </form>
+                </div>
+                <div class="map-area">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps?q=13.9839944,100.5913704&z=17&output=embed"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Google Maps - PK Paint & Supply"></iframe>
+                    </div>
+                    <div style="margin-top:14px;color:#8d96a3;font-size:13px;line-height:1.8;">
+                        <i class="fas fa-location-dot" style="color:#1e90ff;margin-right:8px;"></i>
+                        เปิดดูเส้นทางผ่าน <a href="https://maps.app.goo.gl/kP2w8g4x2kSQs8rA6" target="_blank" rel="noopener" style="color:#1e90ff;text-decoration:none;">Google Maps</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -256,17 +1115,38 @@
 
     <script>
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');
+
         function toggleMenu(open) {
             hamburger.classList.toggle('open', open);
             mobileNav.classList.toggle('open', open);
-            hamburger.setAttribute('aria-expanded', open);
+            hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
             document.body.style.overflow = open ? 'hidden' : '';
         }
+
         hamburger.addEventListener('click', () => toggleMenu(!mobileNav.classList.contains('open')));
-        mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
+        });
+
+        function switchMode(mode) {
+            const body = document.getElementById('body');
+            const newMode = document.getElementById('newModeContent');
+            const classicMode = document.getElementById('classicModeContent');
+            const btnNew = document.getElementById('btnNew');
+            const btnClassic = document.getElementById('btnClassic');
+
+            const isNew = mode === 'new';
+            body.classList.toggle('new-mode', isNew);
+            body.classList.toggle('classic-mode', !isNew);
+            newMode.style.display = isNew ? 'block' : 'none';
+            classicMode.style.display = isNew ? 'none' : 'block';
+            btnNew.classList.toggle('active', isNew);
+            btnClassic.classList.toggle('active', !isNew);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
