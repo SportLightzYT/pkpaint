@@ -2,21 +2,26 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>PK Paint &amp; Supply - ผลงานสีพ่น</title>
-    <meta name="description" content="ชมผลงานการซ่อมสีและพ่นสีรถยนต์จากลูกค้าที่ใช้ผลิตภัณฑ์ PK Paint &amp; Supply คุณภาพระดับมืออาชีพ">
+    <meta name="description" content="ชมผลงานการซ่อมสีและพ่นสีรถยนต์จากลูกค้าที่ใช้ผลิตภัณฑ์ PK Paint &amp; Supply คุณภาพระดับมืออาชีพ รังสิต ปทุมธานี">
     <meta property="og:title" content="PK Paint &amp; Supply - ผลงานสีพ่น">
-    <meta property="og:description" content="รวบรวมผลงานการซ่อมสีและพ่นสีรถยนต์จากลูกค้าที่ใช้ผลิตภัณฑ์ของเรา">
+    <meta property="og:description" content="จำหน่ายสีพ่นรถยนต์ทุกชนิด ทุกระบบ 2K-1K ผสมสีตามตัวอย่าง รับอัดสีสเปรย์กระป๋อง รังสิต ปทุมธานี">
     <meta property="og:type" content="website">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Kanit', sans-serif; background-color: #0a0a0a; color: #fff; overflow-x: hidden; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Kanit', sans-serif; background-color: #0a0a0a; color: #fff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        a { color: inherit; text-decoration: none; }
+        img, svg { max-width: 100%; height: auto; }
 
         /* ── Navbar ── */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 60px; background: rgba(0,0,0,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 60px; background: rgba(0,0,0,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
         .logo-section { display: flex; align-items: center; gap: 12px; }
+        .logo-img { height: 42px; width: auto; object-fit: contain; }
+        .footer-logo-img { height: 38px; width: auto; object-fit: contain; }
         .logo-icon { font-size: 36px; font-weight: 700; color: #fff; font-style: italic; }
         .logo-icon span { color: #1e90ff; }
         .logo-text { font-size: 12px; line-height: 1.4; color: #ccc; }
@@ -25,11 +30,13 @@
         .nav-links a:hover, .nav-links a.active { color: #1e90ff; }
         .nav-right { display: flex; align-items: center; gap: 20px; }
         .phone { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #fff; }
-        .btn-contact { background: #1e90ff; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.3s; }
-        .btn-contact:hover { background: #1873cc; }
+        .phone a { text-decoration: none; color: #fff; transition: color 0.3s; }
+        .phone a:hover { color: #1e90ff; }
+        .btn-contact { background: #1e90ff; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.3s, transform 0.3s; white-space: nowrap; text-decoration: none; display: inline-flex; align-items: center; }
+        .btn-contact:hover { background: #1873cc; transform: translateY(-1px); }
 
         /* ── Hamburger ── */
-        .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; z-index: 1100; }
+        .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; z-index: 1100; min-width: 44px; min-height: 44px; }
         .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease; }
         .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -38,21 +45,18 @@
         /* ── Mobile Nav ── */
         .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
         .mobile-nav.open { opacity: 1; pointer-events: all; }
-        .mobile-nav a { color: #fff; text-decoration: none; font-size: 22px; font-weight: 500; letter-spacing: 1px; transition: color 0.3s; }
+        .mobile-nav a { color: #fff; text-decoration: none; font-size: 22px; font-weight: 500; letter-spacing: 1px; transition: color 0.3s; padding: 8px 16px; }
         .mobile-nav a:hover, .mobile-nav a.active { color: #1e90ff; }
-        .mobile-nav-contact { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); width: 220px; }
+        .mobile-nav-contact { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); width: 240px; }
         .mobile-nav-contact a { font-size: 15px !important; color: #aaa !important; }
 
         /* ── Mode Toggle ── */
-        .mode-toggle { position: fixed; top: 90px; right: 30px; z-index: 998; background: rgba(30,144,255,0.15); border: 1px solid rgba(30,144,255,0.3); border-radius: 30px; padding: 6px; display: flex; gap: 4px; backdrop-filter: blur(10px); }
-        .mode-btn { background: transparent; border: none; color: #888; padding: 8px 16px; border-radius: 20px; font-family: 'Kanit'; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 6px; }
+        .mode-toggle { position: fixed; top: 90px; right: 30px; z-index: 998; background: rgba(30,144,255,0.15); border: 1px solid rgba(30,144,255,0.3); border-radius: 30px; padding: 6px; display: flex; gap: 4px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .mode-btn { background: transparent; border: none; color: #888; padding: 8px 16px; border-radius: 20px; font-family: 'Kanit'; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
         .mode-btn.active { background: #1e90ff; color: #fff; }
         .mode-btn:hover:not(.active) { color: #1e90ff; }
 
-        /* ════════════════════════════════════════ */
-        /* ═══════ MODE: NEW (Full Gallery) ═══════ */
-        /* ════════════════════════════════════════ */
-
+        /* ═══ NEW MODE ═══ */
         .new-mode .page-hero { background: linear-gradient(135deg, #0a1628 0%, #1a0a2e 50%, #0d1f2d 100%); padding: 140px 60px 80px; text-align: center; position: relative; overflow: hidden; }
         .new-mode .page-hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(30,144,255,0.06) 0%, transparent 70%); animation: pulse 5s ease-in-out infinite; }
         @keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 0.8; } }
@@ -87,7 +91,7 @@
         .new-mode .gallery-zoom { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 50px; height: 50px; background: rgba(30,144,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .new-mode .gallery-item:hover .gallery-zoom { transform: translate(-50%, -50%) scale(1); }
 
-        /* Before/After Section */
+        /* Before/After */
         .new-mode .compare-section { padding: 60px; max-width: 1200px; margin: 0 auto; }
         .new-mode .section-header { text-align: center; margin-bottom: 40px; }
         .new-mode .section-header h2 { font-size: 28px; font-weight: 600; margin-bottom: 8px; }
@@ -102,7 +106,7 @@
         .new-mode .compare-info { padding: 20px; }
         .new-mode .compare-info h4 { font-size: 16px; margin-bottom: 6px; }
         .new-mode .compare-info p { font-size: 13px; color: #888; line-height: 1.5; }
-        .new-mode .compare-meta { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: #666; }
+        .new-mode .compare-meta { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: #666; flex-wrap: wrap; }
         .new-mode .compare-meta span { display: flex; align-items: center; gap: 4px; }
         .new-mode .compare-meta i { color: #1e90ff; }
 
@@ -128,10 +132,7 @@
         .lightbox-caption h3 { font-size: 18px; margin-bottom: 4px; }
         .lightbox-caption p { font-size: 13px; color: #888; }
 
-        /* ════════════════════════════════════════ */
-        /* ═══════ MODE: CLASSIC (Enhanced) ═══════ */
-        /* ════════════════════════════════════════ */
-
+        /* ═══ CLASSIC MODE ═══ */
         .classic-mode .page-container { padding: 120px 60px 60px; max-width: 1400px; margin: 0 auto; text-align: center; }
         .classic-mode .page-title { font-size: 36px; font-weight: 600; margin-bottom: 10px; color: #fff; }
         .classic-mode .page-subtitle { color: #aaa; margin-bottom: 50px; font-size: 15px; }
@@ -159,68 +160,91 @@
         .footer-links a:hover { color: #1e90ff; }
         .footer-contact { color: #666; font-size: 13px; line-height: 1.8; }
         .footer-contact i { color: #1e90ff; margin-right: 8px; width: 16px; }
+        .footer-contact a { color: #666; text-decoration: none; transition: color 0.3s; }
+        .footer-contact a:hover { color: #1e90ff; }
         .footer-social { display: flex; gap: 12px; margin-top: 15px; }
         .footer-social a { width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; font-size: 14px; transition: all 0.3s; text-decoration: none; }
         .footer-social a:hover { background: #1e90ff; color: #fff; }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; color: #444; font-size: 12px; }
 
         /* ── Responsive ── */
-        @media (max-width: 1024px) {
+        @media (max-width: 1100px) {
             .navbar { padding: 15px 30px; }
+            .mode-toggle { top: 85px; right: 20px; }
             .new-mode .gallery-masonry { column-count: 2; padding: 20px 30px 40px; }
             .new-mode .compare-grid { grid-template-columns: 1fr; }
             .new-mode .testi-grid { grid-template-columns: 1fr 1fr; }
             .new-mode .page-hero, .new-mode .compare-section, .new-mode .testimonials { padding-left: 30px; padding-right: 30px; }
+            .new-mode .filter-section { padding-left: 30px; padding-right: 30px; }
             .classic-mode .page-container { padding: 120px 30px 60px; }
             .classic-mode .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .footer { padding: 50px 30px 20px; }
             .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
         }
         @media (max-width: 768px) {
-            .navbar { padding: 14px 20px; }
+            .navbar { padding: 12px 16px; }
             .nav-links { display: none; }
             .phone { display: none; }
+            .btn-contact { display: none; }
             .hamburger { display: flex; }
             .mobile-nav { display: flex; }
-            .mode-toggle { top: 80px; right: 15px; }
+            .logo-icon { font-size: 28px; }
+            .logo-text { font-size: 10px; }
+            .mode-toggle { top: auto; bottom: 20px; right: 50%; transform: translateX(50%); padding: 4px; }
             .mode-btn { padding: 6px 12px; font-size: 12px; }
             .new-mode .gallery-masonry { column-count: 2; padding: 20px 15px 30px; gap: 10px; }
-            .new-mode .page-hero { padding: 120px 20px 50px; }
+            .new-mode .page-hero { padding: 110px 20px 50px; }
             .new-mode .page-hero h1 { font-size: 28px; }
-            .new-mode .stats-row { gap: 24px; }
+            .new-mode .stats-row { gap: 24px; flex-wrap: wrap; }
             .new-mode .stat-num { font-size: 24px; }
             .new-mode .compare-section, .new-mode .testimonials { padding: 40px 20px; }
+            .new-mode .filter-section { padding: 30px 15px 10px; }
             .new-mode .testi-grid { grid-template-columns: 1fr; }
             .classic-mode .page-container { padding: 100px 20px 40px; }
             .classic-mode .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
             .footer { padding: 40px 20px 20px; }
             .footer-content { grid-template-columns: 1fr; gap: 24px; }
+            .footer-col { text-align: center; }
+            .footer-logo { justify-content: center; }
+            .footer-contact div { justify-content: center; display: flex; align-items: center; }
+            .footer-social { justify-content: center; }
         }
         @media (max-width: 480px) {
+            .navbar { padding: 10px 12px; }
             .logo-text { display: none; }
+            .logo-icon { font-size: 24px; }
             .new-mode .gallery-masonry { column-count: 1; }
             .new-mode .page-hero h1 { font-size: 24px; }
+            .new-mode .page-hero p { font-size: 14px; }
+            .new-mode .compare-images img { height: 150px; }
             .classic-mode .gallery-grid { grid-template-columns: 1fr; }
             .classic-mode .page-title { font-size: 28px; }
+            .mobile-nav a { font-size: 18px; }
+            .footer { padding: 30px 14px 12px; }
+            .footer-title { font-size: 13px; }
+            .footer-links a { font-size: 12px; }
+            .footer-contact { font-size: 12px; }
+            .footer-bottom { font-size: 11px; }
+        }
+        @media (max-width: 360px) {
+            .logo-text { display: none; }
+            .new-mode .page-hero h1 { font-size: 22px; }
+            .new-mode .stat-num { font-size: 20px; }
         }
     </style>
-<base target="_blank">
 </head>
 <body class="new-mode" id="body">
 
     <!-- Mode Toggle -->
     <div class="mode-toggle">
-        <button class="mode-btn active" id="btnNew" onclick="switchMode('new')">
-            <i class="fas fa-layer-group"></i> ดีไซน์ใหม่
-        </button>
-        <button class="mode-btn" id="btnClassic" onclick="switchMode('classic')">
-            <i class="fas fa-th"></i> ดีไซน์เดิม
-        </button>
+        <button class="mode-btn active" id="btnNew" onclick="switchMode('new')"><i class="fas fa-layer-group"></i> ดีไซน์ใหม่</button>
+        <button class="mode-btn" id="btnClassic" onclick="switchMode('classic')"><i class="fas fa-th"></i> ดีไซน์เดิม</button>
     </div>
 
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo-section">
-            <div class="logo-icon">P<span>K</span></div>
+            <img src="asset/PK Logo-05.png" alt="PK Paint &amp; Supply Logo" class="logo-img">
             <div class="logo-text">PAINT &amp; SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div>
         </div>
         <ul class="nav-links">
@@ -232,14 +256,15 @@
             <li><a href="contact.html">ติดต่อเรา</a></li>
         </ul>
         <div class="nav-right">
-            <div class="phone"><i class="fas fa-phone-alt"></i> 062-369-2663</div>
-            <button class="btn-contact" onclick="window.location.href='contact.html'">ติดต่อสอบถาม</button>
+            <div class="phone"><i class="fas fa-phone-alt"></i> <a href="tel:0623692663">062-369-2663</a></div>
+            <a class="btn-contact" href="contact.html">ติดต่อสอบถาม</a>
             <button class="hamburger" id="hamburger" aria-label="เปิดเมนู" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
+    <!-- Mobile Nav -->
     <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="เมนูหลัก">
         <a href="index.html">หน้าแรก</a>
         <a href="products.html">สินค้า</a>
@@ -249,13 +274,12 @@
         <a href="contact.html">ติดต่อเรา</a>
         <div class="mobile-nav-contact">
             <a href="tel:0623692663"><i class="fas fa-phone-alt" style="margin-right:8px;color:#1e90ff;"></i>062-369-2663</a>
-            <a href="#"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @pkpaint</a>
+            <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @999snkil</a>
+            <a href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" style="margin-right:8px;color:#1877f2;"></i>Facebook</a>
         </div>
     </div>
 
-    <!-- ════════════════════════════════════════ -->
-    <!-- ═══════ NEW MODE CONTENT ═══════ -->
-    <!-- ════════════════════════════════════════ -->
+    <!-- ═══════ NEW MODE ═══════ -->
     <div id="newModeContent">
 
         <!-- Hero -->
@@ -266,7 +290,7 @@
                 <div class="stats-row">
                     <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">คันที่ทำสี</span></div>
                     <div class="stat-item"><span class="stat-num">98%</span><span class="stat-label">ลูกค้าพอใจ</span></div>
-                    <div class="stat-item"><span class="stat-num">12</span><span class="stat-label">ปีประสบการณ์</span></div>
+                    <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">ปีประสบการณ์</span></div>
                 </div>
             </div>
         </section>
@@ -289,10 +313,7 @@
                 <img src="https://autopainthq.com/cdn/shop/products/img0280_562e8e53-2d5b-4082-a211-1dbb7f940721.jpg?v=1683747631&width=950" alt="Honda Civic Super Black" loading="lazy">
                 <div class="gallery-overlay">
                     <div class="gallery-title">Honda Civic - Super Black</div>
-                    <div class="gallery-tags">
-                        <span class="gallery-tag">#เคลือบเงาเต็มระบบ</span>
-                        <span class="gallery-tag red">#งานซ่อมกันชน</span>
-                    </div>
+                    <div class="gallery-tags"><span class="gallery-tag">#เคลือบเงาเต็มระบบ</span><span class="gallery-tag red">#งานซ่อมกันชน</span></div>
                 </div>
                 <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
             </div>
@@ -300,10 +321,7 @@
                 <img src="https://www.mazda.com.au/49c6b8/globalassets/beyond-the-drive/2024/06-mazdas-red-a-co-evolution-with-technology-and-brand-strategy/mazdas-red-hero-1400-x-1400px.jpg" alt="Mazda Soul Red Crystal" loading="lazy">
                 <div class="gallery-overlay">
                     <div class="gallery-title">Mazda 2 - Soul Red Crystal</div>
-                    <div class="gallery-tags">
-                        <span class="gallery-tag">#พ่นสีแคนดี้</span>
-                        <span class="gallery-tag gold">#สีเงาฉ่ำ</span>
-                    </div>
+                    <div class="gallery-tags"><span class="gallery-tag">#พ่นสีแคนดี้</span><span class="gallery-tag gold">#สีเงาฉ่ำ</span></div>
                 </div>
                 <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
             </div>
@@ -311,10 +329,7 @@
                 <img src="https://trademe.tmcdn.co.nz/photoserver/full/2300448087.jpg" alt="Isuzu D-Max Silver Metallic" loading="lazy">
                 <div class="gallery-overlay">
                     <div class="gallery-title">Isuzu D-Max - Silver Metallic</div>
-                    <div class="gallery-tags">
-                        <span class="gallery-tag">#เก็บรอยรอบคัน</span>
-                        <span class="gallery-tag">#Metallic</span>
-                    </div>
+                    <div class="gallery-tags"><span class="gallery-tag">#เก็บรอยรอบคัน</span><span class="gallery-tag">#Metallic</span></div>
                 </div>
                 <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
             </div>
@@ -322,10 +337,7 @@
                 <img src="https://images.medialinksonline.com/4564517x1350x900xFFFFFFxE.jpg" alt="Honda Forza Custom Blue" loading="lazy">
                 <div class="gallery-overlay">
                     <div class="gallery-title">Honda Forza - Custom Blue</div>
-                    <div class="gallery-tags">
-                        <span class="gallery-tag">#ทำสีมอเตอร์ไซค์</span>
-                        <span class="gallery-tag gold">#น้ำเงินแก้ว</span>
-                    </div>
+                    <div class="gallery-tags"><span class="gallery-tag">#ทำสีมอเตอร์ไซค์</span><span class="gallery-tag gold">#น้ำเงินแก้ว</span></div>
                 </div>
                 <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
             </div>
@@ -333,10 +345,7 @@
                 <img src="https://imgcdn.zigwheels.co.th/large/gallery/color/22/236/nissan-almera-color-749406.jpg" alt="Nissan Almera Gun Metal" loading="lazy">
                 <div class="gallery-overlay">
                     <div class="gallery-title">Nissan Almera - Gun Metal</div>
-                    <div class="gallery-tags">
-                        <span class="gallery-tag">#พ่นสีล้อแม็ก</span>
-                        <span class="gallery-tag">#สีเทากันส์</span>
-                    </div>
+                    <div class="gallery-tags"><span class="gallery-tag">#พ่นสีล้อแม็ก</span><span class="gallery-tag">#สีเทากันส์</span></div>
                 </div>
                 <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
             </div>
@@ -344,10 +353,7 @@
                 <img src="https://media.karousell.com/media/photos/products/2024/10/9/custom_car_spray_painting__hig_1728454588_a925f691_progressive" alt="Custom Car Spray Painting" loading="lazy">
                 <div class="gallery-overlay">
                     <div class="gallery-title">Suzuki Swift - Hot Pink Custom</div>
-                    <div class="gallery-tags">
-                        <span class="gallery-tag red">#งานCustom</span>
-                        <span class="gallery-tag gold">#สีชมพูพิเศษ</span>
-                    </div>
+                    <div class="gallery-tags"><span class="gallery-tag red">#งานCustom</span><span class="gallery-tag gold">#สีชมพูพิเศษ</span></div>
                 </div>
                 <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
             </div>
@@ -355,10 +361,7 @@
                 <img src="https://excelautobodyshop.com/wp-content/uploads/2023/01/2019-Dodge-Charger-Longwood-685x468.jpg" alt="Before After Repair" loading="lazy">
                 <div class="gallery-overlay">
                     <div class="gallery-title">Dodge Charger - ซ่อมสีกันชนท้าย</div>
-                    <div class="gallery-tags">
-                        <span class="gallery-tag red">#งานซ่อม</span>
-                        <span class="gallery-tag">#BeforeAfter</span>
-                    </div>
+                    <div class="gallery-tags"><span class="gallery-tag red">#งานซ่อม</span><span class="gallery-tag">#BeforeAfter</span></div>
                 </div>
                 <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
             </div>
@@ -366,10 +369,7 @@
                 <img src="https://image.made-in-china.com/2f0j00IMmbVdQCLpzS/China-Factory-High-Gloss-Car-Automotive-Clear-Coat-2K-Mirror-Effect-Varnish.webp" alt="2K Clear Coat Mirror Effect" loading="lazy">
                 <div class="gallery-overlay">
                     <div class="gallery-title">งานเคลือบเงา 2K Mirror Effect</div>
-                    <div class="gallery-tags">
-                        <span class="gallery-tag">#เคลือบเงา</span>
-                        <span class="gallery-tag gold">#MirrorFinish</span>
-                    </div>
+                    <div class="gallery-tags"><span class="gallery-tag">#เคลือบเงา</span><span class="gallery-tag gold">#MirrorFinish</span></div>
                 </div>
                 <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
             </div>
@@ -377,10 +377,7 @@
                 <img src="https://marvel-b1-cdn.bc0a.com/f00000000270511/s19525.pcdn.co/wp-content/uploads/2022/06/auto-body-refinish.jpg" alt="Auto Body Refinish" loading="lazy">
                 <div class="gallery-overlay">
                     <div class="gallery-title">งานซ่อมสีรอบคัน - เกรดอู่</div>
-                    <div class="gallery-tags">
-                        <span class="gallery-tag red">#งานซ่อม</span>
-                        <span class="gallery-tag">#เกรดอู่</span>
-                    </div>
+                    <div class="gallery-tags"><span class="gallery-tag red">#งานซ่อม</span><span class="gallery-tag">#เกรดอู่</span></div>
                 </div>
                 <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
             </div>
@@ -402,7 +399,7 @@
                     </div>
                     <div class="compare-info">
                         <h4>Honda Civic - ซ่อมสีกันชนหน้า</h4>
-                        <p>ใช้สีรองพื้น PK Primer Surfacer 2K + สีพ่น PK 2K Basecoat + เคลือบเงา PK Clear Coat Anti-Scratch</p>
+                        <p>ใช้สีรองพื้น 2K + สีพ่น Basecoat + เคลือบเงา Clear Coat Anti-Scratch</p>
                         <div class="compare-meta">
                             <span><i class="fas fa-clock"></i> 3 วัน</span>
                             <span><i class="fas fa-paint-roller"></i> ระบบ 2K</span>
@@ -419,7 +416,7 @@
                     </div>
                     <div class="compare-info">
                         <h4>Mazda 2 - พ่นสีแคนดี้รอบคัน</h4>
-                        <p>สีแคนดี้ Soul Red Crystal 3 ชั้น พร้อมเคลือบเงา UV Protection เงาฉ่ำเหมือนรถใหม่ป้ายแดง</p>
+                        <p>สีแคนดี้ Soul Red Crystal 3 ชั้น พร้อมเคลือบเงา UV Protection เงาฉ่ำเหมือนรถใหม่</p>
                         <div class="compare-meta">
                             <span><i class="fas fa-clock"></i> 5 วัน</span>
                             <span><i class="fas fa-paint-roller"></i> สีแคนดี้</span>
@@ -442,10 +439,7 @@
                     <p class="testi-text">"สีที่ร้าน PK เงาฉ่ำมาก ไม่ต่างจากศูนย์เลย ราคาถูกกว่าครึ่ง ประทับใจสุดๆ จะกลับมาใช้บริการอีกแน่นอน"</p>
                     <div class="testi-author">
                         <div class="testi-avatar">ส</div>
-                        <div>
-                            <div class="testi-name">สมชาย วงษ์ใหญ่</div>
-                            <div class="testi-role">Honda Civic 2019</div>
-                        </div>
+                        <div><div class="testi-name">สมชาย วงษ์ใหญ่</div><div class="testi-role">Honda Civic 2019</div></div>
                     </div>
                 </div>
                 <div class="testi-card">
@@ -453,10 +447,7 @@
                     <p class="testi-text">"สั่งสีพ่นออนไลน์ไปใช้ที่อู่ประจำ ช่างบอกว่าสีคุณภาพดีมาก เกลี่ยง่าย เงาสวย ไม่มีรอยตะกอน สั่งซื้อรอบที่ 3 แล้ว"</p>
                     <div class="testi-author">
                         <div class="testi-avatar">น</div>
-                        <div>
-                            <div class="testi-name">นายอู่ ประจำซอย</div>
-                            <div class="testi-role">เจ้าของอู่ซ่อมรถ</div>
-                        </div>
+                        <div><div class="testi-name">นายอู่ ประจำซอย</div><div class="testi-role">เจ้าของอู่ซ่อมรถ</div></div>
                     </div>
                 </div>
                 <div class="testi-card">
@@ -464,66 +455,42 @@
                     <p class="testi-text">"ทำสีมอเตอร์ไซค์ Forza สีน้ำเงินแก้ว ผลลัพธ์ออกมาสวยมากเกินคาด สีติดทนนาน ผ่านฝนมา 6 เดือนยังเงาเหมือนเดิม"</p>
                     <div class="testi-author">
                         <div class="testi-avatar">ก</div>
-                        <div>
-                            <div class="testi-name">กิตติพงษ์ รักดี</div>
-                            <div class="testi-role">Honda Forza 350</div>
-                        </div>
+                        <div><div class="testi-name">กิตติพงษ์ รักดี</div><div class="testi-role">Honda Forza 350</div></div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- ════════════════════════════════════════ -->
-    <!-- ═══════ CLASSIC MODE CONTENT ═══════ -->
-    <!-- ════════════════════════════════════════ -->
+    <!-- ═══════ CLASSIC MODE ═══════ -->
     <div id="classicModeContent" style="display:none;">
         <div class="page-container">
             <h1 class="page-title">ผลงานสีพ่น</h1>
             <p class="page-subtitle">รวบรวมผลงานการซ่อมสีและพ่นสีรถยนต์จากลูกค้าที่ใช้ผลิตภัณฑ์ของเรา</p>
-
             <div class="gallery-grid">
                 <div class="gallery-item" onclick="openLightbox(this)">
                     <img src="https://autopainthq.com/cdn/shop/products/img0280_562e8e53-2d5b-4082-a211-1dbb7f940721.jpg?v=1683747631&width=950" alt="Honda Civic">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Honda Civic - Super Black</div>
-                        <div class="gallery-tag">#เคลือบเงาเต็มระบบ</div>
-                    </div>
+                    <div class="gallery-overlay"><div class="gallery-title">Honda Civic - Super Black</div><div class="gallery-tag">#เคลือบเงาเต็มระบบ</div></div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
                     <img src="https://www.mazda.com.au/49c6b8/globalassets/beyond-the-drive/2024/06-mazdas-red-a-co-evolution-with-technology-and-brand-strategy/mazdas-red-hero-1400-x-1400px.jpg" alt="Mazda">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Mazda 2 - Soul Red Crystal</div>
-                        <div class="gallery-tag">#พ่นสีแคนดี้ #สีเงาฉ่ำ</div>
-                    </div>
+                    <div class="gallery-overlay"><div class="gallery-title">Mazda 2 - Soul Red Crystal</div><div class="gallery-tag">#พ่นสีแคนดี้ #สีเงาฉ่ำ</div></div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
                     <img src="https://trademe.tmcdn.co.nz/photoserver/full/2300448087.jpg" alt="Isuzu">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Isuzu D-Max - Silver Metallic</div>
-                        <div class="gallery-tag">#เก็บรอยรอบคัน</div>
-                    </div>
+                    <div class="gallery-overlay"><div class="gallery-title">Isuzu D-Max - Silver Metallic</div><div class="gallery-tag">#เก็บรอยรอบคัน</div></div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
                     <img src="https://images.medialinksonline.com/4564517x1350x900xFFFFFFxE.jpg" alt="Honda Forza">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Honda Forza - Custom Blue</div>
-                        <div class="gallery-tag">#ทำสีมอเตอร์ไซค์ #น้ำเงินแก้ว</div>
-                    </div>
+                    <div class="gallery-overlay"><div class="gallery-title">Honda Forza - Custom Blue</div><div class="gallery-tag">#ทำสีมอเตอร์ไซค์ #น้ำเงินแก้ว</div></div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
                     <img src="https://imgcdn.zigwheels.co.th/large/gallery/color/22/236/nissan-almera-color-749406.jpg" alt="Nissan">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Nissan Almera - Gun Metal</div>
-                        <div class="gallery-tag">#พ่นสีล้อแม็ก #สีเทากันส์</div>
-                    </div>
+                    <div class="gallery-overlay"><div class="gallery-title">Nissan Almera - Gun Metal</div><div class="gallery-tag">#พ่นสีล้อแม็ก #สีเทากันส์</div></div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
                     <img src="https://media.karousell.com/media/photos/products/2024/10/9/custom_car_spray_painting__hig_1728454588_a925f691_progressive" alt="Custom">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Suzuki Swift - Hot Pink Custom</div>
-                        <div class="gallery-tag">#งานCustom #สีชมพูพิเศษ</div>
-                    </div>
+                    <div class="gallery-overlay"><div class="gallery-title">Suzuki Swift - Hot Pink Custom</div><div class="gallery-tag">#งานCustom #สีชมพูพิเศษ</div></div>
                 </div>
             </div>
         </div>
@@ -533,23 +500,21 @@
     <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
         <button class="lightbox-close" onclick="closeLightboxBtn(event)"><i class="fas fa-times"></i></button>
         <img class="lightbox-img" id="lightboxImg" src="" alt="">
-        <div class="lightbox-caption" id="lightboxCaption">
-            <h3></h3>
-            <p></p>
-        </div>
+        <div class="lightbox-caption" id="lightboxCaption"><h3></h3><p></p></div>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-logo">
-                    <div class="footer-logo-icon">P<span>K</span></div>
+                    <img src="asset/PK Logo-05.png" alt="PK Paint &amp; Supply Logo" class="footer-logo-img">
                     <div>
                         <div style="font-size:14px;font-weight:600;">PAINT &amp; SUPPLY</div>
-                        <div style="font-size:12px;color:#666;">สีพ่นรถยนต์คุณภาพสูง</div>
+                        <div style="font-size:12px;color:#666;">สีพ่นรถยนต์คุณภาพสูง รังสิต</div>
                     </div>
                 </div>
-                <p class="footer-desc">จำหน่ายสีพ่นรถยนต์คุณภาพสูง อุปกรณ์พ่นสีครบวงจร<br>บริการให้คำปรึกษาโดยผู้เชี่ยวชาญ</p>
+                <p class="footer-desc">จำหน่ายสีพ่นรถยนต์ทุกชนิด ทุกระบบ 2K-1K สีเบอร์ตรงรุ่นรถ<br>ผสมสีตามตัวอย่าง รับอัดสีสเปรย์กระป๋อง จัดส่งทั่วประเทศไทย</p>
             </div>
             <div class="footer-col">
                 <h4 class="footer-title">เมนู</h4>
@@ -565,26 +530,27 @@
             <div class="footer-col">
                 <h4 class="footer-title">ติดต่อเรา</h4>
                 <div class="footer-contact">
-                    <div><i class="fas fa-phone-alt"></i> 062-369-2663</div>
-                    <div><i class="fab fa-line"></i> @pkpaint</div>
-                    <div style="margin-top:10px;"><i class="fas fa-map-marker-alt"></i> ร้าน PK Paint &amp; Supply<br>ถนนมะลิวัลย์ จ.ขอนแก่น</div>
+                    <div><i class="fas fa-phone-alt"></i><a href="tel:0623692663">062-369-2663</a></div>
+                    <div><i class="fab fa-line"></i><a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener">@999snkil</a></div>
+                    <div><i class="fas fa-envelope"></i><a href="mailto:pkpaintandsupply@gmail.com">pkpaintandsupply@gmail.com</a></div>
+                    <div style="margin-top:10px;"><i class="fas fa-map-marker-alt"></i> 249/3 ม.6 ถ.รังสิต<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ต.บางพูน อ.เมือง จ.ปทุมธานี</div>
+                    <div style="margin-top:6px;"><a href="https://maps.app.goo.gl/c7nbR1D9EkWsN8GJ8" target="_blank" rel="noopener" style="color:#1e90ff;font-size:12px;"><i class="fas fa-directions" style="margin-right:4px;"></i>เปิดนำทาง Google Maps</a></div>
                 </div>
             </div>
             <div class="footer-col">
                 <h4 class="footer-title">ติดตามเรา</h4>
                 <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-line"></i></a>
+                    <a href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener" title="LINE"><i class="fab fa-line"></i></a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">© <span id="copyright-year"></span> PK Paint &amp; Supply. All Rights Reserved.</div>
+        <div class="footer-bottom">&copy; <span id="copyright-year"></span> PK Paint &amp; Supply. All Rights Reserved.</div>
     </footer>
 
     <script>
-        // Copyright year
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
         // Mobile menu
@@ -607,26 +573,17 @@
             const classicContent = document.getElementById('classicModeContent');
             const btnNew = document.getElementById('btnNew');
             const btnClassic = document.getElementById('btnClassic');
-
             if (mode === 'new') {
-                body.classList.remove('classic-mode');
-                body.classList.add('new-mode');
-                newContent.style.display = 'block';
-                classicContent.style.display = 'none';
-                btnNew.classList.add('active');
-                btnClassic.classList.remove('active');
+                body.classList.remove('classic-mode'); body.classList.add('new-mode');
+                newContent.style.display = 'block'; classicContent.style.display = 'none';
+                btnNew.classList.add('active'); btnClassic.classList.remove('active');
             } else {
-                body.classList.remove('new-mode');
-                body.classList.add('classic-mode');
-                newContent.style.display = 'none';
-                classicContent.style.display = 'block';
-                btnClassic.classList.add('active');
-                btnNew.classList.remove('active');
+                body.classList.remove('new-mode'); body.classList.add('classic-mode');
+                newContent.style.display = 'none'; classicContent.style.display = 'block';
+                btnClassic.classList.add('active'); btnNew.classList.remove('active');
             }
             localStorage.setItem('portfolioMode', mode);
         }
-
-        // Restore saved mode
         const savedMode = localStorage.getItem('portfolioMode') || 'new';
         switchMode(savedMode);
 
@@ -634,10 +591,8 @@
         function filterGallery(btn, cat) {
             document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
             btn.classList.add('active');
-            const items = document.querySelectorAll('#galleryMasonry .gallery-item');
-            items.forEach(item => {
-                const show = cat === 'all' || item.dataset.cat === cat;
-                item.style.display = show ? '' : 'none';
+            document.querySelectorAll('#galleryMasonry .gallery-item').forEach(item => {
+                item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
             });
         }
 
@@ -658,9 +613,25 @@
                 document.body.style.overflow = '';
             }
         }
-        function closeLightboxBtn(e) {
-            e.stopPropagation();
-            closeLightbox();
+        function closeLightboxBtn(e) { e.stopPropagation(); closeLightbox(); }
+
+        // Scroll-in animation
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.gallery-item, .compare-card, .testi-card').forEach(el => {
+                el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
         }
     </script>
 </body>

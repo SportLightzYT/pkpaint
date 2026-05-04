@@ -2,21 +2,25 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PK Paint & Supply - สินค้า</title>
-    <meta name="description" content="เลือกซื้อสีพ่นรถยนต์และอุปกรณ์พ่นสีคุณภาพสูงจาก PK Paint & Supply พร้อมโปรโมชั่นและบริการให้คำปรึกษา">
-    <meta property="og:title" content="PK Paint & Supply - สินค้า">
-    <meta property="og:description" content="สินค้าสีพ่นรถยนต์ อุปกรณ์พ่นสีครบวงจร">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>PK Paint &amp; Supply - สินค้า</title>
+    <meta name="description" content="เลือกซื้อสีพ่นรถยนต์และอุปกรณ์พ่นสีคุณภาพสูงจาก PK Paint &amp; Supply พร้อมโปรโมชั่นและบริการให้คำปรึกษา รังสิต ปทุมธานี">
+    <meta property="og:title" content="PK Paint &amp; Supply - สินค้า">
+    <meta property="og:description" content="สินค้าสีพ่นรถยนต์ อุปกรณ์พ่นสีครบวงจร จัดส่งทั่วประเทศ">
     <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Kanit', sans-serif; background-color: #0a0a0a; color: #fff; overflow-x: hidden; }
-        
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Kanit', sans-serif; background-color: #0a0a0a; color: #fff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        a { color: inherit; text-decoration: none; }
+
         /* ── Navbar ── */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 60px; background: rgba(0,0,0,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 60px; background: rgba(0,0,0,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
         .logo-section { display: flex; align-items: center; gap: 12px; }
+        .logo-img { height: 42px; width: auto; object-fit: contain; }
+        .footer-logo-img { height: 38px; width: auto; object-fit: contain; }
         .logo-icon { font-size: 36px; font-weight: 700; color: #fff; font-style: italic; }
         .logo-icon span { color: #1e90ff; }
         .logo-text { font-size: 12px; line-height: 1.4; color: #ccc; }
@@ -25,11 +29,13 @@
         .nav-links a:hover, .nav-links a.active { color: #1e90ff; }
         .nav-right { display: flex; align-items: center; gap: 20px; }
         .phone { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #fff; }
-        .btn-contact { background: #1e90ff; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.3s; }
-        .btn-contact:hover { background: #1873cc; }
+        .phone a { text-decoration: none; color: #fff; transition: color 0.3s; }
+        .phone a:hover { color: #1e90ff; }
+        .btn-contact { background: #1e90ff; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.3s, transform 0.3s; white-space: nowrap; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+        .btn-contact:hover { background: #1873cc; transform: translateY(-1px); }
 
         /* ── Hamburger ── */
-        .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; z-index: 1100; }
+        .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; z-index: 1100; min-width: 44px; min-height: 44px; }
         .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease; }
         .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -38,26 +44,28 @@
         /* ── Mobile Nav ── */
         .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
         .mobile-nav.open { opacity: 1; pointer-events: all; }
-        .mobile-nav a { color: #fff; text-decoration: none; font-size: 22px; font-weight: 500; letter-spacing: 1px; transition: color 0.3s; }
+        .mobile-nav a { color: #fff; text-decoration: none; font-size: 22px; font-weight: 500; letter-spacing: 1px; transition: color 0.3s; padding: 8px 16px; }
         .mobile-nav a:hover, .mobile-nav a.active { color: #1e90ff; }
-        .mobile-nav-contact { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); width: 220px; }
+        .mobile-nav-contact { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); width: 240px; }
         .mobile-nav-contact a { font-size: 15px !important; color: #aaa !important; }
 
         /* ── Page Content ── */
         .page-container { padding: 120px 60px 60px; max-width: 1400px; margin: 0 auto; }
         .breadcrumb { font-size: 13px; color: #888; margin-bottom: 20px; }
-        .breadcrumb a { color: #1e90ff; text-decoration: none; }
+        .breadcrumb a { color: #1e90ff; text-decoration: none; transition: color 0.3s; }
+        .breadcrumb a:hover { color: #fff; }
         .page-title { font-size: 36px; font-weight: 600; margin-bottom: 30px; text-align: center; }
-        
+
         .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .item-count { font-size: 14px; color: #aaa; }
         .item-count span { color: #fff; font-weight: 500; }
         .sort-box { display: flex; align-items: center; gap: 10px; font-size: 14px; }
-        .sort-select { background: #1a1a1a; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 4px; font-family: 'Kanit', sans-serif; outline: none; }
+        .sort-select { background: #1a1a1a; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 4px; font-family: 'Kanit', sans-serif; outline: none; cursor: pointer; }
+        .sort-select:focus { border-color: #1e90ff; }
 
         /* ── Category Tabs ── */
         .category-tabs { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
-        .cat-tab { background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); color: #aaa; padding: 8px 20px; border-radius: 20px; font-family: 'Kanit'; font-size: 13px; cursor: pointer; transition: all 0.25s; }
+        .cat-tab { background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); color: #aaa; padding: 8px 20px; border-radius: 20px; font-family: 'Kanit'; font-size: 13px; cursor: pointer; transition: all 0.25s; min-height: 40px; display: inline-flex; align-items: center; }
         .cat-tab:hover { border-color: #1e90ff; color: #fff; }
         .cat-tab.active { background: #1e90ff; border-color: #1e90ff; color: #fff; }
 
@@ -84,16 +92,56 @@
         .product-rating span { color: #666; }
         .product-sold { font-size: 11px; color: #555; }
         .product-rating-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; margin-top: 4px; }
-        .btn-shopee { background: #EE4D2D; color: #fff; border: none; width: 100%; padding: 10px; border-radius: 5px; font-family: 'Kanit'; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.25s; display: flex; align-items: center; justify-content: center; gap: 7px; text-decoration: none; margin-bottom: 7px; }
+        .btn-shopee { background: #EE4D2D; color: #fff; border: none; width: 100%; padding: 10px; border-radius: 5px; font-family: 'Kanit'; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.25s; display: flex; align-items: center; justify-content: center; gap: 7px; text-decoration: none; margin-bottom: 7px; min-height: 44px; }
         .btn-shopee:hover { background: #d43d1f; }
-        .btn-view { background: transparent; color: #777; border: 1px solid #2a2a2a; width: 100%; padding: 8px; border-radius: 5px; font-family: 'Kanit'; font-size: 12px; cursor: pointer; transition: all 0.25s; }
+        .btn-view { background: transparent; color: #777; border: 1px solid #2a2a2a; width: 100%; padding: 8px; border-radius: 5px; font-family: 'Kanit'; font-size: 12px; cursor: pointer; transition: all 0.25s; min-height: 40px; }
         .btn-view:hover { border-color: #1e90ff; color: #1e90ff; }
 
+        /* ── Quick View Modal ── */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
+        .modal-content { background: #151515; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; max-width: 520px; width: 90%; max-height: 85vh; overflow-y: auto; padding: 32px; position: relative; transform: translateY(20px) scale(0.95); transition: transform 0.3s ease; }
+        .modal-overlay.active .modal-content { transform: translateY(0) scale(1); }
+        .modal-close { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #aaa; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 14px; transition: all 0.3s; }
+        .modal-close:hover { background: #ff4757; color: #fff; border-color: #ff4757; }
+        .modal-img { width: 100%; aspect-ratio: 16/9; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .modal-img i { font-size: 64px; color: rgba(255,255,255,0.15); }
+        .modal-category { font-size: 12px; color: #1e90ff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .modal-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
+        .modal-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px; }
+        .modal-price { font-size: 28px; font-weight: 700; color: #ff4757; }
+        .modal-price-old { font-size: 16px; color: #555; text-decoration: line-through; }
+        .modal-desc { color: #aaa; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+        .modal-specs { list-style: none; margin-bottom: 24px; }
+        .modal-specs li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; color: #ccc; display: flex; gap: 10px; }
+        .modal-specs li i { color: #1e90ff; width: 18px; flex-shrink: 0; margin-top: 2px; }
+        .modal-specs li strong { color: #fff; min-width: 100px; }
+        .modal-buttons { display: flex; gap: 10px; }
+        .modal-btn-shopee { flex: 1; background: #EE4D2D; color: #fff; border: none; padding: 12px; border-radius: 8px; font-family: 'Kanit'; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; min-height: 48px; }
+        .modal-btn-shopee:hover { background: #d43d1f; }
+        .modal-btn-line { flex: 1; background: #00c300; color: #fff; border: none; padding: 12px; border-radius: 8px; font-family: 'Kanit'; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; min-height: 48px; }
+        .modal-btn-line:hover { background: #00a300; }
+
+        /* ── Pagination ── */
         .pagination { display: flex; justify-content: center; gap: 10px; margin-top: 50px; }
-        .page-btn { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #1a1a1a; border: 1px solid #333; border-radius: 4px; color: #fff; cursor: pointer; text-decoration: none; transition: 0.3s; }
+        .page-btn { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #1a1a1a; border: 1px solid #333; border-radius: 4px; color: #fff; cursor: pointer; text-decoration: none; transition: 0.3s; font-family: 'Kanit'; font-size: 14px; }
         .page-btn:hover, .page-btn.active { background: #1e90ff; border-color: #1e90ff; }
 
-        /* ── Footer (Standard) ── */
+        /* ── CTA Section ── */
+        .products-cta { padding: 60px; text-align: center; background: linear-gradient(135deg, #0d1f2d, #1a0a2e); position: relative; overflow: hidden; margin-top: 40px; border-radius: 16px; max-width: 1280px; margin-left: auto; margin-right: auto; }
+        .products-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(30,144,255,0.08) 0%, transparent 60%); }
+        .products-cta-content { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+        .products-cta h2 { font-size: 28px; font-weight: 600; margin-bottom: 12px; }
+        .products-cta p { color: #aaa; margin-bottom: 24px; font-size: 15px; line-height: 1.7; }
+        .products-cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .btn-primary { background: #1e90ff; color: #fff; border: none; padding: 14px 32px; border-radius: 8px; font-family: 'Kanit'; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; }
+        .btn-primary:hover { background: #1873cc; transform: translateY(-2px); }
+        .btn-line { background: #00c300; color: #fff; border: none; padding: 14px 32px; border-radius: 8px; font-family: 'Kanit'; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; }
+        .btn-line:hover { background: #00a300; transform: translateY(-2px); }
+        .btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 14px 32px; border-radius: 8px; font-family: 'Kanit'; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; }
+        .btn-secondary:hover { border-color: #1e90ff; color: #1e90ff; }
+
+        /* ── Footer ── */
         .footer { background: #050505; padding: 50px 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; }
         .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
         .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
@@ -107,6 +155,8 @@
         .footer-links a:hover { color: #1e90ff; }
         .footer-contact { color: #666; font-size: 13px; line-height: 1.8; }
         .footer-contact i { color: #1e90ff; margin-right: 8px; width: 16px; }
+        .footer-contact a { color: #666; text-decoration: none; transition: color 0.3s; }
+        .footer-contact a:hover { color: #1e90ff; }
         .footer-social { display: flex; gap: 12px; margin-top: 15px; }
         .footer-social a { width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; font-size: 14px; transition: all 0.3s; text-decoration: none; }
         .footer-social a:hover { background: #1e90ff; color: #fff; }
@@ -119,32 +169,56 @@
             .footer { padding: 50px 30px 20px; }
             .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
             .page-container { padding: 120px 30px 60px; }
+            .products-cta { margin: 30px; padding: 50px 30px; }
         }
         @media (max-width: 768px) {
-            .navbar { padding: 14px 20px; }
+            .navbar { padding: 12px 16px; }
             .nav-links { display: none; }
             .phone { display: none; }
+            .btn-contact { display: none; }
             .hamburger { display: flex; }
             .mobile-nav { display: flex; }
+            .logo-icon { font-size: 28px; }
+            .logo-text { font-size: 10px; }
             .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
             .toolbar { flex-direction: column; gap: 15px; align-items: flex-start; }
             .page-container { padding: 100px 20px 40px; }
+            .page-title { font-size: 28px; }
+            .modal-content { padding: 24px; }
+            .modal-title { font-size: 17px; }
+            .modal-price { font-size: 22px; }
+            .modal-buttons { flex-direction: column; }
+            .products-cta { margin: 20px; padding: 40px 20px; }
+            .products-cta h2 { font-size: 22px; }
+            .products-cta-buttons { flex-direction: column; align-items: stretch; }
+            .products-cta-buttons a { justify-content: center; }
             .footer { padding: 40px 20px 20px; margin-top: 40px; }
             .footer-content { grid-template-columns: 1fr; gap: 24px; }
+            .footer-col { text-align: center; }
+            .footer-logo { justify-content: center; }
+            .footer-contact div { justify-content: center; display: flex; align-items: center; }
+            .footer-social { justify-content: center; }
         }
         @media (max-width: 480px) {
+            .navbar { padding: 10px 12px; }
             .logo-text { display: none; }
+            .logo-icon { font-size: 24px; }
             .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .page-title { font-size: 28px; }
+            .page-title { font-size: 24px; }
             .product-info { padding: 8px 10px 10px; }
+            .mobile-nav a { font-size: 18px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo-section">
-            <div class="logo-icon">P<span>K</span></div>
-            <div class="logo-text">PAINT &amp; SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div>
+            <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+                <img src="asset/PK Logo-05.png" alt="PK Paint &amp; Supply Logo" class="logo-img">
+                <div class="logo-text">PAINT &amp; SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div>
+            </a>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">หน้าแรก</a></li>
@@ -155,14 +229,15 @@
             <li><a href="contact.html">ติดต่อเรา</a></li>
         </ul>
         <div class="nav-right">
-            <div class="phone"><i class="fas fa-phone-alt"></i> 062-369-2663</div>
-            <button class="btn-contact" onclick="window.location.href='contact.html'">ติดต่อสอบถาม</button>
+            <div class="phone"><i class="fas fa-phone-alt"></i> <a href="tel:0623692663">062-369-2663</a></div>
+            <a class="btn-contact" href="contact.html">ติดต่อสอบถาม</a>
             <button class="hamburger" id="hamburger" aria-label="เปิดเมนู" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
+    <!-- Mobile Nav -->
     <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="เมนูหลัก">
         <a href="index.html">หน้าแรก</a>
         <a href="products.html" class="active">สินค้า</a>
@@ -172,7 +247,28 @@
         <a href="contact.html">ติดต่อเรา</a>
         <div class="mobile-nav-contact">
             <a href="tel:0623692663"><i class="fas fa-phone-alt" style="margin-right:8px;color:#1e90ff;"></i>062-369-2663</a>
-            <a href="#"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @pkpaint</a>
+            <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @999snkil</a>
+            <a href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" style="margin-right:8px;color:#1877f2;"></i>Facebook</a>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="รายละเอียดสินค้า">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="ปิด"><i class="fas fa-times"></i></button>
+            <div class="modal-img" id="modalImg"><i class="fas fa-spray-can"></i></div>
+            <div class="modal-category" id="modalCategory"></div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div class="modal-price-row">
+                <span class="modal-price" id="modalPrice"></span>
+                <span class="modal-price-old" id="modalPriceOld"></span>
+            </div>
+            <p class="modal-desc" id="modalDesc"></p>
+            <ul class="modal-specs" id="modalSpecs"></ul>
+            <div class="modal-buttons">
+                <a href="https://shopee.co.th" target="_blank" rel="noopener" class="modal-btn-shopee" id="modalShopee"><i class="fas fa-shopping-cart"></i> สั่งซื้อ Shopee</a>
+                <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener" class="modal-btn-line"><i class="fab fa-line"></i> สอบถาม LINE</a>
+            </div>
         </div>
     </div>
 
@@ -180,29 +276,29 @@
         <div class="breadcrumb">
             <a href="index.html">หน้าแรก</a> <i class="fas fa-chevron-right" style="font-size: 10px; margin: 0 8px;"></i> สินค้าทั้งหมด
         </div>
-        
+
         <h1 class="page-title">สินค้าทั้งหมด</h1>
 
         <!-- Category Tabs -->
-        <div class="category-tabs">
-            <button class="cat-tab active" onclick="filterCat(this,'all')">ทั้งหมด</button>
-            <button class="cat-tab" onclick="filterCat(this,'paint')">สีพ่นรถยนต์</button>
-            <button class="cat-tab" onclick="filterCat(this,'primer')">สีรองพื้น</button>
-            <button class="cat-tab" onclick="filterCat(this,'clear')">เคลือบเงา</button>
-            <button class="cat-tab" onclick="filterCat(this,'tool')">อุปกรณ์พ่นสี</button>
-            <button class="cat-tab" onclick="filterCat(this,'polish')">น้ำยาขัดสี</button>
+        <div class="category-tabs" role="tablist" aria-label="หมวดหมู่สินค้า">
+            <button class="cat-tab active" onclick="filterCat(this,'all')" role="tab" aria-selected="true">ทั้งหมด</button>
+            <button class="cat-tab" onclick="filterCat(this,'paint')" role="tab" aria-selected="false">สีพ่นรถยนต์</button>
+            <button class="cat-tab" onclick="filterCat(this,'primer')" role="tab" aria-selected="false">สีรองพื้น</button>
+            <button class="cat-tab" onclick="filterCat(this,'clear')" role="tab" aria-selected="false">เคลือบเงา</button>
+            <button class="cat-tab" onclick="filterCat(this,'tool')" role="tab" aria-selected="false">อุปกรณ์พ่นสี</button>
+            <button class="cat-tab" onclick="filterCat(this,'polish')" role="tab" aria-selected="false">น้ำยาขัดสี</button>
         </div>
 
         <div class="toolbar">
             <div class="item-count">พบ <span id="item-count">12</span> รายการ</div>
             <div class="sort-box">
-                <label>เรียงโดย</label>
-                <select class="sort-select">
-                    <option>แนะนำ</option>
-                    <option>ราคาน้อย → มาก</option>
-                    <option>ราคามาก → น้อย</option>
-                    <option>ใหม่ล่าสุด</option>
-                    <option>ขายดีที่สุด</option>
+                <label for="sortSelect">เรียงโดย</label>
+                <select class="sort-select" id="sortSelect" onchange="sortProducts(this.value)">
+                    <option value="recommended">แนะนำ</option>
+                    <option value="price-asc">ราคาน้อย → มาก</option>
+                    <option value="price-desc">ราคามาก → น้อย</option>
+                    <option value="newest">ใหม่ล่าสุด</option>
+                    <option value="bestselling">ขายดีที่สุด</option>
                 </select>
             </div>
         </div>
@@ -210,7 +306,10 @@
         <div class="product-grid" id="productGrid">
 
             <!-- 1 -->
-            <div class="product-card" data-cat="paint">
+            <div class="product-card" data-cat="paint" data-price="95" data-sold="340" data-new="0"
+                 data-title="PK 2K Basecoat สีพ่นรถยนต์ Toyota Yaris | ระบบ 2K Fast Dry"
+                 data-desc="สีพ่นรถยนต์ระบบ 2K Fast Dry สำหรับ Toyota Yaris ทุกเฉดสี แห้งเร็ว เนื้อสีแน่น สีเบอร์ตรงจากโรงงาน พร้อมใช้งาน"
+                 data-specs="ระบบสี: 2K Basecoat Fast Dry|ขนาด: 200 มล.|ประเภท: สีเบอร์ตรงรุ่นรถ|แห้งสัมผัส: 15-20 นาที|พื้นที่ครอบคลุม: 0.5-0.8 ตรม./กระป๋อง">
                 <span class="product-badge badge-hot">HOT</span>
                 <div class="product-img-box" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
                     <i class="fas fa-spray-can"></i>
@@ -235,16 +334,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 340</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/><path d="M13 15h12M13 19h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 2 -->
-            <div class="product-card" data-cat="paint">
+            <div class="product-card" data-cat="paint" data-price="150" data-sold="90" data-new="1"
+                 data-title="PK 2K Basecoat สีพ่นรถยนต์ Mazda 2 | Soul Red Crystal"
+                 data-desc="สีพ่นรถยนต์ Mazda 2 เฉด Soul Red Crystal สีแดงคริสตัลเฉพาะรุ่น ระบบ 2K คุณภาพสูง สีตรงจากโรงงาน ให้ประกายสีลึกเหมือนสีเดิม"
+                 data-specs="ระบบสี: 2K Basecoat|ขนาด: 200 มล.|ประเภท: สีเบอร์ตรง Soul Red Crystal|แห้งสัมผัส: 15-20 นาที|เหมาะสำหรับ: Mazda 2 / CX-3">
                 <span class="product-badge badge-new">NEW</span>
                 <div class="product-img-box" style="background: linear-gradient(135deg, #2d1515, #1a0a0a);">
                     <i class="fas fa-spray-can"></i>
@@ -267,16 +369,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 90</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 3 -->
-            <div class="product-card" data-cat="paint">
+            <div class="product-card" data-cat="paint" data-price="110" data-sold="120" data-new="0"
+                 data-title="PK 2K Basecoat สีพ่นรถยนต์ Isuzu D-Max | Pro Series"
+                 data-desc="สีพ่นรถยนต์ Isuzu D-Max ระบบ 2K Pro Series ทนทานสูง เหมาะกับรถกระบะ สีเบอร์ตรงทุกเฉด แห้งเร็ว เกาะแน่น"
+                 data-specs="ระบบสี: 2K Basecoat Pro|ขนาด: 200 มล.|ประเภท: สีเบอร์ตรงรุ่นรถ|แห้งสัมผัส: 15-20 นาที|เหมาะสำหรับ: Isuzu D-Max / MU-X">
                 <div class="product-img-box" style="background: linear-gradient(135deg, #101820, #1c2b3a);">
                     <i class="fas fa-spray-can"></i>
                 </div>
@@ -300,16 +405,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 120</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 4 -->
-            <div class="product-card" data-cat="paint">
+            <div class="product-card" data-cat="paint" data-price="85" data-sold="55" data-new="0"
+                 data-title="PK 2K Basecoat สีพ่นรถยนต์ Honda Civic | Midnight Black"
+                 data-desc="สีพ่นรถยนต์ Honda Civic สีดำ Midnight Black ระบบ 2K เนื้อสีแน่น ดำสนิท เงางาม เหมาะสำหรับซ่อมสีเฉพาะจุดหรือทำสีทั้งคัน"
+                 data-specs="ระบบสี: 2K Basecoat|ขนาด: 200 มล.|ประเภท: สีเบอร์ตรง Midnight Black|แห้งสัมผัส: 15-20 นาที|เหมาะสำหรับ: Honda Civic ทุกเจน">
                 <span class="product-badge badge-sale">SALE</span>
                 <div class="product-img-box" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a);">
                     <i class="fas fa-spray-can"></i>
@@ -333,16 +441,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 55</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 5 -->
-            <div class="product-card" data-cat="primer">
+            <div class="product-card" data-cat="primer" data-price="280" data-sold="420" data-new="0"
+                 data-title="PK Primer Surfacer 2K | รองพื้นกลบรอย เกรดอู่มืออาชีพ"
+                 data-desc="สีรองพื้น 2K Surfacer กลบรอยขีดข่วนได้ดีเยี่ยม ขัดง่าย เกรดอู่มืออาชีพ ใช้ก่อนพ่นสีจริง เพิ่มการยึดเกาะและปกป้องพื้นผิว"
+                 data-specs="ระบบสี: Primer Surfacer 2K|ขนาด: 1 ลิตร|ประเภท: รองพื้นกลบรอย|แห้งขัดได้: 2-3 ชั่วโมง|การใช้งาน: รองพื้นก่อนพ่นสีจริง">
                 <span class="product-badge badge-hot">HOT</span>
                 <div class="product-img-box" style="background: linear-gradient(135deg, #1f1a0e, #2e2510);">
                     <i class="fas fa-fill-drip"></i>
@@ -365,16 +476,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 420</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 6 -->
-            <div class="product-card" data-cat="primer">
+            <div class="product-card" data-cat="primer" data-price="380" data-sold="210" data-new="0"
+                 data-title="PK Epoxy Primer 2K | รองพื้น Epoxy กันสนิม งานซ่อมโครงสร้าง"
+                 data-desc="รองพื้น Epoxy 2K กันสนิม เหมาะสำหรับงานซ่อมโครงสร้างเหล็ก ยึดเกาะดีเยี่ยม ทนทานต่อความชื้นและสารเคมี"
+                 data-specs="ระบบสี: Epoxy Primer 2K|ขนาด: 1 ลิตร|ประเภท: รองพื้นกันสนิม|แห้งขัดได้: 4-6 ชั่วโมง|การใช้งาน: งานซ่อมโครงสร้าง / เหล็กเปลือย">
                 <div class="product-img-box" style="background: linear-gradient(135deg, #111820, #192030);">
                     <i class="fas fa-fill-drip"></i>
                 </div>
@@ -394,16 +508,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 210</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 7 -->
-            <div class="product-card" data-cat="clear">
+            <div class="product-card" data-cat="clear" data-price="520" data-sold="580" data-new="0"
+                 data-title="PK Clear Coat 2K Anti-Scratch | เคลือบเงากันรอยขีดข่วน UV Protection"
+                 data-desc="น้ำยาเคลือบเงา 2K สูตร Anti-Scratch กันรอยขีดข่วน พร้อม UV Protection ปกป้องสีจากรังสี UV เงางามทนทานยาวนาน"
+                 data-specs="ระบบสี: Clear Coat 2K|ขนาด: 1 ลิตร|คุณสมบัติ: Anti-Scratch + UV Protection|แห้งสัมผัส: 30 นาที|ความเงา: High Gloss">
                 <span class="product-badge badge-hot">HOT</span>
                 <div class="product-img-box" style="background: linear-gradient(135deg, #0d1f2d, #1a3344);">
                     <i class="fas fa-tint"></i>
@@ -422,16 +539,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 580</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 8 -->
-            <div class="product-card" data-cat="clear">
+            <div class="product-card" data-cat="clear" data-price="580" data-sold="88" data-new="1"
+                 data-title="PK Matte Clear 2K | เคลือบด้าน Matte Finish Premium"
+                 data-desc="น้ำยาเคลือบด้าน 2K สูตร Premium ให้ผิวสัมผัส Matte Finish เรียบเนียน ไม่เงา เหมาะกับรถที่ต้องการสไตล์ด้าน"
+                 data-specs="ระบบสี: Matte Clear 2K|ขนาด: 1 ลิตร|คุณสมบัติ: Matte Finish|แห้งสัมผัส: 30 นาที|ความเงา: Matte / Satin">
                 <span class="product-badge badge-new">NEW</span>
                 <div class="product-img-box" style="background: linear-gradient(135deg, #0a1628, #0f2040);">
                     <i class="fas fa-tint"></i>
@@ -449,16 +569,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 88</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 9 -->
-            <div class="product-card" data-cat="tool">
+            <div class="product-card" data-cat="tool" data-price="4890" data-sold="42" data-new="0"
+                 data-title="ปืนพ่นสี SATA Jet X 5500 HVLP | หัว 1.3 มม. พร้อมถ้วยอะลูมิเนียม"
+                 data-desc="ปืนพ่นสี SATA Jet X 5500 ระบบ HVLP หัว 1.3 มม. พร้อมถ้วยอะลูมิเนียม ประหยัดสี พ่นเนียน คุณภาพระดับมืออาชีพ แบรนด์เยอรมัน"
+                 data-specs="แบรนด์: SATA|รุ่น: Jet X 5500 HVLP|หัว nozzle: 1.3 มม.|ถ้วย: อะลูมิเนียม 600 มล.|ระบบ: HVLP ประหยัดสี">
                 <div class="product-img-box" style="background: linear-gradient(135deg, #1a1200, #2a1e00);">
                     <i class="fas fa-spray-can-sparkles"></i>
                 </div>
@@ -476,16 +599,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 42</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="product-card" data-cat="tool">
+            <div class="product-card" data-cat="tool" data-price="8500" data-sold="28" data-new="0"
+                 data-title="เครื่องขัดสีดีดอล Flex PE 14-2 150 | Rotary Polisher 1400W"
+                 data-desc="เครื่องขัดสีดีดอล Flex รุ่น PE 14-2 150 กำลัง 1400W ระบบ Rotary ขัดเงาได้เร็ว ทนทาน มืออาชีพเลือกใช้ แบรนด์เยอรมัน"
+                 data-specs="แบรนด์: Flex|รุ่น: PE 14-2 150|กำลัง: 1400W|ระบบ: Rotary|ขนาดแผ่น: 150 มม.|น้ำหนัก: 2.3 กก.">
                 <span class="product-badge badge-sale">SALE</span>
                 <div class="product-img-box" style="background: linear-gradient(135deg, #1a1500, #2b2200);">
                     <i class="fas fa-gears"></i>
@@ -504,16 +630,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 28</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 11 -->
-            <div class="product-card" data-cat="polish">
+            <div class="product-card" data-cat="polish" data-price="890" data-sold="1100" data-new="0"
+                 data-title="3M Perfect-It III Compound | น้ำยาขัดสีขจัดรอยละเอียด ขนาด 1 กก."
+                 data-desc="น้ำยาขัดสี 3M Perfect-It III Compound ขจัดรอยขนแมวและรอยขีดข่วนละเอียด เนื้อครีมเนียน ขัดง่าย ไม่ทิ้งคราบ ขนาด 1 กิโลกรัม"
+                 data-specs="แบรนด์: 3M|รุ่น: Perfect-It III|ขนาด: 1 กก.|ประเภท: Compound ขัดละเอียด|ใช้กับ: เครื่องขัดสี / มือ|เหมาะสำหรับ: ขจัดรอยขนแมว">
                 <span class="product-badge badge-hot">HOT</span>
                 <div class="product-img-box" style="background: linear-gradient(135deg, #0f1e0f, #162616);">
                     <i class="fas fa-paint-roller"></i>
@@ -532,16 +661,19 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 1,100</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
             <!-- 12 -->
-            <div class="product-card" data-cat="polish">
+            <div class="product-card" data-cat="polish" data-price="750" data-sold="160" data-new="1"
+                 data-title="Meguiar's Ultimate Polish | สูตรใหม่ กันรอย + เคลือบสี ขนาด 473 มล."
+                 data-desc="น้ำยาขัดสี Meguiar's Ultimate Polish สูตรใหม่ ขัดและเคลือบในขั้นตอนเดียว ขจัดรอยหม่นหมอง เพิ่มความเงางาม ขนาด 473 มล."
+                 data-specs="แบรนด์: Meguiar's|รุ่น: Ultimate Polish|ขนาด: 473 มล.|ประเภท: Polish + Glaze|ใช้กับ: เครื่องขัดสี / มือ|เหมาะสำหรับ: ขัดเงาก่อนเคลือบ">
                 <span class="product-badge badge-new">NEW</span>
                 <div class="product-img-box" style="background: linear-gradient(135deg, #0e1a1e, #142530);">
                     <i class="fas fa-paint-roller"></i>
@@ -559,36 +691,51 @@
                         </div>
                         <span class="product-sold">ขายแล้ว 160</span>
                     </div>
-                    <a href="https://shopee.co.th" target="_blank" class="btn-shopee">
+                    <a href="https://shopee.co.th" target="_blank" rel="noopener" class="btn-shopee">
                         <svg width="16" height="16" viewBox="0 0 38 38" fill="none"><path d="M19 2C9.6 2 2 9.6 2 19s7.6 17 17 17 17-7.6 17-17S28.4 2 19 2z" fill="#fff" opacity=".2"/></svg>
                         <span class="shopee-logo-text">Shopee</span> สั่งซื้อเลย
                     </a>
-                    <button class="btn-view">ดูรายละเอียด</button>
+                    <button class="btn-view" onclick="openModal(this)">ดูรายละเอียด</button>
                 </div>
             </div>
 
         </div><!-- /product-grid -->
 
-        <div class="pagination">
-            <a href="#" class="page-btn"><i class="fas fa-chevron-left"></i></a>
-            <a href="#" class="page-btn active">1</a>
+        <div class="pagination" role="navigation" aria-label="หน้าสินค้า">
+            <a href="#" class="page-btn" aria-label="หน้าก่อนหน้า"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" class="page-btn active" aria-current="page">1</a>
             <a href="#" class="page-btn">2</a>
             <a href="#" class="page-btn">3</a>
-            <a href="#" class="page-btn"><i class="fas fa-chevron-right"></i></a>
+            <a href="#" class="page-btn" aria-label="หน้าถัดไป"><i class="fas fa-chevron-right"></i></a>
         </div>
+
+        <!-- CTA Section -->
+        <section class="products-cta">
+            <div class="products-cta-content">
+                <h2>หาสินค้าที่ต้องการไม่เจอ?</h2>
+                <p>ติดต่อเราได้เลย ทีมงานพร้อมช่วยหาสินค้าที่คุณต้องการ พร้อมให้คำปรึกษาเรื่องสีพ่นรถยนต์ฟรี</p>
+                <div class="products-cta-buttons">
+                    <a class="btn-primary" href="contact.html"><i class="fas fa-phone-alt"></i> ติดต่อเรา</a>
+                    <a class="btn-line" href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener"><i class="fab fa-line"></i> แชทผ่าน LINE</a>
+                    <a class="btn-secondary" href="promotions.html"><i class="fas fa-percent"></i> ดูโปรโมชั่น</a>
+                </div>
+            </div>
+        </section>
+
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-logo">
-                    <div class="footer-logo-icon">P<span>K</span></div>
+                    <img src="asset/PK Logo-05.png" alt="PK Paint &amp; Supply Logo" class="footer-logo-img">
                     <div>
                         <div style="font-size:14px;font-weight:600;">PAINT &amp; SUPPLY</div>
-                        <div style="font-size:12px;color:#666;">สีพ่นรถยนต์คุณภาพสูง</div>
+                        <div style="font-size:12px;color:#666;">สีพ่นรถยนต์คุณภาพสูง รังสิต</div>
                     </div>
                 </div>
-                <p class="footer-desc">จำหน่ายสีพ่นรถยนต์คุณภาพสูง อุปกรณ์พ่นสีครบวงจร<br>บริการให้คำปรึกษาโดยผู้เชี่ยวชาญ</p>
+                <p class="footer-desc">จำหน่ายสีพ่นรถยนต์ทุกชนิด ทุกระบบ 2K-1K สีเบอร์ตรงรุ่นรถ<br>ผสมสีตามตัวอย่าง รับอัดสีสเปรย์กระป๋อง จัดส่งทั่วประเทศไทย</p>
             </div>
             <div class="footer-col">
                 <h4 class="footer-title">เมนู</h4>
@@ -604,26 +751,30 @@
             <div class="footer-col">
                 <h4 class="footer-title">ติดต่อเรา</h4>
                 <div class="footer-contact">
-                    <div><i class="fas fa-phone-alt"></i> 062-369-2663</div>
-                    <div><i class="fab fa-line"></i> @pkpaint</div>
-                    <div style="margin-top:10px;"><i class="fas fa-map-marker-alt"></i> ร้าน PK Paint &amp; Supply<br>ถนนมะลิวัลย์ จ.ขอนแก่น</div>
+                    <div><i class="fas fa-phone-alt"></i><a href="tel:0623692663">062-369-2663</a></div>
+                    <div><i class="fab fa-line"></i><a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener">@999snkil</a></div>
+                    <div><i class="fas fa-envelope"></i><a href="mailto:pkpaintandsupply@gmail.com">pkpaintandsupply@gmail.com</a></div>
+                    <div style="margin-top:10px;"><i class="fas fa-map-marker-alt"></i> 249/3 ม.6 ถ.รังสิต<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ต.บางพูน อ.เมือง จ.ปทุมธานี</div>
+                    <div style="margin-top:6px;"><a href="https://maps.app.goo.gl/c7nbR1D9EkWsN8GJ8" target="_blank" rel="noopener" style="color:#1e90ff;font-size:12px;"><i class="fas fa-directions" style="margin-right:4px;"></i>เปิดนำทาง Google Maps</a></div>
                 </div>
             </div>
             <div class="footer-col">
                 <h4 class="footer-title">ติดตามเรา</h4>
                 <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-line"></i></a>
+                    <a href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener" title="LINE"><i class="fab fa-line"></i></a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">© <span id="copyright-year"></span> PK Paint &amp; Supply. All Rights Reserved.</div>
+        <div class="footer-bottom">&copy; <span id="copyright-year"></span> PK Paint &amp; Supply. All Rights Reserved.</div>
     </footer>
 
     <script>
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // Mobile menu
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');
         function toggleMenu(open) {
@@ -634,11 +785,16 @@
         }
         hamburger.addEventListener('click', () => toggleMenu(!mobileNav.classList.contains('open')));
         mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { toggleMenu(false); closeModal(); } });
 
+        // Category filter
         function filterCat(btn, cat) {
-            document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.cat-tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
             btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
             const cards = document.querySelectorAll('.product-card');
             let count = 0;
             cards.forEach(card => {
@@ -647,6 +803,98 @@
                 if (show) count++;
             });
             document.getElementById('item-count').textContent = count;
+        }
+
+        // Sort products
+        function sortProducts(value) {
+            const grid = document.getElementById('productGrid');
+            const cards = Array.from(grid.querySelectorAll('.product-card'));
+            cards.sort((a, b) => {
+                switch (value) {
+                    case 'price-asc': return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+                    case 'price-desc': return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+                    case 'bestselling': return parseInt(b.dataset.sold) - parseInt(a.dataset.sold);
+                    case 'newest': return parseInt(b.dataset.new) - parseInt(a.dataset.new);
+                    default: return 0;
+                }
+            });
+            cards.forEach(card => grid.appendChild(card));
+        }
+
+        // Quick View Modal
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+
+        function openModal(btn) {
+            const card = btn.closest('.product-card');
+            const imgEl = card.querySelector('.product-img-box');
+            const icon = imgEl.querySelector('i').cloneNode(true);
+            const bg = imgEl.style.background;
+
+            document.getElementById('modalImg').style.background = bg;
+            document.getElementById('modalImg').innerHTML = '';
+            document.getElementById('modalImg').appendChild(icon);
+            document.getElementById('modalCategory').textContent = card.querySelector('.product-category-tag').textContent;
+            document.getElementById('modalTitle').textContent = card.dataset.title;
+            document.getElementById('modalPrice').textContent = '฿' + parseInt(card.dataset.price).toLocaleString();
+
+            const oldPriceEl = card.querySelector('.product-price-old');
+            const modalOld = document.getElementById('modalPriceOld');
+            if (oldPriceEl) {
+                modalOld.textContent = oldPriceEl.textContent;
+                modalOld.style.display = '';
+            } else {
+                modalOld.style.display = 'none';
+            }
+
+            document.getElementById('modalDesc').textContent = card.dataset.desc || '';
+
+            const specsList = document.getElementById('modalSpecs');
+            specsList.innerHTML = '';
+            if (card.dataset.specs) {
+                card.dataset.specs.split('|').forEach(spec => {
+                    const parts = spec.split(':');
+                    if (parts.length === 2) {
+                        const li = document.createElement('li');
+                        li.innerHTML = '<i class="fas fa-check-circle"></i><strong>' + parts[0].trim() + '</strong>' + parts[1].trim();
+                        specsList.appendChild(li);
+                    }
+                });
+            }
+
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
+
+        // Scroll-in animations
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 60);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+
+            document.querySelectorAll('.product-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s';
+                observer.observe(el);
+            });
         }
     </script>
 </body>
