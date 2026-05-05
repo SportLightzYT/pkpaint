@@ -54,8 +54,18 @@
             font-size: 14px;
             font-weight: 500;
             transition: color 0.3s;
+            position: relative;
+            padding-bottom: 4px;
         }
-        .nav-links a:hover, .nav-links a.active { color: #1e90ff; }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: #1e90ff;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: #1e90ff; }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: #fff; }
+        .nav-links a.active::after { width: 100%; }
         .nav-right { display: flex; align-items: center; gap: 20px; }
         .phone { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #fff; }
         .phone a { text-decoration: none; color: #fff; }
@@ -132,42 +142,14 @@
         }
         .mobile-nav a:hover, .mobile-nav a.active { color: #1e90ff; }
 
-        /* Mode Toggle */
-        .mode-toggle {
-            position: fixed;
-            top: 90px;
-            right: 30px;
-            z-index: 998;
-            background: rgba(30,144,255,0.15);
-            border: 1px solid rgba(30,144,255,0.3);
-            border-radius: 30px;
-            padding: 6px;
-            display: flex;
-            gap: 4px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        .mode-btn {
-            background: transparent;
-            border: none;
-            color: #888;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-family: 'Kanit', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-        }
-        .mode-btn.active { background: #1e90ff; color: #fff; }
-        .mode-btn:hover:not(.active) { color: #1e90ff; }
+        
+        
+        
+        
+        
 
         /* ===== New Mode ===== */
-        .new-mode .page-hero {
+        .page-hero {
             padding: 160px 60px 100px;
             background:
                 radial-gradient(circle at top left, rgba(30,144,255,0.18), transparent 35%),
@@ -177,13 +159,13 @@
             overflow: hidden;
             text-align: center;
         }
-        .new-mode .hero-inner {
+        .hero-inner {
             position: relative;
             z-index: 1;
             max-width: 800px;
             margin: 0 auto;
         }
-        .new-mode .hero-copy h1 {
+        .hero-copy h1 {
             font-size: 48px;
             line-height: 1.1;
             font-weight: 800;
@@ -193,19 +175,19 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .new-mode .hero-copy p {
+        .hero-copy p {
             color: #b8c0cc;
             font-size: 17px;
             line-height: 1.8;
         }
-        .new-mode .hero-actions {
+        .hero-actions {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 12px;
             margin-top: 32px;
         }
-        .new-mode .hero-btn {
+        .hero-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -218,26 +200,26 @@
             border: 1px solid rgba(255,255,255,0.1);
             min-height: 48px;
         }
-        .new-mode .hero-btn:hover { transform: translateY(-2px); }
-        .new-mode .hero-btn.primary { background: linear-gradient(135deg, #1e90ff, #49b1ff); color: #fff; border-color: transparent; }
-        .new-mode .hero-btn.secondary { background: rgba(255,255,255,0.04); color: #fff; }
-        .new-mode .hero-btn.facebook { background: linear-gradient(135deg, #1877f2, #3b9aff); color: #fff; border-color: transparent; }
+        .hero-btn:hover { transform: translateY(-2px); }
+        .hero-btn.primary { background: linear-gradient(135deg, #1e90ff, #49b1ff); color: #fff; border-color: transparent; }
+        .hero-btn.secondary { background: rgba(255,255,255,0.04); color: #fff; }
+        .hero-btn.facebook { background: linear-gradient(135deg, #1877f2, #3b9aff); color: #fff; border-color: transparent; }
 
-        .new-mode .contact-section { padding: 0 60px 70px; }
-        .new-mode .contact-wrap {
+        .contact-section { padding: 0 60px 70px; }
+        .contact-wrap {
             max-width: 1200px;
             margin: 0 auto;
             margin-top: -40px;
             position: relative;
             z-index: 2;
         }
-        .new-mode .info-row {
+        .info-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 16px;
             margin-bottom: 30px;
         }
-        .new-mode .info-card {
+        .info-card {
             background: linear-gradient(180deg, rgba(17,17,17,0.96), rgba(11,11,11,0.96));
             border: 1px solid rgba(255,255,255,0.07);
             border-radius: 18px;
@@ -245,7 +227,7 @@
             box-shadow: 0 18px 45px rgba(0,0,0,0.3);
             text-align: center;
         }
-        .new-mode .info-icon {
+        .info-icon {
             width: 50px;
             height: 50px;
             border-radius: 14px;
@@ -256,30 +238,30 @@
             color: #1e90ff;
             font-size: 20px;
         }
-        .new-mode .info-card h4 { font-size: 16px; margin-bottom: 10px; }
-        .new-mode .info-card p,
-        .new-mode .info-card a {
+        .info-card h4 { font-size: 16px; margin-bottom: 10px; }
+        .info-card p,
+        .info-card a {
             font-size: 13px;
             color: #a6b0bf;
             text-decoration: none;
             line-height: 1.7;
         }
-        .new-mode .info-card a:hover { color: #1e90ff; }
+        .info-card a:hover { color: #1e90ff; }
 
-        .new-mode .contact-grid {
+        .contact-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
             gap: 24px;
         }
-        .new-mode .panel {
+        .panel {
             background: linear-gradient(180deg, rgba(17,17,17,0.98), rgba(10,10,10,0.98));
             border: 1px solid rgba(255,255,255,0.07);
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 25px 60px rgba(0,0,0,0.35);
         }
-        .new-mode .panel-head { padding: 30px 30px 0; }
-        .new-mode .section-kicker {
+        .panel-head { padding: 30px 30px 0; }
+        .section-kicker {
             color: #1e90ff;
             font-size: 13px;
             font-weight: 600;
@@ -287,19 +269,19 @@
             text-transform: uppercase;
             margin-bottom: 8px;
         }
-        .new-mode .section-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
-        .new-mode .section-desc { color: #98a2b3; font-size: 14px; line-height: 1.8; }
-        .new-mode .form-area { padding-bottom: 30px; }
-        .new-mode .form-grid {
+        .section-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .section-desc { color: #98a2b3; font-size: 14px; line-height: 1.8; }
+        .form-area { padding-bottom: 30px; }
+        .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
             padding: 30px;
         }
-        .new-mode .form-group.full { grid-column: 1 / -1; }
-        .new-mode .form-label { display: block; font-size: 13px; margin-bottom: 8px; color: #d6d6d6; }
-        .new-mode .form-label span { color: #ff6b6b; }
-        .new-mode .form-control {
+        .form-group.full { grid-column: 1 / -1; }
+        .form-label { display: block; font-size: 13px; margin-bottom: 8px; color: #d6d6d6; }
+        .form-label span { color: #ff6b6b; }
+        .form-control {
             width: 100%;
             padding: 13px 15px;
             background: #161616;
@@ -313,13 +295,13 @@
             -webkit-appearance: none;
             appearance: none;
         }
-        .new-mode .form-control:focus {
+        .form-control:focus {
             border-color: #1e90ff;
             box-shadow: 0 0 0 4px rgba(30,144,255,0.12);
         }
-        .new-mode textarea.form-control { min-height: 150px; resize: vertical; }
+        textarea.form-control { min-height: 150px; resize: vertical; }
 
-        .new-mode .privacy-check {
+        .privacy-check {
             display: flex;
             align-items: flex-start;
             gap: 10px;
@@ -327,14 +309,14 @@
             color: #a5adba;
             padding: 0 30px;
         }
-        .new-mode .privacy-check input[type="checkbox"] {
+        .privacy-check input[type="checkbox"] {
             margin-top: 4px;
             accent-color: #1e90ff;
             min-width: 18px;
             min-height: 18px;
         }
-        .new-mode .submit-row { padding: 24px 30px 0; }
-        .new-mode .btn-submit {
+        .submit-row { padding: 24px 30px 0; }
+        .btn-submit {
             background: linear-gradient(135deg, #1e90ff, #49b1ff);
             color: #fff;
             border: none;
@@ -351,54 +333,82 @@
             box-shadow: 0 10px 20px rgba(30,144,255,0.2);
             min-height: 48px;
         }
-        .new-mode .btn-submit:hover {
+        .btn-submit:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 30px rgba(30,144,255,0.3);
         }
 
-        .new-mode .map-box { height: 100%; display: flex; flex-direction: column; }
-        .new-mode .map-top { padding: 24px 24px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-        .new-mode .map-frame { width: 100%; flex-grow: 1; min-height: 450px; border: 0; display: block; }
+        .map-box { height: 100%; display: flex; flex-direction: column; }
+        .map-top { padding: 24px 24px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .map-frame { width: 100%; flex-grow: 1; min-height: 450px; border: 0; display: block; }
+
+        /* ===== Quick Channel Cards ===== */
+        .quick-channels {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto 28px;
+        }
+        .quick-card {
+            display: flex; align-items: center; gap: 16px;
+            background: rgba(17,17,17,0.96); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px; padding: 20px 24px; text-decoration: none;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+            min-height: 80px;
+        }
+        .quick-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+        .quick-card.line-card { border-color: rgba(0,195,0,0.2); }
+        .quick-card.line-card:hover { border-color: #00c300; }
+        .quick-card.phone-card { border-color: rgba(30,144,255,0.2); }
+        .quick-card.phone-card:hover { border-color: #1e90ff; }
+        .quick-card.fb-card { border-color: rgba(24,119,242,0.2); }
+        .quick-card.fb-card:hover { border-color: #1877f2; }
+        .quick-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; flex-shrink: 0;
+        }
+        .quick-icon.line { background: rgba(0,195,0,0.15); color: #00c300; }
+        .quick-icon.phone { background: rgba(30,144,255,0.15); color: #1e90ff; }
+        .quick-icon.fb { background: rgba(24,119,242,0.15); color: #1877f2; }
+        .quick-label { font-size: 13px; color: #888; margin-bottom: 2px; }
+        .quick-value { font-size: 15px; font-weight: 600; color: #fff; }
+
+        /* ===== Hours Bar ===== */
+        .hours-bar {
+            display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+            background: rgba(30,144,255,0.06); border: 1px solid rgba(30,144,255,0.2);
+            border-radius: 10px; padding: 12px 20px; margin-bottom: 16px;
+            font-size: 13px; color: #ccc;
+        }
+        .hours-bar i { color: #1e90ff; }
+        .hours-open { color: #2ed573; font-weight: 600; }
+        .hours-closed { color: #ff4757; font-weight: 600; }
+
+        /* ===== Footer Payment & Delivery ===== */
+        .footer-payment-row, .footer-delivery-row {
+            max-width: 1200px; margin: 0 auto 24px;
+            padding: 16px 24px; background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06); border-radius: 10px;
+            display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+        }
+        .footer-section-label { font-size: 12px; font-weight: 600; color: #888; white-space: nowrap; min-width: 100px; }
+        .payment-icons { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+        .payment-item { display: flex; flex-direction: column; align-items: center; gap: 4px; color: #aaa; font-size: 11px; }
+        .payment-item i { font-size: 20px; color: #1e90ff; }
+        .delivery-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+        .delivery-badge { background: #1a1a1a; color: #aaa; border: 1px solid #333; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+
+        @media (max-width: 768px) {
+            .quick-channels { grid-template-columns: 1fr; gap: 10px; }
+        }
 
         /* ===== Classic Mode ===== */
-        .classic-mode .contact-container {
-            padding: 120px 60px 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .classic-mode .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            background: #111;
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .classic-mode .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 6px;
-            color: #fff;
-            font-family: 'Kanit', sans-serif;
-            font-size: 16px;
-            outline: none;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-        .classic-mode .btn-submit {
-            background: #1e90ff;
-            color: #fff;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 6px;
-            cursor: pointer;
-            min-height: 48px;
-            font-family: 'Kanit', sans-serif;
-            font-size: 15px;
-        }
+        
+        
+        
+        
 
         /* ===== Footer ===== */
         .footer { background: #050505; padding: 50px 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -436,9 +446,9 @@
 
         /* ======== Responsive ======== */
         @media (max-width: 1100px) {
-            .new-mode .contact-grid { grid-template-columns: 1fr; }
-            .new-mode .info-row { grid-template-columns: repeat(2, 1fr); }
-            .new-mode .contact-wrap { margin-top: -20px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .info-row { grid-template-columns: repeat(2, 1fr); }
+            .contact-wrap { margin-top: -20px; }
             .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
         }
         @media (max-width: 768px) {
@@ -448,28 +458,28 @@
             .btn-contact { display: none; }
             .logo-icon { font-size: 28px; }
             .logo-text { font-size: 10px; }
-            .mode-toggle { top: auto; bottom: 20px; right: 50%; transform: translateX(50%); padding: 4px; }
-            .mode-btn { padding: 6px 12px; font-size: 12px; }
-            .new-mode .page-hero { padding: 110px 20px 60px; }
-            .new-mode .hero-copy h1 { font-size: 30px; }
-            .new-mode .hero-copy p { font-size: 15px; }
-            .new-mode .hero-actions { flex-direction: column; align-items: stretch; }
-            .new-mode .hero-btn { justify-content: center; width: 100%; }
-            .new-mode .contact-section { padding: 0 16px 50px; }
-            .new-mode .info-row { grid-template-columns: 1fr; gap: 12px; }
-            .new-mode .info-card { padding: 18px; border-radius: 14px; }
-            .new-mode .contact-grid { gap: 16px; }
-            .new-mode .panel { border-radius: 18px; }
-            .new-mode .panel-head { padding: 24px 20px 0; }
-            .new-mode .section-title { font-size: 22px; }
-            .new-mode .form-grid { grid-template-columns: 1fr; padding: 20px; gap: 14px; }
-            .new-mode .form-group.full { grid-column: 1; }
-            .new-mode .privacy-check { padding: 0 20px; }
-            .new-mode .submit-row { padding: 20px 20px 0; }
-            .new-mode .btn-submit { width: 100%; justify-content: center; }
-            .new-mode .map-frame { min-height: 300px; }
-            .classic-mode .contact-container { padding: 100px 16px 40px; }
-            .classic-mode .contact-grid { grid-template-columns: 1fr; padding: 20px; gap: 24px; }
+            
+            
+            .page-hero { padding: 110px 20px 60px; }
+            .hero-copy h1 { font-size: 30px; }
+            .hero-copy p { font-size: 15px; }
+            .hero-actions { flex-direction: column; align-items: stretch; }
+            .hero-btn { justify-content: center; width: 100%; }
+            .contact-section { padding: 0 16px 50px; }
+            .info-row { grid-template-columns: 1fr; gap: 12px; }
+            .info-card { padding: 18px; border-radius: 14px; }
+            .contact-grid { gap: 16px; }
+            .panel { border-radius: 18px; }
+            .panel-head { padding: 24px 20px 0; }
+            .section-title { font-size: 22px; }
+            .form-grid { grid-template-columns: 1fr; padding: 20px; gap: 14px; }
+            .form-group.full { grid-column: 1; }
+            .privacy-check { padding: 0 20px; }
+            .submit-row { padding: 20px 20px 0; }
+            .btn-submit { width: 100%; justify-content: center; }
+            .map-frame { min-height: 300px; }
+            
+            
             .footer { padding: 40px 20px 16px; }
             .footer-content { grid-template-columns: 1fr; gap: 24px; }
             .footer-col { text-align: center; }
@@ -481,26 +491,26 @@
             .navbar { padding: 10px 12px; }
             .logo-icon { font-size: 24px; }
             .logo-text { font-size: 9px; }
-            .new-mode .page-hero { padding: 100px 14px 40px; }
-            .new-mode .hero-copy h1 { font-size: 26px; }
-            .new-mode .hero-copy p { font-size: 14px; }
-            .new-mode .hero-btn { padding: 12px 18px; font-size: 14px; }
-            .new-mode .contact-section { padding: 0 10px 40px; }
-            .new-mode .info-card { padding: 14px; border-radius: 12px; }
-            .new-mode .info-card h4 { font-size: 14px; }
-            .new-mode .info-card p, .new-mode .info-card a { font-size: 12px; }
-            .new-mode .panel-head { padding: 18px 16px 0; }
-            .new-mode .section-title { font-size: 20px; }
-            .new-mode .section-desc { font-size: 13px; }
-            .new-mode .form-grid { padding: 16px; gap: 12px; }
-            .new-mode .form-control { padding: 12px 14px; font-size: 16px; border-radius: 10px; }
-            .new-mode .privacy-check { padding: 0 16px; font-size: 12px; }
-            .new-mode .submit-row { padding: 16px 16px 0; }
-            .new-mode .btn-submit { padding: 12px 20px; font-size: 14px; border-radius: 10px; }
-            .new-mode .map-top { padding: 18px 16px 12px; }
-            .new-mode .map-frame { min-height: 250px; }
-            .mode-toggle { padding: 3px; gap: 2px; }
-            .mode-btn { padding: 5px 10px; font-size: 11px; }
+            .page-hero { padding: 100px 14px 40px; }
+            .hero-copy h1 { font-size: 26px; }
+            .hero-copy p { font-size: 14px; }
+            .hero-btn { padding: 12px 18px; font-size: 14px; }
+            .contact-section { padding: 0 10px 40px; }
+            .info-card { padding: 14px; border-radius: 12px; }
+            .info-card h4 { font-size: 14px; }
+            .info-card p, .info-card a { font-size: 12px; }
+            .panel-head { padding: 18px 16px 0; }
+            .section-title { font-size: 20px; }
+            .section-desc { font-size: 13px; }
+            .form-grid { padding: 16px; gap: 12px; }
+            .form-control { padding: 12px 14px; font-size: 16px; border-radius: 10px; }
+            .privacy-check { padding: 0 16px; font-size: 12px; }
+            .submit-row { padding: 16px 16px 0; }
+            .btn-submit { padding: 12px 20px; font-size: 14px; border-radius: 10px; }
+            .map-top { padding: 18px 16px 12px; }
+            .map-frame { min-height: 250px; }
+            
+            
             .footer { padding: 30px 14px 12px; }
             .footer-title { font-size: 13px; }
             .footer-links a { font-size: 12px; }
@@ -510,30 +520,40 @@
         }
         @media (max-width: 360px) {
             .logo-text { display: none; }
-            .new-mode .hero-copy h1 { font-size: 22px; }
-            .new-mode .info-card { padding: 12px; }
-            .new-mode .section-title { font-size: 18px; }
+            .hero-copy h1 { font-size: 22px; }
+            .info-card { padding: 12px; }
+            .section-title { font-size: 18px; }
         }
+
+        /* Scroll-to-top */
+        .scroll-top {
+            position: fixed; bottom: 30px; right: 30px; z-index: 990;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: #1e90ff; color: #fff; border: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; font-size: 16px;
+            box-shadow: 0 4px 16px rgba(30,144,255,0.4);
+            opacity: 0; visibility: hidden; transition: all 0.3s;
+        }
+        .scroll-top.visible { opacity: 1; visibility: visible; }
+        .scroll-top:hover { background: #1873cc; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(30,144,255,0.5); }
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px; z-index: 1001;
+            background: linear-gradient(90deg, #1e90ff, #00c8ff);
+            width: 0%; transition: width 0.1s linear;
+        }
+
+        .logo-link { text-decoration: none; display: inline-flex; align-items: center; cursor: pointer; transition: opacity 0.2s; }
+        .logo-link:hover { opacity: 0.85; }
     </style>
 </head>
-<body class="new-mode" id="body">
-
-    <!-- Mode Toggle -->
-    <div class="mode-toggle">
-        <button class="mode-btn active" id="btnNew" onclick="switchMode('new')">
-            <i class="fas fa-layer-group"></i> ดีไซน์ใหม่
-        </button>
-        <button class="mode-btn" id="btnClassic" onclick="switchMode('classic')">
-            <i class="fas fa-th"></i> ดีไซน์เดิม
-        </button>
-    </div>
-
-    <!-- Navbar -->
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+<!-- Navbar -->
     <nav class="navbar">
-        <div class="logo-section">
+        <a href="index.html" class="logo-link" aria-label="กลับหน้าแรก"><div class="logo-section">
             <img src="asset/PK Logo-05.png" alt="PK Paint &amp; Supply Logo" class="logo-img">
-            <div class="logo-text">PAINT & SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div>
-        </div>
+            <div class="logo-text">PAINT & SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div></div></a>
         <ul class="nav-links">
             <li><a href="index.html">หน้าแรก</a></li>
             <li><a href="products.html">สินค้า</a></li>
@@ -562,8 +582,7 @@
     </div>
 
     <!-- ==================== NEW MODE ==================== -->
-    <div id="newModeContent">
-        <section class="page-hero">
+    <section class="page-hero">
             <div class="hero-inner">
                 <div class="hero-copy">
                     <div class="section-kicker">Get in touch</div>
@@ -619,6 +638,22 @@
                     </div>
                 </div>
 
+                <!-- ช่องทางด่วน -->
+                <div class="quick-channels">
+                    <a class="quick-card line-card" href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener">
+                        <div class="quick-icon line"><i class="fab fa-line"></i></div>
+                        <div><div class="quick-label">LINE Official</div><div class="quick-value">@999snkil</div></div>
+                    </a>
+                    <a class="quick-card phone-card" href="tel:0928528535">
+                        <div class="quick-icon phone"><i class="fas fa-phone-alt"></i></div>
+                        <div><div class="quick-label">โทรสอบถาม</div><div class="quick-value">092-852-8535</div></div>
+                    </a>
+                    <a class="quick-card fb-card" href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener">
+                        <div class="quick-icon fb"><i class="fab fa-facebook-f"></i></div>
+                        <div><div class="quick-label">Facebook</div><div class="quick-value">pkpaint1996</div></div>
+                    </a>
+                </div>
+
                 <!-- Contact Grid -->
                 <div class="contact-grid">
                     <section class="panel form-area">
@@ -636,6 +671,10 @@
                                 <div class="form-group">
                                     <label class="form-label">เบอร์โทรศัพท์ <span>*</span></label>
                                     <input type="tel" class="form-control" name="phone" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">LINE ID <span style="color:#888;font-size:11px;">(ไม่บังคับ)</span></label>
+                                    <input type="text" class="form-control" name="line_id" placeholder="ระบุ LINE ID ของคุณ" />
                                 </div>
                                 <div class="form-group full">
                                     <label class="form-label">เรื่องที่ติดต่อ <span>*</span></label>
@@ -669,6 +708,13 @@
                                 <div class="section-kicker">Find us</div>
                                 <h2 class="section-title">แผนที่ร้าน</h2>
                                 <p class="section-desc">พี.เค.เพ้นท์แอนด์ซัพพลาย — 249/3 ม.6 ถ.รังสิต ต.บางพูน อ.เมือง จ.ปทุมธานี</p>
+                                <!-- เวลาทำการ -->
+                                <div class="hours-bar">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>จ.–ส.</strong> <span class="hours-open">08:00–18:00 น.</span></span>
+                                    <span>·</span>
+                                    <span><strong>อาทิตย์</strong> <span class="hours-closed">ปิดทำการ</span></span>
+                                </div>
                             </div>
                             <iframe
                                 class="map-frame"
@@ -685,47 +731,26 @@
         </section>
     </div>
 
-    <!-- ==================== CLASSIC MODE ==================== -->
-    <div id="classicModeContent" style="display:none;">
-        <div class="contact-container">
-            <h1 style="margin-bottom:20px;">ติดต่อเรา</h1>
-            <p style="margin-bottom:24px;color:#98a2b3;line-height:1.8;">
-                พี.เค.เพ้นท์แอนด์ซัพพลาย — 249/3 ม.6 ถ.รังสิต ต.บางพูน อ.เมือง จ.ปทุมธานี<br>
-                โทร <a href="tel:0928528535" style="color:#1e90ff;">092-852-8535</a> |
-                LINE: <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener" style="color:#1e90ff;">@999snkil</a> |
-                Email: <a href="mailto:pkpaintandsupply@gmail.com" style="color:#1e90ff;">pkpaintandsupply@gmail.com</a>
-            </p>
-            <div class="contact-grid">
-                <div class="form-area">
-                    <div style="margin-bottom:15px;">
-                        <label>ชื่อ-นามสกุล</label>
-                        <input type="text" class="form-control" name="name" />
-                    </div>
-                    <div style="margin-bottom:15px;">
-                        <label>เบอร์โทร</label>
-                        <input type="tel" class="form-control" name="phone" />
-                    </div>
-                    <div style="margin-bottom:15px;">
-                        <label>ข้อความ</label>
-                        <textarea class="form-control" name="message" style="height:100px;"></textarea>
-                    </div>
-                    <button class="btn-submit">ส่งข้อมูล</button>
-                </div>
-                <div>
-                    <iframe
-                        src="https://www.google.com/maps?q=13.9839944,100.5913704&z=17&output=embed"
-                        style="width:100%;height:300px;border:0;"
-                        allowfullscreen
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                </div>
+    <!-- FOOTER ==================== -->
+    <footer class="footer">
+        <!-- ชำระเงินผ่าน -->
+        <div class="footer-payment-row">
+            <span class="footer-section-label"><i class="fas fa-credit-card" style="margin-right:6px;color:#1e90ff;"></i>ชำระเงินผ่าน</span>
+            <div class="payment-icons">
+                <div class="payment-item"><i class="fas fa-university"></i><span>โอนเงิน</span></div>
+                <div class="payment-item"><i class="fas fa-qrcode"></i><span>QR Promptpay</span></div>
+                <div class="payment-item"><i class="fas fa-money-bill-wave"></i><span>เงินสด</span></div>
             </div>
         </div>
-    </div>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
+        <!-- จัดส่งโดย -->
+        <div class="footer-delivery-row">
+            <span class="footer-section-label"><i class="fas fa-truck" style="margin-right:6px;color:#1e90ff;"></i>จัดส่งโดย</span>
+            <div class="delivery-badges">
+                <span class="delivery-badge">Kerry Express</span>
+                <span class="delivery-badge">Flash Express</span>
+                <span class="delivery-badge">J&T Express</span>
+            </div>
+        </div>
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-logo">
@@ -789,14 +814,25 @@
             });
         });
 
-        function switchMode(mode) {
-            const isNew = mode === 'new';
-            document.getElementById('body').className = isNew ? 'new-mode' : 'classic-mode';
-            document.getElementById('newModeContent').style.display = isNew ? 'block' : 'none';
-            document.getElementById('classicModeContent').style.display = isNew ? 'none' : 'block';
-            document.getElementById('btnNew').classList.toggle('active', isNew);
-            document.getElementById('btnClassic').classList.toggle('active', !isNew);
-        }
+    
+        // Scroll progress bar & scroll-to-top
+        (function() {
+            const scrollTopBtn = document.getElementById('scrollTop');
+            const prog = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', () => {
+                if (prog) {
+                    const docH = document.documentElement.scrollHeight - window.innerHeight;
+                    prog.style.width = (docH > 0 ? (window.scrollY / docH * 100) : 0) + '%';
+                }
+                if (scrollTopBtn) scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+            });
+            if (scrollTopBtn) scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        })();
     </script>
+
+    <!-- Scroll-to-top button -->
+    <button class="scroll-top" id="scrollTop" aria-label="กลับขึ้นด้านบน" title="กลับขึ้นด้านบน">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 </body>
 </html>
