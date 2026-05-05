@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="th">
 
 <head>
@@ -30,8 +30,8 @@
 
         body {
             font-family: 'Kanit', sans-serif;
-            background: #0a0a0a;
-            color: #fff;
+            background: #f8f9fa;
+            color: #333;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -53,14 +53,14 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 60px;
-            background: rgba(10, 10, 10, 0.98);
+            background: rgba(255, 255, 255, 0.95);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .logo-section {
@@ -79,23 +79,24 @@
             height: 38px;
             width: auto;
             object-fit: contain;
+            filter: brightness(0) invert(1);
         }
 
         .logo-icon {
             font-size: 36px;
             font-weight: 700;
-            color: #fff;
+            color: #333;
             font-style: italic;
         }
 
         .logo-icon span {
-            color: #0056b3;
+            color: #1e90ff;
         }
 
         .logo-text {
             font-size: 12px;
             line-height: 1.4;
-            color: #ccc;
+            color: #555;
         }
 
         .nav-links {
@@ -105,7 +106,7 @@
         }
 
         .nav-links a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
@@ -121,12 +122,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #0056b3;
+            background: #1e90ff;
             transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #0056b3;
+            color: #1e90ff;
         }
 
         .nav-links a:hover::after {
@@ -134,7 +135,7 @@
         }
 
         .nav-links a.active {
-            color: #fff;
+            color: #333;
         }
 
         .nav-links a.active::after {
@@ -152,16 +153,16 @@
             align-items: center;
             gap: 8px;
             font-size: 14px;
-            color: #fff;
+            color: #333;
         }
 
         .phone a {
             text-decoration: none;
-            color: #fff;
+            color: #333;
         }
 
         .btn-contact {
-            background: #0056b3;
+            background: #1e90ff;
             color: #fff;
             border: none;
             padding: 10px 24px;
@@ -178,7 +179,7 @@
         }
 
         .btn-contact:hover {
-            background: #004494;
+            background: #1873cc;
             transform: translateY(-1px);
         }
 
@@ -201,7 +202,7 @@
             display: block;
             width: 24px;
             height: 2px;
-            background: #fff;
+            background: #333;
             border-radius: 2px;
             transition: all 0.3s ease;
         }
@@ -226,7 +227,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.97);
+            background: rgba(255, 255, 255, 0.97);
             z-index: 999;
             flex-direction: column;
             align-items: center;
@@ -243,7 +244,7 @@
         }
 
         .mobile-nav a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
             font-size: 22px;
             font-weight: 500;
@@ -254,7 +255,7 @@
 
         .mobile-nav a:hover,
         .mobile-nav a.active {
-            color: #4da6ff;
+            color: #1e90ff;
         }
 
 
@@ -265,14 +266,35 @@
 
         /* ===== New Mode ===== */
         .page-hero {
-            padding: 160px 60px 100px;
+            padding: 160px 60px 110px;
             background:
-                radial-gradient(circle at top left, rgba(0, 86, 179, 0.18), transparent 35%),
-                radial-gradient(circle at top right, rgba(120, 80, 255, 0.12), transparent 30%),
-                linear-gradient(135deg, #0a1628 0%, #0f1020 55%, #0d1f2d 100%);
+                radial-gradient(circle at 20% 50%, rgba(30, 144, 255, 0.25), transparent 40%),
+                radial-gradient(circle at 80% 30%, rgba(100, 60, 255, 0.15), transparent 35%),
+                linear-gradient(135deg, #0a1628 0%, #0d2137 50%, #0f2a50 100%);
             position: relative;
             overflow: hidden;
             text-align: center;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 15% 80%, rgba(30, 144, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 20%, rgba(30, 144, 255, 0.06) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, rgba(248, 249, 250, 0.15));
+            pointer-events: none;
         }
 
         .hero-inner {
@@ -282,19 +304,34 @@
             margin: 0 auto;
         }
 
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(30, 144, 255, 0.15);
+            border: 1px solid rgba(30, 144, 255, 0.3);
+            color: #7ec8ff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
         .hero-copy h1 {
             font-size: 48px;
-            line-height: 1.1;
+            line-height: 1.15;
             font-weight: 800;
             margin-bottom: 18px;
-            background: linear-gradient(135deg, #fff 0%, #7cc4ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
+            -webkit-text-fill-color: unset;
+            background: none;
         }
 
         .hero-copy p {
-            color: #b8c0cc;
+            color: rgba(255, 255, 255, 0.72);
             font-size: 17px;
             line-height: 1.8;
         }
@@ -304,7 +341,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 12px;
-            margin-top: 32px;
+            margin-top: 36px;
         }
 
         .hero-btn {
@@ -326,18 +363,13 @@
         }
 
         .hero-btn.primary {
-            background: linear-gradient(135deg, #0056b3, #49b1ff);
+            background: linear-gradient(135deg, #1e90ff, #49b1ff);
             color: #fff;
             border-color: transparent;
         }
 
         .hero-btn.secondary {
-            background: rgba(255, 255, 255, 0.04);
-            color: #fff;
-        }
-
-        .hero-btn.line {
-            background: linear-gradient(135deg, #00c300, #33d633);
+            background: #00c300;
             color: #fff;
             border-color: transparent;
         }
@@ -368,11 +400,11 @@
         }
 
         .info-card {
-            background: linear-gradient(180deg, rgba(17, 17, 17, 0.96), rgba(11, 11, 11, 0.96));
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 18px;
             padding: 24px;
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             text-align: center;
         }
 
@@ -383,8 +415,8 @@
             display: grid;
             place-items: center;
             margin: 0 auto 16px;
-            background: rgba(0, 86, 179, 0.12);
-            color: #0056b3;
+            background: rgba(30, 144, 255, 0.12);
+            color: #1e90ff;
             font-size: 20px;
         }
 
@@ -396,13 +428,13 @@
         .info-card p,
         .info-card a {
             font-size: 13px;
-            color: #a6b0bf;
+            color: #555;
             text-decoration: none;
             line-height: 1.7;
         }
 
         .info-card a:hover {
-            color: #0056b3;
+            color: #1e90ff;
         }
 
         .contact-grid {
@@ -412,11 +444,11 @@
         }
 
         .panel {
-            background: linear-gradient(180deg, rgba(17, 17, 17, 0.98), rgba(10, 10, 10, 0.98));
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
         }
 
         .panel-head {
@@ -424,7 +456,7 @@
         }
 
         .section-kicker {
-            color: #0056b3;
+            color: #1e90ff;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -439,7 +471,7 @@
         }
 
         .section-desc {
-            color: #98a2b3;
+            color: #555;
             font-size: 14px;
             line-height: 1.8;
         }
@@ -463,7 +495,7 @@
             display: block;
             font-size: 13px;
             margin-bottom: 8px;
-            color: #d6d6d6;
+            color: #555;
         }
 
         .form-label span {
@@ -473,10 +505,10 @@
         .form-control {
             width: 100%;
             padding: 13px 15px;
-            background: #161616;
-            border: 1px solid #2e2e2e;
+            background: #ffffff;
+            border: 1px solid #ced4da;
             border-radius: 12px;
-            color: #fff;
+            color: #333;
             font-family: 'Kanit', sans-serif;
             font-size: 16px;
             outline: none;
@@ -486,8 +518,8 @@
         }
 
         .form-control:focus {
-            border-color: #0056b3;
-            box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.12);
+            border-color: #1e90ff;
+            box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.12);
         }
 
         textarea.form-control {
@@ -500,13 +532,13 @@
             align-items: flex-start;
             gap: 10px;
             font-size: 13px;
-            color: #a5adba;
+            color: #555;
             padding: 0 30px;
         }
 
         .privacy-check input[type="checkbox"] {
             margin-top: 4px;
-            accent-color: #0056b3;
+            accent-color: #1e90ff;
             min-width: 18px;
             min-height: 18px;
         }
@@ -516,7 +548,7 @@
         }
 
         .btn-submit {
-            background: linear-gradient(135deg, #0056b3, #49b1ff);
+            background: linear-gradient(135deg, #1e90ff, #49b1ff);
             color: #fff;
             border: none;
             padding: 14px 30px;
@@ -529,13 +561,13 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
+            box-shadow: 0 10px 20px rgba(30, 144, 255, 0.2);
             min-height: 48px;
         }
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(0, 86, 179, 0.3);
+            box-shadow: 0 15px 30px rgba(30, 144, 255, 0.3);
         }
 
         .map-box {
@@ -546,7 +578,7 @@
 
         .map-top {
             padding: 24px 24px 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
 
         .map-frame {
@@ -570,8 +602,8 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            background: rgba(17, 17, 17, 0.96);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 16px;
             padding: 20px 24px;
             text-decoration: none;
@@ -581,7 +613,7 @@
 
         .quick-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .quick-card.line-card {
@@ -593,11 +625,11 @@
         }
 
         .quick-card.phone-card {
-            border-color: rgba(0, 86, 179, 0.2);
+            border-color: rgba(30, 144, 255, 0.2);
         }
 
         .quick-card.phone-card:hover {
-            border-color: #0056b3;
+            border-color: #1e90ff;
         }
 
         .quick-card.fb-card {
@@ -625,8 +657,8 @@
         }
 
         .quick-icon.phone {
-            background: rgba(0, 86, 179, 0.15);
-            color: #0056b3;
+            background: rgba(30, 144, 255, 0.15);
+            color: #1e90ff;
         }
 
         .quick-icon.fb {
@@ -636,14 +668,14 @@
 
         .quick-label {
             font-size: 13px;
-            color: #888;
+            color: #777;
             margin-bottom: 2px;
         }
 
         .quick-value {
             font-size: 15px;
             font-weight: 600;
-            color: #fff;
+            color: #333;
         }
 
         /* ===== Hours Bar ===== */
@@ -652,17 +684,17 @@
             align-items: center;
             gap: 16px;
             flex-wrap: wrap;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(0, 86, 179, 0.2);
+            background: rgba(30, 144, 255, 0.06);
+            border: 1px solid rgba(30, 144, 255, 0.2);
             border-radius: 10px;
             padding: 12px 20px;
             margin-bottom: 16px;
             font-size: 13px;
-            color: #ccc;
+            color: #555;
         }
 
         .hours-bar i {
-            color: #0056b3;
+            color: #1e90ff;
         }
 
         .hours-open {
@@ -681,8 +713,8 @@
             max-width: 1200px;
             margin: 0 auto 24px;
             padding: 16px 24px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -693,7 +725,7 @@
         .footer-section-label {
             font-size: 12px;
             font-weight: 600;
-            color: #888;
+            color: #777;
             white-space: nowrap;
             min-width: 100px;
         }
@@ -710,13 +742,13 @@
             flex-direction: column;
             align-items: center;
             gap: 4px;
-            color: #aaa;
+            color: #666;
             font-size: 11px;
         }
 
         .payment-item i {
             font-size: 20px;
-            color: #0056b3;
+            color: #1e90ff;
         }
 
         .delivery-badges {
@@ -726,8 +758,8 @@
         }
 
         .delivery-badge {
-            background: #1a1a1a;
-            color: #aaa;
+            background: #ffffff;
+            color: #666;
             border: 1px solid #333;
             padding: 4px 12px;
             border-radius: 4px;
@@ -750,9 +782,9 @@
 
         /* ===== Footer ===== */
         .footer {
-            background: #050505;
+            background: linear-gradient(135deg, #0d2137 0%, #1565c0 50%, #0d3070 100%);
             padding: 50px 60px 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 3px solid #1e90ff;
         }
 
         .footer-content {
@@ -777,11 +809,11 @@
         }
 
         .footer-logo-icon span {
-            color: #0056b3;
+            color: #82c8ff;
         }
 
         .footer-desc {
-            color: #666;
+            color: #dbeafe;
             font-size: 13px;
             line-height: 1.6;
         }
@@ -802,36 +834,36 @@
         }
 
         .footer-links a {
-            color: #666;
+            color: #dbeafe;
             text-decoration: none;
             font-size: 13px;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: #0056b3;
+            color: #1e90ff;
         }
 
         .footer-contact {
-            color: #666;
+            color: #dbeafe;
             font-size: 13px;
             line-height: 1.8;
         }
 
         .footer-contact i {
-            color: #0056b3;
+            color: #1e90ff;
             margin-right: 8px;
             width: 16px;
         }
 
         .footer-contact a {
-            color: #666;
+            color: #dbeafe;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .footer-contact a:hover {
-            color: #0056b3;
+            color: #1e90ff;
         }
 
         .footer-social {
@@ -843,27 +875,27 @@
         .footer-social a {
             width: 36px;
             height: 36px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
+            color: #fff;
             font-size: 14px;
             transition: all 0.3s;
             text-decoration: none;
         }
 
         .footer-social a:hover {
-            background: #0056b3;
+            background: rgba(255, 255, 255, 0.25);
             color: #fff;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             padding-top: 20px;
             text-align: center;
-            color: #444;
+            color: #888;
             font-size: 12px;
         }
 
@@ -1170,15 +1202,15 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: #0056b3;
-            color: #fff;
+            background: #1e90ff;
+            color: #333;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 16px rgba(30, 144, 255, 0.4);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s;
@@ -1190,9 +1222,9 @@
         }
 
         .scroll-top:hover {
-            background: #004494;
+            background: #1873cc;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 24px rgba(30, 144, 255, 0.5);
         }
 
         /* Scroll progress bar */
@@ -1202,7 +1234,7 @@
             left: 0;
             height: 3px;
             z-index: 1001;
-            background: linear-gradient(90deg, #0056b3, #00c8ff);
+            background: linear-gradient(90deg, #1e90ff, #00c8ff);
             width: 0%;
             transition: width 0.1s linear;
         }
@@ -1218,6 +1250,10 @@
         .logo-link:hover {
             opacity: 0.85;
         }
+
+        #lightboxCaption {
+            display: none !important;
+        }
     </style>
 </head>
 
@@ -1227,7 +1263,7 @@
     <nav class="navbar">
         <a href="index.html" class="logo-link" aria-label="กลับหน้าแรก">
             <div class="logo-section">
-                <img src="asset/PK Logo-05.png" alt="PK Paint &amp; Supply Logo" class="logo-img">
+                <img src="asset/PK Logo-06.png" alt="PK Paint &amp; Supply Logo" class="logo-img">
                 <div class="logo-text">PAINT & SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div>
             </div>
         </a>
@@ -1256,24 +1292,19 @@
         <a href="portfolio.html">ผลงานสีพ่น</a>
         <a href="about.html">เกี่ยวกับเรา</a>
         <a href="contact.html" class="active">ติดต่อเรา</a>
-        <div class="mobile-nav-contact">
-            <a href="tel:0928528535"><i class="fas fa-phone-alt" style="margin-right:8px;color:#0056b3;"></i>092-852-8535</a>
-            <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @999snkil</a>
-            <a href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" style="margin-right:8px;color:#1877f2;"></i>Facebook</a>
-        </div>
     </div>
 
     <!-- ==================== NEW MODE ==================== -->
     <section class="page-hero">
         <div class="hero-inner">
             <div class="hero-copy">
-                <div class="section-kicker">Get in touch</div>
+                <div class="hero-kicker"><i class="fas fa-headset"></i> Get in touch</div>
                 <h1>ติดต่อ PK Paint & Supply</h1>
                 <p>ยินดีให้คำปรึกษาเรื่องสีพ่นรถยนต์และอุปกรณ์ครบวงจร
                     พร้อมบริการประเมินราคาและให้ข้อมูลสินค้าโดยผู้เชี่ยวชาญ</p>
                 <div class="hero-actions">
                     <a class="hero-btn primary" href="tel:0928528535"><i class="fas fa-phone-alt"></i> โทรสอบถาม</a>
-                    <a class="hero-btn line" href="https://line.me/R/ti/p/@999snkil" target="_blank"
+                    <a class="hero-btn secondary" href="https://line.me/R/ti/p/@999snkil" target="_blank"
                         rel="noopener"><i class="fab fa-line"></i> แชทผ่าน LINE</a>
                     <a class="hero-btn facebook" href="https://www.facebook.com/pkpaint1996/" target="_blank"
                         rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a>
@@ -1323,32 +1354,6 @@
                 </div>
             </div>
 
-            <!-- ช่องทางด่วน -->
-            <div class="quick-channels">
-                <a class="quick-card line-card" href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener">
-                    <div class="quick-icon line"><i class="fab fa-line"></i></div>
-                    <div>
-                        <div class="quick-label">LINE Official</div>
-                        <div class="quick-value">@999snkil</div>
-                    </div>
-                </a>
-                <a class="quick-card phone-card" href="tel:0928528535">
-                    <div class="quick-icon phone"><i class="fas fa-phone-alt"></i></div>
-                    <div>
-                        <div class="quick-label">โทรสอบถาม</div>
-                        <div class="quick-value">092-852-8535</div>
-                    </div>
-                </a>
-                <a class="quick-card fb-card" href="https://www.facebook.com/pkpaint1996/" target="_blank"
-                    rel="noopener">
-                    <div class="quick-icon fb"><i class="fab fa-facebook-f"></i></div>
-                    <div>
-                        <div class="quick-label">Facebook</div>
-                        <div class="quick-value">pkpaint1996</div>
-                    </div>
-                </a>
-            </div>
-
             <!-- Contact Grid -->
             <div class="contact-grid">
                 <section class="panel form-area">
@@ -1369,7 +1374,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label">LINE ID <span
-                                        style="color:#888;font-size:11px;">(ไม่บังคับ)</span></label>
+                                        style="color: #777;font-size:11px;">(ไม่บังคับ)</span></label>
                                 <input type="text" class="form-control" name="line_id"
                                     placeholder="ระบุ LINE ID ของคุณ" />
                             </div>
@@ -1428,33 +1433,13 @@
 
     <!-- FOOTER ==================== -->
     <footer class="footer">
-        <!-- ชำระเงินผ่าน -->
-        <div class="footer-payment-row">
-            <span class="footer-section-label"><i class="fas fa-credit-card"
-                    style="margin-right:6px;color:#0056b3;"></i>ชำระเงินผ่าน</span>
-            <div class="payment-icons">
-                <div class="payment-item"><i class="fas fa-university"></i><span>โอนเงิน</span></div>
-                <div class="payment-item"><i class="fas fa-qrcode"></i><span>QR Promptpay</span></div>
-                <div class="payment-item"><i class="fas fa-money-bill-wave"></i><span>เงินสด</span></div>
-            </div>
-        </div>
-        <!-- จัดส่งโดย -->
-        <div class="footer-delivery-row">
-            <span class="footer-section-label"><i class="fas fa-truck"
-                    style="margin-right:6px;color:#0056b3;"></i>จัดส่งโดย</span>
-            <div class="delivery-badges">
-                <span class="delivery-badge">Kerry Express</span>
-                <span class="delivery-badge">Flash Express</span>
-                <span class="delivery-badge">J&T Express</span>
-            </div>
-        </div>
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-logo">
                     <img src="asset/PK Logo-05.png" alt="PK Paint &amp; Supply Logo" class="footer-logo-img">
                     <div>
-                        <div style="font-size:14px;font-weight:600;">PAINT &amp; SUPPLY</div>
-                        <div style="font-size:12px;color:#666;">สีพ่นรถยนต์คุณภาพสูง รังสิต</div>
+                        <div style="font-size:14px;font-weight:600;color:#fff;">PAINT &amp; SUPPLY</div>
+                        <div style="font-size:12px;color:#b0d4f7;">สีพ่นรถยนต์คุณภาพสูง รังสิต</div>
                     </div>
                 </div>
                 <p class="footer-desc">จำหน่ายสีพ่นรถยนต์ทุกชนิด ทุกระบบ 2K-1K สีเบอร์ตรงรุ่นรถ<br>ผสมสีตามตัวอย่าง
@@ -1482,7 +1467,7 @@
                     <div style="margin-top:10px;"><i class="fas fa-map-marker-alt"></i> 249/3 ม.6
                         ถ.รังสิต<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ต.บางพูน อ.เมือง จ.ปทุมธานี</div>
                     <div style="margin-top:6px;"><a href="https://maps.app.goo.gl/c7nbR1D9EkWsN8GJ8" target="_blank"
-                            rel="noopener" style="color:#0056b3;font-size:12px;"><i class="fas fa-directions"
+                            rel="noopener" style="color:#90cdff;font-size:12px;"><i class="fas fa-directions"
                                 style="margin-right:4px;"></i>เปิดนำทาง Google Maps</a></div>
                 </div>
             </div>
