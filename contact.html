@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <title>PK Paint & Supply - ติดต่อเรา</title>
-    <meta name="description" content="ติดต่อ PK Paint & Supply รังสิต ปทุมธานี สอบถามข้อมูลสินค้า ขอใบเสนอราคา หรือรับคำปรึกษาเรื่องสีพ่นรถยนต์จากผู้เชี่ยวชาญ โทร 092-852-8535" />
+    <meta name="description"
+        content="ติดต่อ PK Paint & Supply รังสิต ปทุมธานี สอบถามข้อมูลสินค้า ขอใบเสนอราคา หรือรับคำปรึกษาเรื่องสีพ่นรถยนต์จากผู้เชี่ยวชาญ โทร 092-852-8535" />
     <meta property="og:title" content="PK Paint & Supply - ติดต่อเรา" />
-    <meta property="og:description" content="จำหน่ายสีพ่นรถยนต์ทุกชนิด ทุกระบบ 2K-1K ผสมสีตามตัวอย่าง รับอัดสีสเปรย์กระป๋อง รังสิต ปทุมธานี" />
+    <meta property="og:description"
+        content="จำหน่ายสีพ่นรถยนต์ทุกชนิด ทุกระบบ 2K-1K ผสมสีตามตัวอย่าง รับอัดสีสเปรย์กระป๋อง รังสิต ปทุมธานี" />
     <meta property="og:type" content="website" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
             font-family: 'Kanit', sans-serif;
             background: #0a0a0a;
@@ -23,8 +36,16 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        a { color: inherit; }
-        img, svg { max-width: 100%; height: auto; }
+
+        a {
+            color: inherit;
+        }
+
+        img,
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
 
         /* Navbar */
         .navbar {
@@ -32,22 +53,57 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 60px;
-            background: rgba(0,0,0,0.95);
+            background: rgba(10, 10, 10, 0.98);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
-        .logo-section { display: flex; align-items: center; gap: 12px; }
-        .logo-img { height: 42px; width: auto; object-fit: contain; }
-        .footer-logo-img { height: 38px; width: auto; object-fit: contain; }
-        .logo-icon { font-size: 36px; font-weight: 700; color: #fff; font-style: italic; }
-        .logo-icon span { color: #1e90ff; }
-        .logo-text { font-size: 12px; line-height: 1.4; color: #ccc; }
-        .nav-links { display: flex; gap: 30px; list-style: none; }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .footer-logo-img {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-icon {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            font-style: italic;
+        }
+
+        .logo-icon span {
+            color: #0056b3;
+        }
+
+        .logo-text {
+            font-size: 12px;
+            line-height: 1.4;
+            color: #ccc;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
         .nav-links a {
             color: #fff;
             text-decoration: none;
@@ -57,20 +113,55 @@
             position: relative;
             padding-bottom: 4px;
         }
+
         .nav-links a::after {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 0; height: 2px; background: #1e90ff;
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0056b3;
             transition: width 0.3s ease;
         }
-        .nav-links a:hover { color: #1e90ff; }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: #fff; }
-        .nav-links a.active::after { width: 100%; }
-        .nav-right { display: flex; align-items: center; gap: 20px; }
-        .phone { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #fff; }
-        .phone a { text-decoration: none; color: #fff; }
+
+        .nav-links a:hover {
+            color: #0056b3;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: #fff;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .phone a {
+            text-decoration: none;
+            color: #fff;
+        }
+
         .btn-contact {
-            background: #1e90ff;
+            background: #0056b3;
             color: #fff;
             border: none;
             padding: 10px 24px;
@@ -85,7 +176,11 @@
             display: inline-flex;
             align-items: center;
         }
-        .btn-contact:hover { background: #1873cc; transform: translateY(-1px); }
+
+        .btn-contact:hover {
+            background: #004494;
+            transform: translateY(-1px);
+        }
 
         /* Hamburger */
         .hamburger {
@@ -101,6 +196,7 @@
             min-width: 44px;
             min-height: 44px;
         }
+
         .hamburger span {
             display: block;
             width: 24px;
@@ -109,18 +205,28 @@
             border-radius: 2px;
             transition: all 0.3s ease;
         }
-        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
 
         /* Mobile Nav */
         .mobile-nav {
             display: none;
             position: fixed;
-            top: 0; left: 0;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.97);
+            background: rgba(0, 0, 0, 0.97);
             z-index: 999;
             flex-direction: column;
             align-items: center;
@@ -130,7 +236,12 @@
             pointer-events: none;
             transition: opacity 0.3s ease;
         }
-        .mobile-nav.open { opacity: 1; pointer-events: all; }
+
+        .mobile-nav.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
         .mobile-nav a {
             color: #fff;
             text-decoration: none;
@@ -140,31 +251,37 @@
             transition: color 0.3s;
             padding: 8px 16px;
         }
-        .mobile-nav a:hover, .mobile-nav a.active { color: #1e90ff; }
 
-        
-        
-        
-        
-        
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            color: #4da6ff;
+        }
+
+
+
+
+
+
 
         /* ===== New Mode ===== */
         .page-hero {
             padding: 160px 60px 100px;
             background:
-                radial-gradient(circle at top left, rgba(30,144,255,0.18), transparent 35%),
-                radial-gradient(circle at top right, rgba(120,80,255,0.12), transparent 30%),
+                radial-gradient(circle at top left, rgba(0, 86, 179, 0.18), transparent 35%),
+                radial-gradient(circle at top right, rgba(120, 80, 255, 0.12), transparent 30%),
                 linear-gradient(135deg, #0a1628 0%, #0f1020 55%, #0d1f2d 100%);
             position: relative;
             overflow: hidden;
             text-align: center;
         }
+
         .hero-inner {
             position: relative;
             z-index: 1;
             max-width: 800px;
             margin: 0 auto;
         }
+
         .hero-copy h1 {
             font-size: 48px;
             line-height: 1.1;
@@ -175,11 +292,13 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .hero-copy p {
             color: #b8c0cc;
             font-size: 17px;
             line-height: 1.8;
         }
+
         .hero-actions {
             display: flex;
             justify-content: center;
@@ -187,6 +306,7 @@
             gap: 12px;
             margin-top: 32px;
         }
+
         .hero-btn {
             display: inline-flex;
             align-items: center;
@@ -197,15 +317,41 @@
             font-size: 15px;
             font-weight: 600;
             transition: transform 0.25s, background 0.25s, border-color 0.25s;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             min-height: 48px;
         }
-        .hero-btn:hover { transform: translateY(-2px); }
-        .hero-btn.primary { background: linear-gradient(135deg, #1e90ff, #49b1ff); color: #fff; border-color: transparent; }
-        .hero-btn.secondary { background: rgba(255,255,255,0.04); color: #fff; }
-        .hero-btn.facebook { background: linear-gradient(135deg, #1877f2, #3b9aff); color: #fff; border-color: transparent; }
 
-        .contact-section { padding: 0 60px 70px; }
+        .hero-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-btn.primary {
+            background: linear-gradient(135deg, #0056b3, #49b1ff);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .hero-btn.secondary {
+            background: rgba(255, 255, 255, 0.04);
+            color: #fff;
+        }
+
+        .hero-btn.line {
+            background: linear-gradient(135deg, #00c300, #33d633);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .hero-btn.facebook {
+            background: linear-gradient(135deg, #1877f2, #3b9aff);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .contact-section {
+            padding: 0 60px 70px;
+        }
+
         .contact-wrap {
             max-width: 1200px;
             margin: 0 auto;
@@ -213,20 +359,23 @@
             position: relative;
             z-index: 2;
         }
+
         .info-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 16px;
             margin-bottom: 30px;
         }
+
         .info-card {
-            background: linear-gradient(180deg, rgba(17,17,17,0.96), rgba(11,11,11,0.96));
-            border: 1px solid rgba(255,255,255,0.07);
+            background: linear-gradient(180deg, rgba(17, 17, 17, 0.96), rgba(11, 11, 11, 0.96));
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 18px;
             padding: 24px;
-            box-shadow: 0 18px 45px rgba(0,0,0,0.3);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
+
         .info-icon {
             width: 50px;
             height: 50px;
@@ -234,11 +383,16 @@
             display: grid;
             place-items: center;
             margin: 0 auto 16px;
-            background: rgba(30,144,255,0.12);
-            color: #1e90ff;
+            background: rgba(0, 86, 179, 0.12);
+            color: #0056b3;
             font-size: 20px;
         }
-        .info-card h4 { font-size: 16px; margin-bottom: 10px; }
+
+        .info-card h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
         .info-card p,
         .info-card a {
             font-size: 13px;
@@ -246,41 +400,76 @@
             text-decoration: none;
             line-height: 1.7;
         }
-        .info-card a:hover { color: #1e90ff; }
+
+        .info-card a:hover {
+            color: #0056b3;
+        }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
             gap: 24px;
         }
+
         .panel {
-            background: linear-gradient(180deg, rgba(17,17,17,0.98), rgba(10,10,10,0.98));
-            border: 1px solid rgba(255,255,255,0.07);
+            background: linear-gradient(180deg, rgba(17, 17, 17, 0.98), rgba(10, 10, 10, 0.98));
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
         }
-        .panel-head { padding: 30px 30px 0; }
+
+        .panel-head {
+            padding: 30px 30px 0;
+        }
+
         .section-kicker {
-            color: #1e90ff;
+            color: #0056b3;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
-        .section-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
-        .section-desc { color: #98a2b3; font-size: 14px; line-height: 1.8; }
-        .form-area { padding-bottom: 30px; }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-desc {
+            color: #98a2b3;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .form-area {
+            padding-bottom: 30px;
+        }
+
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
             padding: 30px;
         }
-        .form-group.full { grid-column: 1 / -1; }
-        .form-label { display: block; font-size: 13px; margin-bottom: 8px; color: #d6d6d6; }
-        .form-label span { color: #ff6b6b; }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: #d6d6d6;
+        }
+
+        .form-label span {
+            color: #ff6b6b;
+        }
+
         .form-control {
             width: 100%;
             padding: 13px 15px;
@@ -295,11 +484,16 @@
             -webkit-appearance: none;
             appearance: none;
         }
+
         .form-control:focus {
-            border-color: #1e90ff;
-            box-shadow: 0 0 0 4px rgba(30,144,255,0.12);
+            border-color: #0056b3;
+            box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.12);
         }
-        textarea.form-control { min-height: 150px; resize: vertical; }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
 
         .privacy-check {
             display: flex;
@@ -309,15 +503,20 @@
             color: #a5adba;
             padding: 0 30px;
         }
+
         .privacy-check input[type="checkbox"] {
             margin-top: 4px;
-            accent-color: #1e90ff;
+            accent-color: #0056b3;
             min-width: 18px;
             min-height: 18px;
         }
-        .submit-row { padding: 24px 30px 0; }
+
+        .submit-row {
+            padding: 24px 30px 0;
+        }
+
         .btn-submit {
-            background: linear-gradient(135deg, #1e90ff, #49b1ff);
+            background: linear-gradient(135deg, #0056b3, #49b1ff);
             color: #fff;
             border: none;
             padding: 14px 30px;
@@ -330,17 +529,33 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 10px 20px rgba(30,144,255,0.2);
+            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
             min-height: 48px;
         }
+
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(30,144,255,0.3);
+            box-shadow: 0 15px 30px rgba(0, 86, 179, 0.3);
         }
 
-        .map-box { height: 100%; display: flex; flex-direction: column; }
-        .map-top { padding: 24px 24px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-        .map-frame { width: 100%; flex-grow: 1; min-height: 450px; border: 0; display: block; }
+        .map-box {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .map-top {
+            padding: 24px 24px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .map-frame {
+            width: 100%;
+            flex-grow: 1;
+            min-height: 450px;
+            border: 0;
+            display: block;
+        }
 
         /* ===== Quick Channel Cards ===== */
         .quick-channels {
@@ -350,94 +565,302 @@
             max-width: 1200px;
             margin: 0 auto 28px;
         }
+
         .quick-card {
-            display: flex; align-items: center; gap: 16px;
-            background: rgba(17,17,17,0.96); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px; padding: 20px 24px; text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(17, 17, 17, 0.96);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px 24px;
+            text-decoration: none;
             transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
             min-height: 80px;
         }
-        .quick-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
-        .quick-card.line-card { border-color: rgba(0,195,0,0.2); }
-        .quick-card.line-card:hover { border-color: #00c300; }
-        .quick-card.phone-card { border-color: rgba(30,144,255,0.2); }
-        .quick-card.phone-card:hover { border-color: #1e90ff; }
-        .quick-card.fb-card { border-color: rgba(24,119,242,0.2); }
-        .quick-card.fb-card:hover { border-color: #1877f2; }
-        .quick-icon {
-            width: 48px; height: 48px; border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 22px; flex-shrink: 0;
+
+        .quick-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
-        .quick-icon.line { background: rgba(0,195,0,0.15); color: #00c300; }
-        .quick-icon.phone { background: rgba(30,144,255,0.15); color: #1e90ff; }
-        .quick-icon.fb { background: rgba(24,119,242,0.15); color: #1877f2; }
-        .quick-label { font-size: 13px; color: #888; margin-bottom: 2px; }
-        .quick-value { font-size: 15px; font-weight: 600; color: #fff; }
+
+        .quick-card.line-card {
+            border-color: rgba(0, 195, 0, 0.2);
+        }
+
+        .quick-card.line-card:hover {
+            border-color: #00c300;
+        }
+
+        .quick-card.phone-card {
+            border-color: rgba(0, 86, 179, 0.2);
+        }
+
+        .quick-card.phone-card:hover {
+            border-color: #0056b3;
+        }
+
+        .quick-card.fb-card {
+            border-color: rgba(24, 119, 242, 0.2);
+        }
+
+        .quick-card.fb-card:hover {
+            border-color: #1877f2;
+        }
+
+        .quick-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .quick-icon.line {
+            background: rgba(0, 195, 0, 0.15);
+            color: #00c300;
+        }
+
+        .quick-icon.phone {
+            background: rgba(0, 86, 179, 0.15);
+            color: #0056b3;
+        }
+
+        .quick-icon.fb {
+            background: rgba(24, 119, 242, 0.15);
+            color: #1877f2;
+        }
+
+        .quick-label {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 2px;
+        }
+
+        .quick-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+        }
 
         /* ===== Hours Bar ===== */
         .hours-bar {
-            display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-            background: rgba(30,144,255,0.06); border: 1px solid rgba(30,144,255,0.2);
-            border-radius: 10px; padding: 12px 20px; margin-bottom: 16px;
-            font-size: 13px; color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(0, 86, 179, 0.2);
+            border-radius: 10px;
+            padding: 12px 20px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #ccc;
         }
-        .hours-bar i { color: #1e90ff; }
-        .hours-open { color: #2ed573; font-weight: 600; }
-        .hours-closed { color: #ff4757; font-weight: 600; }
+
+        .hours-bar i {
+            color: #0056b3;
+        }
+
+        .hours-open {
+            color: #2ed573;
+            font-weight: 600;
+        }
+
+        .hours-closed {
+            color: #ff4757;
+            font-weight: 600;
+        }
 
         /* ===== Footer Payment & Delivery ===== */
-        .footer-payment-row, .footer-delivery-row {
-            max-width: 1200px; margin: 0 auto 24px;
-            padding: 16px 24px; background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06); border-radius: 10px;
-            display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+        .footer-payment-row,
+        .footer-delivery-row {
+            max-width: 1200px;
+            margin: 0 auto 24px;
+            padding: 16px 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
         }
-        .footer-section-label { font-size: 12px; font-weight: 600; color: #888; white-space: nowrap; min-width: 100px; }
-        .payment-icons { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
-        .payment-item { display: flex; flex-direction: column; align-items: center; gap: 4px; color: #aaa; font-size: 11px; }
-        .payment-item i { font-size: 20px; color: #1e90ff; }
-        .delivery-badges { display: flex; gap: 8px; flex-wrap: wrap; }
-        .delivery-badge { background: #1a1a1a; color: #aaa; border: 1px solid #333; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+
+        .footer-section-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #888;
+            white-space: nowrap;
+            min-width: 100px;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .payment-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: #aaa;
+            font-size: 11px;
+        }
+
+        .payment-item i {
+            font-size: 20px;
+            color: #0056b3;
+        }
+
+        .delivery-badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .delivery-badge {
+            background: #1a1a1a;
+            color: #aaa;
+            border: 1px solid #333;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
 
         @media (max-width: 768px) {
-            .quick-channels { grid-template-columns: 1fr; gap: 10px; }
+            .quick-channels {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
         }
 
         /* ===== Classic Mode ===== */
-        
-        
-        
-        
+
+
+
+
 
         /* ===== Footer ===== */
-        .footer { background: #050505; padding: 50px 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
-        .footer-logo-icon { font-size: 32px; font-weight: 700; color: #fff; font-style: italic; }
-        .footer-logo-icon span { color: #1e90ff; }
-        .footer-desc { color: #666; font-size: 13px; line-height: 1.6; }
-        .footer-title { font-size: 14px; font-weight: 600; margin-bottom: 20px; color: #fff; }
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #666; text-decoration: none; font-size: 13px; transition: color 0.3s; }
-        .footer-links a:hover { color: #1e90ff; }
-        .footer-contact { color: #666; font-size: 13px; line-height: 1.8; }
-        .footer-contact i { color: #1e90ff; margin-right: 8px; width: 16px; }
-        .footer-contact a { color: #666; text-decoration: none; transition: color 0.3s; }
-        .footer-contact a:hover { color: #1e90ff; }
-        .footer-social { display: flex; gap: 12px; margin-top: 15px; }
-        .footer-social a {
-            width: 36px; height: 36px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: #666; font-size: 14px;
-            transition: all 0.3s; text-decoration: none;
+        .footer {
+            background: #050505;
+            padding: 50px 60px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .footer-social a:hover { background: #1e90ff; color: #fff; }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo-icon {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            font-style: italic;
+        }
+
+        .footer-logo-icon span {
+            color: #0056b3;
+        }
+
+        .footer-desc {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #0056b3;
+        }
+
+        .footer-contact {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .footer-contact i {
+            color: #0056b3;
+            margin-right: 8px;
+            width: 16px;
+        }
+
+        .footer-contact a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-contact a:hover {
+            color: #0056b3;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: #0056b3;
+            color: #fff;
+        }
+
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 20px;
             text-align: center;
             color: #444;
@@ -446,114 +869,368 @@
 
         /* ======== Responsive ======== */
         @media (max-width: 1100px) {
-            .contact-grid { grid-template-columns: 1fr; }
-            .info-row { grid-template-columns: repeat(2, 1fr); }
-            .contact-wrap { margin-top: -20px; }
-            .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-wrap {
+                margin-top: -20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
         }
+
         @media (max-width: 768px) {
-            .navbar { padding: 12px 16px; }
-            .nav-links, .phone { display: none; }
-            .hamburger, .mobile-nav { display: flex; }
-            .btn-contact { display: none; }
-            .logo-icon { font-size: 28px; }
-            .logo-text { font-size: 10px; }
-            
-            
-            .page-hero { padding: 110px 20px 60px; }
-            .hero-copy h1 { font-size: 30px; }
-            .hero-copy p { font-size: 15px; }
-            .hero-actions { flex-direction: column; align-items: stretch; }
-            .hero-btn { justify-content: center; width: 100%; }
-            .contact-section { padding: 0 16px 50px; }
-            .info-row { grid-template-columns: 1fr; gap: 12px; }
-            .info-card { padding: 18px; border-radius: 14px; }
-            .contact-grid { gap: 16px; }
-            .panel { border-radius: 18px; }
-            .panel-head { padding: 24px 20px 0; }
-            .section-title { font-size: 22px; }
-            .form-grid { grid-template-columns: 1fr; padding: 20px; gap: 14px; }
-            .form-group.full { grid-column: 1; }
-            .privacy-check { padding: 0 20px; }
-            .submit-row { padding: 20px 20px 0; }
-            .btn-submit { width: 100%; justify-content: center; }
-            .map-frame { min-height: 300px; }
-            
-            
-            .footer { padding: 40px 20px 16px; }
-            .footer-content { grid-template-columns: 1fr; gap: 24px; }
-            .footer-col { text-align: center; }
-            .footer-logo { justify-content: center; }
-            .footer-contact div { justify-content: center; display: flex; align-items: center; }
-            .footer-social { justify-content: center; }
+            .navbar {
+                padding: 12px 16px;
+            }
+
+            .nav-links,
+            .phone {
+                display: none;
+            }
+
+            .hamburger,
+            .mobile-nav {
+                display: flex;
+            }
+
+            .btn-contact {
+                display: none;
+            }
+
+            .logo-icon {
+                font-size: 28px;
+            }
+
+            .logo-text {
+                font-size: 10px;
+            }
+
+
+            .page-hero {
+                padding: 110px 20px 60px;
+            }
+
+            .hero-copy h1 {
+                font-size: 30px;
+            }
+
+            .hero-copy p {
+                font-size: 15px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-btn {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .contact-section {
+                padding: 0 16px 50px;
+            }
+
+            .info-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .info-card {
+                padding: 18px;
+                border-radius: 14px;
+            }
+
+            .contact-grid {
+                gap: 16px;
+            }
+
+            .panel {
+                border-radius: 18px;
+            }
+
+            .panel-head {
+                padding: 24px 20px 0;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 14px;
+            }
+
+            .form-group.full {
+                grid-column: 1;
+            }
+
+            .privacy-check {
+                padding: 0 20px;
+            }
+
+            .submit-row {
+                padding: 20px 20px 0;
+            }
+
+            .btn-submit {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .map-frame {
+                min-height: 300px;
+            }
+
+
+            .footer {
+                padding: 40px 20px 16px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .footer-col {
+                text-align: center;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-contact div {
+                justify-content: center;
+                display: flex;
+                align-items: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
         }
+
         @media (max-width: 480px) {
-            .navbar { padding: 10px 12px; }
-            .logo-icon { font-size: 24px; }
-            .logo-text { font-size: 9px; }
-            .page-hero { padding: 100px 14px 40px; }
-            .hero-copy h1 { font-size: 26px; }
-            .hero-copy p { font-size: 14px; }
-            .hero-btn { padding: 12px 18px; font-size: 14px; }
-            .contact-section { padding: 0 10px 40px; }
-            .info-card { padding: 14px; border-radius: 12px; }
-            .info-card h4 { font-size: 14px; }
-            .info-card p, .info-card a { font-size: 12px; }
-            .panel-head { padding: 18px 16px 0; }
-            .section-title { font-size: 20px; }
-            .section-desc { font-size: 13px; }
-            .form-grid { padding: 16px; gap: 12px; }
-            .form-control { padding: 12px 14px; font-size: 16px; border-radius: 10px; }
-            .privacy-check { padding: 0 16px; font-size: 12px; }
-            .submit-row { padding: 16px 16px 0; }
-            .btn-submit { padding: 12px 20px; font-size: 14px; border-radius: 10px; }
-            .map-top { padding: 18px 16px 12px; }
-            .map-frame { min-height: 250px; }
-            
-            
-            .footer { padding: 30px 14px 12px; }
-            .footer-title { font-size: 13px; }
-            .footer-links a { font-size: 12px; }
-            .footer-contact { font-size: 12px; }
-            .footer-bottom { font-size: 11px; }
-            .mobile-nav a { font-size: 18px; }
+            .navbar {
+                padding: 10px 12px;
+            }
+
+            .logo-icon {
+                font-size: 24px;
+            }
+
+            .logo-text {
+                font-size: 9px;
+            }
+
+            .page-hero {
+                padding: 100px 14px 40px;
+            }
+
+            .hero-copy h1 {
+                font-size: 26px;
+            }
+
+            .hero-copy p {
+                font-size: 14px;
+            }
+
+            .hero-btn {
+                padding: 12px 18px;
+                font-size: 14px;
+            }
+
+            .contact-section {
+                padding: 0 10px 40px;
+            }
+
+            .info-card {
+                padding: 14px;
+                border-radius: 12px;
+            }
+
+            .info-card h4 {
+                font-size: 14px;
+            }
+
+            .info-card p,
+            .info-card a {
+                font-size: 12px;
+            }
+
+            .panel-head {
+                padding: 18px 16px 0;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .section-desc {
+                font-size: 13px;
+            }
+
+            .form-grid {
+                padding: 16px;
+                gap: 12px;
+            }
+
+            .form-control {
+                padding: 12px 14px;
+                font-size: 16px;
+                border-radius: 10px;
+            }
+
+            .privacy-check {
+                padding: 0 16px;
+                font-size: 12px;
+            }
+
+            .submit-row {
+                padding: 16px 16px 0;
+            }
+
+            .btn-submit {
+                padding: 12px 20px;
+                font-size: 14px;
+                border-radius: 10px;
+            }
+
+            .map-top {
+                padding: 18px 16px 12px;
+            }
+
+            .map-frame {
+                min-height: 250px;
+            }
+
+
+            .footer {
+                padding: 30px 14px 12px;
+            }
+
+            .footer-title {
+                font-size: 13px;
+            }
+
+            .footer-links a {
+                font-size: 12px;
+            }
+
+            .footer-contact {
+                font-size: 12px;
+            }
+
+            .footer-bottom {
+                font-size: 11px;
+            }
+
+            .mobile-nav a {
+                font-size: 18px;
+            }
         }
+
         @media (max-width: 360px) {
-            .logo-text { display: none; }
-            .hero-copy h1 { font-size: 22px; }
-            .info-card { padding: 12px; }
-            .section-title { font-size: 18px; }
+            .logo-text {
+                display: none;
+            }
+
+            .hero-copy h1 {
+                font-size: 22px;
+            }
+
+            .info-card {
+                padding: 12px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
         }
 
         /* Scroll-to-top */
         .scroll-top {
-            position: fixed; bottom: 30px; right: 30px; z-index: 990;
-            width: 44px; height: 44px; border-radius: 50%;
-            background: #1e90ff; color: #fff; border: none; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; font-size: 16px;
-            box-shadow: 0 4px 16px rgba(30,144,255,0.4);
-            opacity: 0; visibility: hidden; transition: all 0.3s;
-        }
-        .scroll-top.visible { opacity: 1; visibility: visible; }
-        .scroll-top:hover { background: #1873cc; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(30,144,255,0.5); }
-        /* Scroll progress bar */
-        .scroll-progress {
-            position: fixed; top: 0; left: 0; height: 3px; z-index: 1001;
-            background: linear-gradient(90deg, #1e90ff, #00c8ff);
-            width: 0%; transition: width 0.1s linear;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 990;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #0056b3;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
         }
 
-        .logo-link { text-decoration: none; display: inline-flex; align-items: center; cursor: pointer; transition: opacity 0.2s; }
-        .logo-link:hover { opacity: 0.85; }
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: #004494;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            z-index: 1001;
+            background: linear-gradient(90deg, #0056b3, #00c8ff);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .logo-link:hover {
+            opacity: 0.85;
+        }
     </style>
 </head>
+
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
-<!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar">
-        <a href="index.html" class="logo-link" aria-label="กลับหน้าแรก"><div class="logo-section">
-            <img src="asset/PK Logo-05.png" alt="PK Paint &amp; Supply Logo" class="logo-img">
-            <div class="logo-text">PAINT & SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div></div></a>
+        <a href="index.html" class="logo-link" aria-label="กลับหน้าแรก">
+            <div class="logo-section">
+                <img src="asset/PK Logo-05.png" alt="PK Paint &amp; Supply Logo" class="logo-img">
+                <div class="logo-text">PAINT & SUPPLY<br>สีพ่นรถยนต์คุณภาพสูง</div>
+            </div>
+        </a>
         <ul class="nav-links">
             <li><a href="index.html">หน้าแรก</a></li>
             <li><a href="products.html">สินค้า</a></li>
@@ -579,163 +1256,182 @@
         <a href="portfolio.html">ผลงานสีพ่น</a>
         <a href="about.html">เกี่ยวกับเรา</a>
         <a href="contact.html" class="active">ติดต่อเรา</a>
+        <div class="mobile-nav-contact">
+            <a href="tel:0928528535"><i class="fas fa-phone-alt" style="margin-right:8px;color:#0056b3;"></i>092-852-8535</a>
+            <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @999snkil</a>
+            <a href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" style="margin-right:8px;color:#1877f2;"></i>Facebook</a>
+        </div>
     </div>
 
     <!-- ==================== NEW MODE ==================== -->
     <section class="page-hero">
-            <div class="hero-inner">
-                <div class="hero-copy">
-                    <div class="section-kicker">Get in touch</div>
-                    <h1>ติดต่อ PK Paint & Supply</h1>
-                    <p>ยินดีให้คำปรึกษาเรื่องสีพ่นรถยนต์และอุปกรณ์ครบวงจร พร้อมบริการประเมินราคาและให้ข้อมูลสินค้าโดยผู้เชี่ยวชาญ</p>
-                    <div class="hero-actions">
-                        <a class="hero-btn primary" href="tel:0928528535"><i class="fas fa-phone-alt"></i> โทรสอบถาม</a>
-                        <a class="hero-btn secondary" href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener"><i class="fab fa-line"></i> แชทผ่าน LINE</a>
-                        <a class="hero-btn facebook" href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a>
-                    </div>
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <div class="section-kicker">Get in touch</div>
+                <h1>ติดต่อ PK Paint & Supply</h1>
+                <p>ยินดีให้คำปรึกษาเรื่องสีพ่นรถยนต์และอุปกรณ์ครบวงจร
+                    พร้อมบริการประเมินราคาและให้ข้อมูลสินค้าโดยผู้เชี่ยวชาญ</p>
+                <div class="hero-actions">
+                    <a class="hero-btn primary" href="tel:0928528535"><i class="fas fa-phone-alt"></i> โทรสอบถาม</a>
+                    <a class="hero-btn line" href="https://line.me/R/ti/p/@999snkil" target="_blank"
+                        rel="noopener"><i class="fab fa-line"></i> แชทผ่าน LINE</a>
+                    <a class="hero-btn facebook" href="https://www.facebook.com/pkpaint1996/" target="_blank"
+                        rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="contact-section">
-            <div class="contact-wrap">
+    <section class="contact-section">
+        <div class="contact-wrap">
 
-                <!-- Info Cards -->
-                <div class="info-row">
-                    <div class="info-card">
-                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
-                        <h4>โทรศัพท์</h4>
-                        <p><a href="tel:0928528535">092-852-8535</a></p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon"><i class="fab fa-line"></i></div>
-                        <h4>LINE Official</h4>
-                        <p><a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener">@999snkil</a></p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                        <h4>อีเมล</h4>
-                        <p><a href="mailto:pkpaintandsupply@gmail.com">pkpaintandsupply@gmail.com</a></p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                        <h4>เวลาทำการ</h4>
-                        <p>จันทร์ - เสาร์ (08:00 - 17:00)</p>
-                    </div>
+            <!-- Info Cards -->
+            <div class="info-row">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h4>โทรศัพท์</h4>
+                    <p><a href="tel:0928528535">092-852-8535</a></p>
                 </div>
-
-                <!-- Address Card -->
-                <div class="info-row" style="margin-top:-14px;">
-                    <div class="info-card" style="grid-column: 1 / -1;">
-                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <h4>ที่อยู่ร้าน พี.เค.เพ้นท์แอนด์ซัพพลาย</h4>
-                        <p>249/3 ม.6 ถ.รังสิต ต.บางพูน อ.เมือง จ.ปทุมธานี</p>
-                        <p style="margin-top:8px;">
-                            <a href="https://maps.app.goo.gl/c7nbR1D9EkWsN8GJ8" target="_blank" rel="noopener">
-                                <i class="fas fa-directions" style="margin-right:6px;"></i>เปิดนำทาง Google Maps
-                            </a>
-                        </p>
-                    </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fab fa-line"></i></div>
+                    <h4>LINE Official</h4>
+                    <p><a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener">@999snkil</a></p>
                 </div>
-
-                <!-- ช่องทางด่วน -->
-                <div class="quick-channels">
-                    <a class="quick-card line-card" href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener">
-                        <div class="quick-icon line"><i class="fab fa-line"></i></div>
-                        <div><div class="quick-label">LINE Official</div><div class="quick-value">@999snkil</div></div>
-                    </a>
-                    <a class="quick-card phone-card" href="tel:0928528535">
-                        <div class="quick-icon phone"><i class="fas fa-phone-alt"></i></div>
-                        <div><div class="quick-label">โทรสอบถาม</div><div class="quick-value">092-852-8535</div></div>
-                    </a>
-                    <a class="quick-card fb-card" href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener">
-                        <div class="quick-icon fb"><i class="fab fa-facebook-f"></i></div>
-                        <div><div class="quick-label">Facebook</div><div class="quick-value">pkpaint1996</div></div>
-                    </a>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <h4>อีเมล</h4>
+                    <p><a href="mailto:pkpaintandsupply@gmail.com">pkpaintandsupply@gmail.com</a></p>
                 </div>
-
-                <!-- Contact Grid -->
-                <div class="contact-grid">
-                    <section class="panel form-area">
-                        <div class="panel-head">
-                            <div class="section-kicker">Message us</div>
-                            <h2 class="section-title">ส่งข้อความถึงเรา</h2>
-                            <p class="section-desc">กรอกรายละเอียดเพื่อให้ทีมงานติดต่อกลับโดยเร็วที่สุด</p>
-                        </div>
-                        <form action="#" method="post">
-                            <div class="form-grid">
-                                <div class="form-group">
-                                    <label class="form-label">ชื่อ-นามสกุล <span>*</span></label>
-                                    <input type="text" class="form-control" name="name" required />
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">เบอร์โทรศัพท์ <span>*</span></label>
-                                    <input type="tel" class="form-control" name="phone" required />
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">LINE ID <span style="color:#888;font-size:11px;">(ไม่บังคับ)</span></label>
-                                    <input type="text" class="form-control" name="line_id" placeholder="ระบุ LINE ID ของคุณ" />
-                                </div>
-                                <div class="form-group full">
-                                    <label class="form-label">เรื่องที่ติดต่อ <span>*</span></label>
-                                    <select class="form-control" name="topic" required>
-                                        <option value="">-- เลือกหัวข้อ --</option>
-                                        <option value="สอบถามสินค้า">สอบถามสินค้า</option>
-                                        <option value="ขอใบเสนอราคา">ขอใบเสนอราคา</option>
-                                        <option value="ผสมสีตามตัวอย่าง">ผสมสีตามตัวอย่าง</option>
-                                        <option value="อัดสีสเปรย์กระป๋อง">อัดสีสเปรย์กระป๋อง</option>
-                                        <option value="อื่นๆ">อื่นๆ</option>
-                                    </select>
-                                </div>
-                                <div class="form-group full">
-                                    <label class="form-label">ข้อความรายละเอียด <span>*</span></label>
-                                    <textarea class="form-control" name="message" required></textarea>
-                                </div>
-                            </div>
-                            <div class="privacy-check">
-                                <input type="checkbox" id="p1" required />
-                                <label for="p1"> ยอมรับนโยบายความเป็นส่วนตัว</label>
-                            </div>
-                            <div class="submit-row">
-                                <button type="submit" class="btn-submit"><i class="far fa-paper-plane"></i> ส่งข้อความตอนนี้</button>
-                            </div>
-                        </form>
-                    </section>
-
-                    <aside class="panel">
-                        <div class="map-box">
-                            <div class="map-top">
-                                <div class="section-kicker">Find us</div>
-                                <h2 class="section-title">แผนที่ร้าน</h2>
-                                <p class="section-desc">พี.เค.เพ้นท์แอนด์ซัพพลาย — 249/3 ม.6 ถ.รังสิต ต.บางพูน อ.เมือง จ.ปทุมธานี</p>
-                                <!-- เวลาทำการ -->
-                                <div class="hours-bar">
-                                    <i class="fas fa-clock"></i>
-                                    <span><strong>จ.–ส.</strong> <span class="hours-open">08:00–18:00 น.</span></span>
-                                    <span>·</span>
-                                    <span><strong>อาทิตย์</strong> <span class="hours-closed">ปิดทำการ</span></span>
-                                </div>
-                            </div>
-                            <iframe
-                                class="map-frame"
-                                src="https://www.google.com/maps?q=13.9839944,100.5913704&z=17&output=embed"
-                                loading="lazy"
-                                allowfullscreen
-                                referrerpolicy="no-referrer-when-downgrade"
-                            ></iframe>
-                        </div>
-                    </aside>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <h4>เวลาทำการ</h4>
+                    <p>จันทร์ - เสาร์ (08:30 – 18:00)</p>
                 </div>
-
             </div>
-        </section>
+
+            <!-- Address Card -->
+            <div class="info-row" style="margin-top:-14px;">
+                <div class="info-card" style="grid-column: 1 / -1;">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h4>ที่อยู่ร้าน พี.เค.เพ้นท์แอนด์ซัพพลาย</h4>
+                    <p>249/3 ม.6 ถ.รังสิต ต.บางพูน อ.เมือง จ.ปทุมธานี</p>
+                    <p style="margin-top:8px;">
+                        <a href="https://maps.app.goo.gl/c7nbR1D9EkWsN8GJ8" target="_blank" rel="noopener">
+                            <i class="fas fa-directions" style="margin-right:6px;"></i>เปิดนำทาง Google Maps
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- ช่องทางด่วน -->
+            <div class="quick-channels">
+                <a class="quick-card line-card" href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener">
+                    <div class="quick-icon line"><i class="fab fa-line"></i></div>
+                    <div>
+                        <div class="quick-label">LINE Official</div>
+                        <div class="quick-value">@999snkil</div>
+                    </div>
+                </a>
+                <a class="quick-card phone-card" href="tel:0928528535">
+                    <div class="quick-icon phone"><i class="fas fa-phone-alt"></i></div>
+                    <div>
+                        <div class="quick-label">โทรสอบถาม</div>
+                        <div class="quick-value">092-852-8535</div>
+                    </div>
+                </a>
+                <a class="quick-card fb-card" href="https://www.facebook.com/pkpaint1996/" target="_blank"
+                    rel="noopener">
+                    <div class="quick-icon fb"><i class="fab fa-facebook-f"></i></div>
+                    <div>
+                        <div class="quick-label">Facebook</div>
+                        <div class="quick-value">pkpaint1996</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Contact Grid -->
+            <div class="contact-grid">
+                <section class="panel form-area">
+                    <div class="panel-head">
+                        <div class="section-kicker">Message us</div>
+                        <h2 class="section-title">ส่งข้อความถึงเรา</h2>
+                        <p class="section-desc">กรอกรายละเอียดเพื่อให้ทีมงานติดต่อกลับโดยเร็วที่สุด</p>
+                    </div>
+                    <form action="#" method="post">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">ชื่อ-นามสกุล <span>*</span></label>
+                                <input type="text" class="form-control" name="name" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">เบอร์โทรศัพท์ <span>*</span></label>
+                                <input type="tel" class="form-control" name="phone" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">LINE ID <span
+                                        style="color:#888;font-size:11px;">(ไม่บังคับ)</span></label>
+                                <input type="text" class="form-control" name="line_id"
+                                    placeholder="ระบุ LINE ID ของคุณ" />
+                            </div>
+                            <div class="form-group full">
+                                <label class="form-label">เรื่องที่ติดต่อ <span>*</span></label>
+                                <select class="form-control" name="topic" required>
+                                    <option value="">-- เลือกหัวข้อ --</option>
+                                    <option value="สอบถามสินค้า">สอบถามสินค้า</option>
+                                    <option value="ขอใบเสนอราคา">ขอใบเสนอราคา</option>
+                                    <option value="ผสมสีตามตัวอย่าง">ผสมสีตามตัวอย่าง</option>
+                                    <option value="อัดสีสเปรย์กระป๋อง">อัดสีสเปรย์กระป๋อง</option>
+                                    <option value="อื่นๆ">อื่นๆ</option>
+                                </select>
+                            </div>
+                            <div class="form-group full">
+                                <label class="form-label">ข้อความรายละเอียด <span>*</span></label>
+                                <textarea class="form-control" name="message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="privacy-check">
+                            <input type="checkbox" id="p1" required />
+                            <label for="p1"> ยอมรับนโยบายความเป็นส่วนตัว</label>
+                        </div>
+                        <div class="submit-row">
+                            <button type="submit" class="btn-submit"><i class="far fa-paper-plane"></i>
+                                ส่งข้อความตอนนี้</button>
+                        </div>
+                    </form>
+                </section>
+
+                <aside class="panel">
+                    <div class="map-box">
+                        <div class="map-top">
+                            <div class="section-kicker">Find us</div>
+                            <h2 class="section-title">แผนที่ร้าน</h2>
+                            <p class="section-desc">พี.เค.เพ้นท์แอนด์ซัพพลาย — 249/3 ม.6 ถ.รังสิต ต.บางพูน อ.เมือง
+                                จ.ปทุมธานี</p>
+                            <!-- เวลาทำการ -->
+                            <div class="hours-bar">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>จ.–ส.</strong> <span class="hours-open">8:30–18:00 น.</span></span>
+                                <span>·</span>
+                                <span><strong>อาทิตย์</strong> <span class="hours-closed">ปิดทำการ</span></span>
+                            </div>
+                        </div>
+                        <iframe class="map-frame"
+                            src="https://www.google.com/maps?q=13.9839944,100.5913704&z=17&output=embed" loading="lazy"
+                            allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </aside>
+            </div>
+
+        </div>
+    </section>
     </div>
 
     <!-- FOOTER ==================== -->
     <footer class="footer">
         <!-- ชำระเงินผ่าน -->
         <div class="footer-payment-row">
-            <span class="footer-section-label"><i class="fas fa-credit-card" style="margin-right:6px;color:#1e90ff;"></i>ชำระเงินผ่าน</span>
+            <span class="footer-section-label"><i class="fas fa-credit-card"
+                    style="margin-right:6px;color:#0056b3;"></i>ชำระเงินผ่าน</span>
             <div class="payment-icons">
                 <div class="payment-item"><i class="fas fa-university"></i><span>โอนเงิน</span></div>
                 <div class="payment-item"><i class="fas fa-qrcode"></i><span>QR Promptpay</span></div>
@@ -744,7 +1440,8 @@
         </div>
         <!-- จัดส่งโดย -->
         <div class="footer-delivery-row">
-            <span class="footer-section-label"><i class="fas fa-truck" style="margin-right:6px;color:#1e90ff;"></i>จัดส่งโดย</span>
+            <span class="footer-section-label"><i class="fas fa-truck"
+                    style="margin-right:6px;color:#0056b3;"></i>จัดส่งโดย</span>
             <div class="delivery-badges">
                 <span class="delivery-badge">Kerry Express</span>
                 <span class="delivery-badge">Flash Express</span>
@@ -760,7 +1457,8 @@
                         <div style="font-size:12px;color:#666;">สีพ่นรถยนต์คุณภาพสูง รังสิต</div>
                     </div>
                 </div>
-                <p class="footer-desc">จำหน่ายสีพ่นรถยนต์ทุกชนิด ทุกระบบ 2K-1K สีเบอร์ตรงรุ่นรถ<br>ผสมสีตามตัวอย่าง รับอัดสีสเปรย์กระป๋อง จัดส่งทั่วประเทศไทย</p>
+                <p class="footer-desc">จำหน่ายสีพ่นรถยนต์ทุกชนิด ทุกระบบ 2K-1K สีเบอร์ตรงรุ่นรถ<br>ผสมสีตามตัวอย่าง
+                    รับอัดสีสเปรย์กระป๋อง จัดส่งทั่วประเทศไทย</p>
             </div>
             <div class="footer-col">
                 <h4 class="footer-title">เมนู</h4>
@@ -777,23 +1475,31 @@
                 <h4 class="footer-title">ติดต่อเรา</h4>
                 <div class="footer-contact">
                     <div><i class="fas fa-phone-alt"></i><a href="tel:0928528535">092-852-8535</a></div>
-                    <div><i class="fab fa-line"></i><a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener">@999snkil</a></div>
-                    <div><i class="fas fa-envelope"></i><a href="mailto:pkpaintandsupply@gmail.com">pkpaintandsupply@gmail.com</a></div>
-                    <div style="margin-top:10px;"><i class="fas fa-map-marker-alt"></i> 249/3 ม.6 ถ.รังสิต<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ต.บางพูน อ.เมือง จ.ปทุมธานี</div>
-                    <div style="margin-top:6px;"><a href="https://maps.app.goo.gl/c7nbR1D9EkWsN8GJ8" target="_blank" rel="noopener" style="color:#1e90ff;font-size:12px;"><i class="fas fa-directions" style="margin-right:4px;"></i>เปิดนำทาง Google Maps</a></div>
+                    <div><i class="fab fa-line"></i><a href="https://line.me/R/ti/p/@999snkil" target="_blank"
+                            rel="noopener">@999snkil</a></div>
+                    <div><i class="fas fa-envelope"></i><a
+                            href="mailto:pkpaintandsupply@gmail.com">pkpaintandsupply@gmail.com</a></div>
+                    <div style="margin-top:10px;"><i class="fas fa-map-marker-alt"></i> 249/3 ม.6
+                        ถ.รังสิต<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ต.บางพูน อ.เมือง จ.ปทุมธานี</div>
+                    <div style="margin-top:6px;"><a href="https://maps.app.goo.gl/c7nbR1D9EkWsN8GJ8" target="_blank"
+                            rel="noopener" style="color:#0056b3;font-size:12px;"><i class="fas fa-directions"
+                                style="margin-right:4px;"></i>เปิดนำทาง Google Maps</a></div>
                 </div>
             </div>
             <div class="footer-col">
                 <h4 class="footer-title">ติดตามเรา</h4>
                 <div class="footer-social">
-                    <a href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener" title="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
                     <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                     <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener" title="LINE"><i class="fab fa-line"></i></a>
+                    <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener" title="LINE"><i
+                            class="fab fa-line"></i></a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">&copy; <span id="copyright-year"></span> PK Paint &amp; Supply. All Rights Reserved.</div>
+        <div class="footer-bottom">&copy; <span id="copyright-year"></span> PK Paint &amp; Supply. All Rights Reserved.
+        </div>
     </footer>
 
     <script>
@@ -814,9 +1520,9 @@
             });
         });
 
-    
+
         // Scroll progress bar & scroll-to-top
-        (function() {
+        (function () {
             const scrollTopBtn = document.getElementById('scrollTop');
             const prog = document.getElementById('scrollProgress');
             window.addEventListener('scroll', () => {
@@ -835,4 +1541,5 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 </body>
+
 </html>

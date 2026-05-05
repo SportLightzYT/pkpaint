@@ -17,12 +17,12 @@
         a { color: inherit; text-decoration: none; }
 
         /* ── Navbar ── */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 60px; background: rgba(0,0,0,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 60px; background: rgba(10,10,10,0.98); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
         .logo-section { display: flex; align-items: center; gap: 12px; }
         .logo-img { height: 42px; width: auto; object-fit: contain; }
         .footer-logo-img { height: 38px; width: auto; object-fit: contain; }
         .logo-icon { font-size: 36px; font-weight: 700; color: #fff; font-style: italic; }
-        .logo-icon span { color: #1e90ff; }
+        .logo-icon span { color: #0056b3; }
         .logo-text { font-size: 12px; line-height: 1.4; color: #ccc; }
         .nav-links { display: flex; gap: 30px; list-style: none; }
         .nav-links a {
@@ -31,19 +31,19 @@
         }
         .nav-links a::after {
             content: ''; position: absolute; bottom: 0; left: 0;
-            width: 0; height: 2px; background: #1e90ff;
+            width: 0; height: 2px; background: #0056b3;
             transition: width 0.3s ease;
         }
-        .nav-links a:hover { color: #1e90ff; }
+        .nav-links a:hover { color: #0056b3; }
         .nav-links a:hover::after { width: 100%; }
         .nav-links a.active { color: #fff; }
         .nav-links a.active::after { width: 100%; }
         .nav-right { display: flex; align-items: center; gap: 20px; }
         .phone { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #fff; }
         .phone a { text-decoration: none; color: #fff; transition: color 0.3s; }
-        .phone a:hover { color: #1e90ff; }
-        .btn-contact { background: #1e90ff; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.3s, transform 0.3s; white-space: nowrap; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
-        .btn-contact:hover { background: #1873cc; transform: translateY(-1px); }
+        .phone a:hover { color: #0056b3; }
+        .btn-contact { background: #0056b3; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.3s, transform 0.3s; white-space: nowrap; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+        .btn-contact:hover { background: #004494; transform: translateY(-1px); }
 
         /* ── Hamburger ── */
         .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; z-index: 1100; min-width: 44px; min-height: 44px; }
@@ -56,14 +56,14 @@
         .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
         .mobile-nav.open { opacity: 1; pointer-events: all; }
         .mobile-nav a { color: #fff; text-decoration: none; font-size: 22px; font-weight: 500; letter-spacing: 1px; transition: color 0.3s; padding: 8px 16px; }
-        .mobile-nav a:hover, .mobile-nav a.active { color: #1e90ff; }
+        .mobile-nav a:hover, .mobile-nav a.active { color: #4da6ff; }
         .mobile-nav-contact { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); width: 240px; }
         .mobile-nav-contact a { font-size: 15px !important; color: #aaa !important; }
 
         /* ── Page Content ── */
         .page-container { padding: 120px 60px 60px; max-width: 1400px; margin: 0 auto; }
         .breadcrumb { font-size: 13px; color: #888; margin-bottom: 20px; }
-        .breadcrumb a { color: #1e90ff; text-decoration: none; transition: color 0.3s; }
+        .breadcrumb a { color: #0056b3; text-decoration: none; transition: color 0.3s; }
         .breadcrumb a:hover { color: #fff; }
         .page-title { font-size: 36px; font-weight: 600; margin-bottom: 30px; text-align: center; }
 
@@ -72,21 +72,21 @@
         .item-count span { color: #fff; font-weight: 500; }
         .sort-box { display: flex; align-items: center; gap: 10px; font-size: 14px; }
         .sort-select { background: #1a1a1a; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 4px; font-family: 'Kanit', sans-serif; outline: none; cursor: pointer; }
-        .sort-select:focus { border-color: #1e90ff; }
+        .sort-select:focus { border-color: #0056b3; }
 
         /* ── Category Tabs ── */
         .category-tabs { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
         .cat-tab { background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); color: #aaa; padding: 8px 20px; border-radius: 20px; font-family: 'Kanit'; font-size: 13px; cursor: pointer; transition: all 0.25s; min-height: 40px; display: inline-flex; align-items: center; }
-        .cat-tab:hover { border-color: #1e90ff; color: #fff; }
-        .cat-tab.active { background: #1e90ff; border-color: #1e90ff; color: #fff; }
+        .cat-tab:hover { border-color: #0056b3; color: #fff; }
+        .cat-tab.active { background: #0056b3; border-color: #0056b3; color: #fff; }
 
         /* ── Product Grid ── */
         .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .product-card { background: #151515; border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; overflow: hidden; transition: all 0.3s; position: relative; display: flex; flex-direction: column; }
-        .product-card:hover { transform: translateY(-4px); border-color: rgba(30,144,255,0.4); box-shadow: 0 8px 20px rgba(0,0,0,0.4); border-left: 3px solid #1e90ff; }
+        .product-card:hover { transform: translateY(-4px); border-color: #555; box-shadow: 0 8px 20px rgba(0,0,0,0.4); border-left: 3px solid #0056b3; }
         .product-badge { position: absolute; top: 10px; left: 10px; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; z-index: 2; }
         .badge-hot { background: #ff4757; color: #fff; }
-        .badge-new { background: #1e90ff; color: #fff; }
+        .badge-new { background: #0056b3; color: #fff; }
         .badge-sale { background: #ff9f43; color: #fff; }
         .product-img-box { width: 100%; aspect-ratio: 4/3; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
         .product-img-box i { font-size: 52px; color: rgba(255,255,255,0.18); }
@@ -94,7 +94,7 @@
         .swatch { width: 15px; height: 15px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); cursor: pointer; transition: transform 0.2s; flex-shrink: 0; }
         .swatch:hover { transform: scale(1.35); }
         .product-info { padding: 10px 14px 14px; flex: 1; display: flex; flex-direction: column; }
-        .product-category-tag { font-size: 11px; color: #1e90ff; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .product-category-tag { font-size: 11px; color: #0056b3; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
         .product-title { font-size: 13px; color: #ddd; margin-bottom: 6px; line-height: 1.45; height: 38px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; }
         .product-price { color: #ff4757; font-size: 17px; font-weight: 700; }
         .product-price-old { color: #555; font-size: 11px; text-decoration: line-through; margin-left: 6px; }
@@ -106,7 +106,7 @@
         .btn-shopee { background: #EE4D2D; color: #fff; border: none; width: 100%; padding: 10px; border-radius: 5px; font-family: 'Kanit'; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.25s; display: flex; align-items: center; justify-content: center; gap: 7px; text-decoration: none; margin-bottom: 7px; min-height: 44px; }
         .btn-shopee:hover { background: #d43d1f; }
         .btn-view { background: transparent; color: #777; border: 1px solid #2a2a2a; width: 100%; padding: 8px; border-radius: 5px; font-family: 'Kanit'; font-size: 12px; cursor: pointer; transition: all 0.25s; min-height: 40px; }
-        .btn-view:hover { border-color: #1e90ff; color: #1e90ff; }
+        .btn-view:hover { border-color: #0056b3; color: #0056b3; }
 
         /* ── Quick View Modal ── */
         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
@@ -117,7 +117,7 @@
         .modal-close:hover { background: #ff4757; color: #fff; border-color: #ff4757; }
         .modal-img { width: 100%; aspect-ratio: 16/9; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
         .modal-img i { font-size: 64px; color: rgba(255,255,255,0.15); }
-        .modal-category { font-size: 12px; color: #1e90ff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .modal-category { font-size: 12px; color: #0056b3; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
         .modal-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
         .modal-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px; }
         .modal-price { font-size: 28px; font-weight: 700; color: #ff4757; }
@@ -125,7 +125,7 @@
         .modal-desc { color: #aaa; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
         .modal-specs { list-style: none; margin-bottom: 24px; }
         .modal-specs li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; color: #ccc; display: flex; gap: 10px; }
-        .modal-specs li i { color: #1e90ff; width: 18px; flex-shrink: 0; margin-top: 2px; }
+        .modal-specs li i { color: #0056b3; width: 18px; flex-shrink: 0; margin-top: 2px; }
         .modal-specs li strong { color: #fff; min-width: 100px; }
         .modal-buttons { display: flex; gap: 10px; }
         .modal-btn-shopee { flex: 1; background: #EE4D2D; color: #fff; border: none; padding: 12px; border-radius: 8px; font-family: 'Kanit'; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; min-height: 48px; }
@@ -136,31 +136,31 @@
         /* ── Pagination ── */
         .pagination { display: flex; justify-content: center; gap: 10px; margin-top: 50px; }
         .page-btn { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #1a1a1a; border: 1px solid #333; border-radius: 4px; color: #fff; cursor: pointer; text-decoration: none; transition: 0.3s; font-family: 'Kanit'; font-size: 14px; }
-        .page-btn:hover, .page-btn.active { background: #1e90ff; border-color: #1e90ff; }
+        .page-btn:hover, .page-btn.active { background: #0056b3; border-color: #0056b3; }
 
         /* ── CTA Section ── */
         .products-cta { padding: 60px; text-align: center; background: linear-gradient(135deg, #0d1f2d, #1a0a2e); position: relative; overflow: hidden; margin-top: 40px; border-radius: 16px; max-width: 1280px; margin-left: auto; margin-right: auto; }
-        .products-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(30,144,255,0.08) 0%, transparent 60%); }
+        .products-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(0,86,179,0.08) 0%, transparent 60%); }
         .products-cta-content { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
         .products-cta h2 { font-size: 28px; font-weight: 600; margin-bottom: 12px; }
         .products-cta p { color: #aaa; margin-bottom: 24px; font-size: 15px; line-height: 1.7; }
         .products-cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-        .btn-primary { background: #1e90ff; color: #fff; border: none; padding: 14px 32px; border-radius: 8px; font-family: 'Kanit'; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; }
-        .btn-primary:hover { background: #1873cc; transform: translateY(-2px); }
+        .btn-primary { background: #0056b3; color: #fff; border: none; padding: 14px 32px; border-radius: 8px; font-family: 'Kanit'; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; }
+        .btn-primary:hover { background: #004494; transform: translateY(-2px); }
         .btn-line { background: #00c300; color: #fff; border: none; padding: 14px 32px; border-radius: 8px; font-family: 'Kanit'; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; }
         .btn-line:hover { background: #00a300; transform: translateY(-2px); }
         .btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 14px 32px; border-radius: 8px; font-family: 'Kanit'; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; }
-        .btn-secondary:hover { border-color: #1e90ff; color: #1e90ff; }
+        .btn-secondary:hover { border-color: #0056b3; color: #0056b3; }
 
         /* ── Sticky Contact Bar ── */
         .sticky-contact-bar {
-            background: #1a1a1a; border-top: 1px solid #1e90ff;
+            background: #1a1a1a; border-top: 1px solid #0056b3;
             padding: 16px 60px; display: flex; align-items: center;
             justify-content: space-between; gap: 16px; flex-wrap: wrap;
             margin-top: 40px;
         }
         .sticky-contact-text { font-size: 15px; font-weight: 500; color: #ccc; }
-        .sticky-contact-text span { color: #1e90ff; }
+        .sticky-contact-text span { color: #0056b3; }
         .sticky-contact-btns { display: flex; gap: 12px; }
         .sticky-btn-line {
             background: #00c300; color: #fff; padding: 10px 22px; border-radius: 6px;
@@ -175,7 +175,7 @@
             font-weight: 500; text-decoration: none; display: inline-flex;
             align-items: center; gap: 8px; min-height: 44px; transition: border-color 0.3s;
         }
-        .sticky-btn-phone:hover { border-color: #1e90ff; color: #1e90ff; }
+        .sticky-btn-phone:hover { border-color: #0056b3; color: #0056b3; }
 
         /* ── Footer Payment & Delivery ── */
         .footer-payment-row, .footer-delivery-row {
@@ -187,7 +187,7 @@
         .footer-section-label { font-size: 12px; font-weight: 600; color: #888; white-space: nowrap; min-width: 100px; }
         .payment-icons { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
         .payment-item { display: flex; flex-direction: column; align-items: center; gap: 4px; color: #aaa; font-size: 11px; }
-        .payment-item i { font-size: 20px; color: #1e90ff; }
+        .payment-item i { font-size: 20px; color: #0056b3; }
         .delivery-badges { display: flex; gap: 8px; flex-wrap: wrap; }
         .delivery-badge { background: #1a1a1a; color: #aaa; border: 1px solid #333; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 500; }
 
@@ -203,20 +203,20 @@
         .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
         .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
         .footer-logo-icon { font-size: 32px; font-weight: 700; color: #fff; font-style: italic; }
-        .footer-logo-icon span { color: #1e90ff; }
+        .footer-logo-icon span { color: #0056b3; }
         .footer-desc { color: #666; font-size: 13px; line-height: 1.6; }
         .footer-title { font-size: 14px; font-weight: 600; margin-bottom: 20px; color: #fff; }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 10px; }
         .footer-links a { color: #666; text-decoration: none; font-size: 13px; transition: color 0.3s; }
-        .footer-links a:hover { color: #1e90ff; }
+        .footer-links a:hover { color: #0056b3; }
         .footer-contact { color: #666; font-size: 13px; line-height: 1.8; }
-        .footer-contact i { color: #1e90ff; margin-right: 8px; width: 16px; }
+        .footer-contact i { color: #0056b3; margin-right: 8px; width: 16px; }
         .footer-contact a { color: #666; text-decoration: none; transition: color 0.3s; }
-        .footer-contact a:hover { color: #1e90ff; }
+        .footer-contact a:hover { color: #0056b3; }
         .footer-social { display: flex; gap: 12px; margin-top: 15px; }
         .footer-social a { width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #666; font-size: 14px; transition: all 0.3s; text-decoration: none; }
-        .footer-social a:hover { background: #1e90ff; color: #fff; }
+        .footer-social a:hover { background: #0056b3; color: #fff; }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; color: #444; font-size: 12px; }
 
         /* ── Responsive ── */
@@ -270,17 +270,17 @@
         .scroll-top {
             position: fixed; bottom: 30px; right: 30px; z-index: 990;
             width: 44px; height: 44px; border-radius: 50%;
-            background: #1e90ff; color: #fff; border: none; cursor: pointer;
+            background: #0056b3; color: #fff; border: none; cursor: pointer;
             display: flex; align-items: center; justify-content: center; font-size: 16px;
-            box-shadow: 0 4px 16px rgba(30,144,255,0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             opacity: 0; visibility: hidden; transition: all 0.3s;
         }
         .scroll-top.visible { opacity: 1; visibility: visible; }
-        .scroll-top:hover { background: #1873cc; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(30,144,255,0.5); }
+        .scroll-top:hover { background: #004494; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
         /* Scroll progress bar */
         .scroll-progress {
             position: fixed; top: 0; left: 0; height: 3px; z-index: 1001;
-            background: linear-gradient(90deg, #1e90ff, #00c8ff);
+            background: linear-gradient(90deg, #0056b3, #00c8ff);
             width: 0%; transition: width 0.1s linear;
         }
 
@@ -323,7 +323,7 @@
         <a href="about.html">เกี่ยวกับเรา</a>
         <a href="contact.html">ติดต่อเรา</a>
         <div class="mobile-nav-contact">
-            <a href="tel:0928528535"><i class="fas fa-phone-alt" style="margin-right:8px;color:#1e90ff;"></i>092-852-8535</a>
+            <a href="tel:0928528535"><i class="fas fa-phone-alt" style="margin-right:8px;color:#0056b3;"></i>092-852-8535</a>
             <a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener"><i class="fab fa-line" style="margin-right:8px;color:#00c300;"></i>LINE: @999snkil</a>
             <a href="https://www.facebook.com/pkpaint1996/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" style="margin-right:8px;color:#1877f2;"></i>Facebook</a>
         </div>
@@ -814,7 +814,7 @@
     <footer class="footer">
         <!-- ชำระเงินผ่าน -->
         <div class="footer-payment-row">
-            <span class="footer-section-label"><i class="fas fa-credit-card" style="margin-right:6px;color:#1e90ff;"></i>ชำระเงินผ่าน</span>
+            <span class="footer-section-label"><i class="fas fa-credit-card" style="margin-right:6px;color:#0056b3;"></i>ชำระเงินผ่าน</span>
             <div class="payment-icons">
                 <div class="payment-item"><i class="fas fa-university"></i><span>โอนเงิน</span></div>
                 <div class="payment-item"><i class="fas fa-qrcode"></i><span>QR Promptpay</span></div>
@@ -823,7 +823,7 @@
         </div>
         <!-- จัดส่งโดย -->
         <div class="footer-delivery-row">
-            <span class="footer-section-label"><i class="fas fa-truck" style="margin-right:6px;color:#1e90ff;"></i>จัดส่งโดย</span>
+            <span class="footer-section-label"><i class="fas fa-truck" style="margin-right:6px;color:#0056b3;"></i>จัดส่งโดย</span>
             <div class="delivery-badges">
                 <span class="delivery-badge">Kerry Express</span>
                 <span class="delivery-badge">Flash Express</span>
@@ -859,7 +859,7 @@
                     <div><i class="fab fa-line"></i><a href="https://line.me/R/ti/p/@999snkil" target="_blank" rel="noopener">@999snkil</a></div>
                     <div><i class="fas fa-envelope"></i><a href="mailto:pkpaintandsupply@gmail.com">pkpaintandsupply@gmail.com</a></div>
                     <div style="margin-top:10px;"><i class="fas fa-map-marker-alt"></i> 249/3 ม.6 ถ.รังสิต<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ต.บางพูน อ.เมือง จ.ปทุมธานี</div>
-                    <div style="margin-top:6px;"><a href="https://maps.app.goo.gl/c7nbR1D9EkWsN8GJ8" target="_blank" rel="noopener" style="color:#1e90ff;font-size:12px;"><i class="fas fa-directions" style="margin-right:4px;"></i>เปิดนำทาง Google Maps</a></div>
+                    <div style="margin-top:6px;"><a href="https://maps.app.goo.gl/c7nbR1D9EkWsN8GJ8" target="_blank" rel="noopener" style="color:#0056b3;font-size:12px;"><i class="fas fa-directions" style="margin-right:4px;"></i>เปิดนำทาง Google Maps</a></div>
                 </div>
             </div>
             <div class="footer-col">
@@ -929,7 +929,7 @@
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (!navbar) return;
-            navbar.style.borderBottomColor = window.scrollY > 80 ? 'rgba(30,144,255,0.4)' : 'rgba(255,255,255,0.1)';
+            navbar.style.borderBottomColor = window.scrollY > 80 ? 'rgba(0,86,179,0.4)' : 'rgba(255,255,255,0.1)';
             navbar.style.transition = 'border-color 0.3s';
         });
 
